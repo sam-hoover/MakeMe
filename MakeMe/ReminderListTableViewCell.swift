@@ -10,6 +10,27 @@ import UIKit
 
 class ReminderListTableViewCell: UITableViewCell {
 
+    var reminderList: ReminderList? {
+        didSet {
+            update()
+        }
+    }
+    
+    @IBOutlet weak var TitleLabel: UILabel!
+    @IBOutlet weak var CountLabel: UILabel!
+    
+    
+    func update() {
+        TitleLabel?.text = nil
+        CountLabel?.text = nil
+        
+        if let reminderList = self.reminderList {
+            TitleLabel?.text = reminderList.title
+            
+        }
+    }
+    
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

@@ -10,6 +10,16 @@ import UIKit
 
 class ReminderListTableViewController: UITableViewController {
 
+    var reminderLists = [ReminderList]()
+    
+    var testHomeList = ReminderList(title: "Home")
+    
+    var testSchoolList = ReminderList(title: "School")
+    
+    private struct Storyboard {
+        static let CellReuseIdentifier = "ReminderListTableCell"
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -18,6 +28,11 @@ class ReminderListTableViewController: UITableViewController {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        
+        
+        // adding lists to be displayed
+        reminderLists += [testHomeList, testSchoolList]
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -28,24 +43,27 @@ class ReminderListTableViewController: UITableViewController {
     // MARK: - Table view data source
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 0
+        return reminderLists.count
     }
 
-    /*
+    
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath)
+        // not sure why i have to downcast here ("as!") and cannot just use "as"
+        let cell = tableView.dequeueReusableCellWithIdentifier(Storyboard.CellReuseIdentifier, forIndexPath: indexPath) as! ReminderListTableViewCell
 
         // Configure the cell...
-
+        let reminderList = reminderLists[indexPath.row]
+        
+        cell.reminderList = reminderList
+        cell.CountLabel.text = "0"
+        
         return cell
     }
-    */
+
 
     /*
     // Override to support conditional editing of the table view.
