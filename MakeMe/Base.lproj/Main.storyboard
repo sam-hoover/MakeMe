@@ -120,11 +120,92 @@
             </objects>
             <point key="canvasLocation" x="479" y="590"/>
         </scene>
+        <!--Add Personal List View Controller-->
+        <scene sceneID="R6a-zi-hRV">
+            <objects>
+                <viewController id="3Dh-xC-gIq" customClass="AddPersonalListViewController" customModule="MakeMe" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y7E-hr-1f6"/>
+                        <viewControllerLayoutGuide type="bottom" id="jrK-qV-S6r"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="stO-ez-l4P">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="r50-Cv-Njc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-341" y="-1212"/>
+        </scene>
+        <!--Add List Type Selection View Controller-->
+        <scene sceneID="7NN-gG-v1f">
+            <objects>
+                <viewController id="nJs-W2-pXe" customClass="AddListTypeSelectionViewController" customModule="MakeMe" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="KS7-2v-mB7"/>
+                        <viewControllerLayoutGuide type="bottom" id="os8-4v-tiM"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="3BJ-cL-dTY">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Igd-Bz-rIK">
+                                <rect key="frame" x="270" y="285" width="60" height="30"/>
+                                <state key="normal" title="Personal"/>
+                                <connections>
+                                    <segue destination="3Dh-xC-gIq" kind="presentation" id="6DF-Pa-XmP"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kEB-di-Jx1">
+                                <rect key="frame" x="276" y="323" width="49" height="30"/>
+                                <state key="normal" title="Shared"/>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="kEB-di-Jx1" firstAttribute="centerX" secondItem="Igd-Bz-rIK" secondAttribute="centerX" id="0sD-k3-oT1"/>
+                            <constraint firstItem="kEB-di-Jx1" firstAttribute="centerY" secondItem="3BJ-cL-dTY" secondAttribute="centerY" constant="38" id="4SH-LV-x2W"/>
+                            <constraint firstItem="Igd-Bz-rIK" firstAttribute="centerX" secondItem="3BJ-cL-dTY" secondAttribute="centerX" id="BJe-Vb-B6P"/>
+                            <constraint firstItem="kEB-di-Jx1" firstAttribute="width" secondItem="Igd-Bz-rIK" secondAttribute="width" constant="-11" id="JsK-Sn-VHt"/>
+                            <constraint firstItem="Igd-Bz-rIK" firstAttribute="top" secondItem="KS7-2v-mB7" secondAttribute="bottom" constant="265" id="JwY-Wf-obV"/>
+                            <constraint firstItem="Igd-Bz-rIK" firstAttribute="centerY" secondItem="3BJ-cL-dTY" secondAttribute="centerY" id="dPT-24-X0Q"/>
+                            <constraint firstItem="kEB-di-Jx1" firstAttribute="top" secondItem="Igd-Bz-rIK" secondAttribute="bottom" constant="8" symbolic="YES" id="kWF-K1-L8K"/>
+                            <constraint firstItem="kEB-di-Jx1" firstAttribute="top" secondItem="Igd-Bz-rIK" secondAttribute="bottom" constant="8" id="mUT-Ls-oMv"/>
+                            <constraint firstItem="Igd-Bz-rIK" firstAttribute="top" secondItem="KS7-2v-mB7" secondAttribute="bottom" constant="265" id="yfT-eP-Zwa"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="JwY-Wf-obV"/>
+                                <exclude reference="yfT-eP-Zwa"/>
+                                <exclude reference="4SH-LV-x2W"/>
+                                <exclude reference="JsK-Sn-VHt"/>
+                                <exclude reference="mUT-Ls-oMv"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <connections>
+                        <outlet property="addPersonalListButton" destination="Igd-Bz-rIK" id="oJ6-qc-7eQ"/>
+                        <outlet property="addSharedListButton" destination="kEB-di-Jx1" id="yai-eQ-nxX"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yCN-w5-DgD" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-341" y="-477"/>
+        </scene>
         <!--Master View Controller-->
         <scene sceneID="Zk3-uU-k5T">
             <objects>
                 <tabBarController id="eGb-oZ-V6q" customClass="MasterViewController" customModule="MakeMe" customModuleProvider="target" sceneMemberID="viewController">
-                    <navigationItem key="navigationItem" id="umQ-UO-WEV"/>
+                    <navigationItem key="navigationItem" id="umQ-UO-WEV">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="Ufn-eV-HWQ">
+                            <connections>
+                                <segue destination="nJs-W2-pXe" kind="popoverPresentation" popoverAnchorBarButtonItem="Ufn-eV-HWQ" id="FXm-Jb-D1W">
+                                    <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
+                                </segue>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="t80-bo-GSW">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
