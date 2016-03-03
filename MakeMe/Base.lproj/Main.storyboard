@@ -89,7 +89,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QdA-zj-J8u" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="479" y="-100"/>
+            <point key="canvasLocation" x="479" y="-96"/>
         </scene>
         <!--Shared Reminder List-->
         <scene sceneID="eL3-lq-Z7b">
@@ -118,7 +118,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="21m-oO-lZE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="479" y="590"/>
+            <point key="canvasLocation" x="479" y="598"/>
         </scene>
         <!--Add Personal List View Controller-->
         <scene sceneID="R6a-zi-hRV">
@@ -184,6 +184,7 @@
                             </mask>
                         </variation>
                     </view>
+                    <navigationItem key="navigationItem" id="OeD-Fg-6U6"/>
                     <connections>
                         <outlet property="addPersonalListButton" destination="Igd-Bz-rIK" id="oJ6-qc-7eQ"/>
                         <outlet property="addSharedListButton" destination="kEB-di-Jx1" id="yai-eQ-nxX"/>
@@ -200,7 +201,7 @@
                     <navigationItem key="navigationItem" id="umQ-UO-WEV">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="Ufn-eV-HWQ">
                             <connections>
-                                <segue destination="nJs-W2-pXe" kind="popoverPresentation" popoverAnchorBarButtonItem="Ufn-eV-HWQ" id="FXm-Jb-D1W">
+                                <segue destination="d2r-r8-nK4" kind="popoverPresentation" popoverAnchorBarButtonItem="Ufn-eV-HWQ" id="FXm-Jb-D1W">
                                     <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
                                 </segue>
                             </connections>
@@ -219,6 +220,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="azh-zR-tFJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-341" y="247"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="WMc-NI-VjM">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="d2r-r8-nK4" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="SpH-23-mnF">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="nJs-W2-pXe" kind="relationship" relationship="rootViewController" id="aiw-Mh-Hx8"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eG9-5J-A3X" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1050" y="-477"/>
         </scene>
     </scenes>
 </document>

@@ -11,6 +11,7 @@ import Foundation
 class Reminder {
     
     var text: String
+    var alert: String?
     
     init() {
         text = ""
