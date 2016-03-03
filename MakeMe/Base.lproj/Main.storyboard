@@ -38,27 +38,41 @@
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="itu-qo-nXm">
-                                            <rect key="frame" x="8" y="8" width="42" height="21"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="itu-qo-nXm">
+                                            <rect key="frame" x="8" y="12" width="39.5" height="19.5"/>
                                             <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e6Z-Ue-eVs">
-                                            <rect key="frame" x="550" y="8" width="42" height="21"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e6Z-Ue-eVs">
+                                            <rect key="frame" x="552" y="12" width="39.5" height="19.5"/>
                                             <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="itu-qo-nXm" firstAttribute="centerY" secondItem="WUV-T0-Ppw" secondAttribute="centerY" constant="-3.25" id="7Nb-5L-tI6"/>
+                                        <constraint firstItem="itu-qo-nXm" firstAttribute="centerY" secondItem="WUV-T0-Ppw" secondAttribute="centerY" constant="-3" id="7Nb-5L-tI6"/>
+                                        <constraint firstAttribute="leadingMargin" secondItem="itu-qo-nXm" secondAttribute="leading" id="YF4-I8-NPc"/>
+                                        <constraint firstItem="e6Z-Ue-eVs" firstAttribute="centerY" secondItem="WUV-T0-Ppw" secondAttribute="centerY" id="Z9Q-Ee-PRp"/>
+                                        <constraint firstItem="itu-qo-nXm" firstAttribute="centerY" secondItem="WUV-T0-Ppw" secondAttribute="centerY" id="eDH-Qv-w5X"/>
                                         <constraint firstAttribute="topMargin" secondItem="e6Z-Ue-eVs" secondAttribute="top" id="gll-OL-nec"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="e6Z-Ue-eVs" secondAttribute="trailing" id="hBu-hw-uiG"/>
                                         <constraint firstAttribute="topMargin" secondItem="itu-qo-nXm" secondAttribute="top" id="odV-Gn-Fz9"/>
                                         <constraint firstItem="itu-qo-nXm" firstAttribute="baseline" secondItem="e6Z-Ue-eVs" secondAttribute="baseline" id="qD2-ea-fkz"/>
                                         <constraint firstAttribute="trailingMargin" secondItem="e6Z-Ue-eVs" secondAttribute="trailing" id="vvp-Jt-bMU"/>
                                         <constraint firstItem="e6Z-Ue-eVs" firstAttribute="leading" secondItem="itu-qo-nXm" secondAttribute="trailing" constant="500" id="wVB-vT-oTZ"/>
                                     </constraints>
+                                    <variation key="default">
+                                        <mask key="constraints">
+                                            <exclude reference="7Nb-5L-tI6"/>
+                                            <exclude reference="odV-Gn-Fz9"/>
+                                            <exclude reference="qD2-ea-fkz"/>
+                                            <exclude reference="gll-OL-nec"/>
+                                            <exclude reference="vvp-Jt-bMU"/>
+                                            <exclude reference="wVB-vT-oTZ"/>
+                                        </mask>
+                                    </variation>
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="CountLabel" destination="e6Z-Ue-eVs" id="bJ6-ac-89U"/>

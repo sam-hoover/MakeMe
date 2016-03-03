@@ -10,14 +10,14 @@ import UIKit
 
 class ReminderListTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var TitleLabel: UILabel!
+    @IBOutlet weak var CountLabel: UILabel!
+    
     var reminderList: ReminderList? {
         didSet {
             update()
         }
     }
-    
-    @IBOutlet weak var TitleLabel: UILabel!
-    @IBOutlet weak var CountLabel: UILabel!
     
     
     func update() {
@@ -27,6 +27,8 @@ class ReminderListTableViewCell: UITableViewCell {
         if let reminderList = self.reminderList {
             TitleLabel?.text = reminderList.title
             
+            // set to this value for testing, should be count of reminders in the ReminderList
+            CountLabel?.text = "0"
         }
     }
     
@@ -36,6 +38,7 @@ class ReminderListTableViewCell: UITableViewCell {
         // Initialization code
     }
 
+    
     override func setSelected(selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 

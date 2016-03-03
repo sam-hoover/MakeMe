@@ -59,7 +59,6 @@ class ReminderListTableViewController: UITableViewController {
         let reminderList = reminderLists[indexPath.row]
         
         cell.reminderList = reminderList
-        cell.CountLabel.text = "0"
         
         return cell
     }
