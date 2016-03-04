@@ -11,20 +11,17 @@ import Foundation
 class ReminderList {
  
     var title: String
-    var personal: [Reminder]
-    var shared: [Reminder]
+    var reminders: [Reminder]
     
     init() {
         title = "title"
-        personal = [Reminder]()
-        shared = [Reminder]()
+        reminders = [Reminder]()
     }
     
     // temp for testing
     init(title: String) {
         self.title = title
-        personal = [Reminder]()
-        shared = [Reminder]()
+        reminders = [Reminder]()
     }
     
 }

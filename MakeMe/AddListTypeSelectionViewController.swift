@@ -15,8 +15,10 @@ class AddListTypeSelectionViewController: UIViewController {
     
     @IBOutlet weak var addPersonalListButton: UIButton!
     @IBOutlet weak var addSharedListButton: UIButton!
+    @IBOutlet weak var cancelButton: UIBarButtonItem!
     
     override func viewDidLoad() {
+        
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
@@ -28,6 +30,17 @@ class AddListTypeSelectionViewController: UIViewController {
     }
     
     
+    @IBAction func cancel(sender: UIBarButtonItem) {
+        
+        // Depending on style of presentation (modal or push presentation), this view controller needs to be dismissed in two different ways.
+        let isPresentingInAddMealMode = presentingViewController is UINavigationController
+        
+        if isPresentingInAddMealMode {
+            dismissViewControllerAnimated(true, completion: nil)
+        } else {
+            navigationController!.popViewControllerAnimated(true)
+        }
+    }
     
     
 

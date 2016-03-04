@@ -120,7 +120,7 @@
             </objects>
             <point key="canvasLocation" x="479" y="598"/>
         </scene>
-        <!--Add Personal List View Controller-->
+        <!--Add Personal Reminder List-->
         <scene sceneID="R6a-zi-hRV">
             <objects>
                 <viewController id="3Dh-xC-gIq" customClass="AddPersonalListViewController" customModule="MakeMe" customModuleProvider="target" sceneMemberID="viewController">
@@ -131,14 +131,44 @@
                     <view key="view" contentMode="scaleToFill" id="stO-ez-l4P">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter the name of you reminder list" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="BxV-Pm-JLh">
+                                <rect key="frame" x="163" y="285" width="274.5" height="30"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES"/>
+                            </textField>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="BxV-Pm-JLh" firstAttribute="centerY" secondItem="stO-ez-l4P" secondAttribute="centerY" id="4fj-oV-V20"/>
+                            <constraint firstItem="BxV-Pm-JLh" firstAttribute="centerX" secondItem="stO-ez-l4P" secondAttribute="centerX" id="NWu-TQ-6Ud"/>
+                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="Add Personal Reminder List" id="Kfm-yA-y85">
+                        <barButtonItem key="leftBarButtonItem" title="Cancel" id="ysw-Xa-ctT">
+                            <connections>
+                                <action selector="cancel:" destination="3Dh-xC-gIq" id="0M6-iy-b9y"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Save" id="PNJ-zc-r31">
+                            <connections>
+                                <action selector="savePersonalList:" destination="3Dh-xC-gIq" id="6RO-fy-FDd"/>
+                                <segue destination="ox5-US-XF6" kind="unwind" unwindAction="unwindAddPersonalList:" id="T20-Mu-Lrc"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="cancelButton" destination="ysw-Xa-ctT" id="A3N-oa-f19"/>
+                        <outlet property="listTitleLabel" destination="BxV-Pm-JLh" id="rct-5D-aUm"/>
+                        <outlet property="saveButton" destination="PNJ-zc-r31" id="XMr-Md-j7q"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="r50-Cv-Njc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="ox5-US-XF6" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="-341" y="-1212"/>
         </scene>
-        <!--Add List Type Selection View Controller-->
+        <!--Select List Type-->
         <scene sceneID="7NN-gG-v1f">
             <objects>
                 <viewController id="nJs-W2-pXe" customClass="AddListTypeSelectionViewController" customModule="MakeMe" customModuleProvider="target" sceneMemberID="viewController">
@@ -154,7 +184,7 @@
                                 <rect key="frame" x="270" y="285" width="60" height="30"/>
                                 <state key="normal" title="Personal"/>
                                 <connections>
-                                    <segue destination="3Dh-xC-gIq" kind="presentation" id="6DF-Pa-XmP"/>
+                                    <segue destination="6pD-nw-1mL" kind="presentation" id="6DF-Pa-XmP"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kEB-di-Jx1">
@@ -184,7 +214,13 @@
                             </mask>
                         </variation>
                     </view>
-                    <navigationItem key="navigationItem" id="OeD-Fg-6U6"/>
+                    <navigationItem key="navigationItem" title="Select List Type" id="OeD-Fg-6U6">
+                        <barButtonItem key="leftBarButtonItem" title="Cancel" id="r97-F7-3pd">
+                            <connections>
+                                <action selector="cancel:" destination="nJs-W2-pXe" id="TWJ-Zr-rKV"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="addPersonalListButton" destination="Igd-Bz-rIK" id="oJ6-qc-7eQ"/>
                         <outlet property="addSharedListButton" destination="kEB-di-Jx1" id="yai-eQ-nxX"/>
@@ -194,11 +230,11 @@
             </objects>
             <point key="canvasLocation" x="-341" y="-477"/>
         </scene>
-        <!--Master View Controller-->
+        <!--Reminder Lists-->
         <scene sceneID="Zk3-uU-k5T">
             <objects>
                 <tabBarController id="eGb-oZ-V6q" customClass="MasterViewController" customModule="MakeMe" customModuleProvider="target" sceneMemberID="viewController">
-                    <navigationItem key="navigationItem" id="umQ-UO-WEV">
+                    <navigationItem key="navigationItem" title="Reminder Lists" id="umQ-UO-WEV">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="Ufn-eV-HWQ">
                             <connections>
                                 <segue destination="d2r-r8-nK4" kind="popoverPresentation" popoverAnchorBarButtonItem="Ufn-eV-HWQ" id="FXm-Jb-D1W">
@@ -238,6 +274,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eG9-5J-A3X" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1050" y="-477"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="QNM-sE-XNN">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="6pD-nw-1mL" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="8Dn-44-AQQ">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="3Dh-xC-gIq" kind="relationship" relationship="rootViewController" id="odn-jh-eSi"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fqw-mD-BX2" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1050" y="-1212"/>
         </scene>
     </scenes>
 </document>

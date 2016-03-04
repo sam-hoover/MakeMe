@@ -10,7 +10,9 @@ import UIKit
 
 class ReminderListTableViewController: UITableViewController {
 
-    var reminderLists = [ReminderList]()
+    //var reminderLists = [ReminderList]()
+    var personalReminderList = [ReminderList]()
+    var sharedReminderList = [ReminderList]()
     
     var testHomeList = ReminderList(title: "Home")
     
@@ -31,7 +33,7 @@ class ReminderListTableViewController: UITableViewController {
         
         
         // adding lists to be displayed
-        reminderLists += [testHomeList, testSchoolList]
+        personalReminderList += [testHomeList, testSchoolList]
         
     }
 
@@ -47,7 +49,7 @@ class ReminderListTableViewController: UITableViewController {
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return reminderLists.count
+        return personalReminderList.count
     }
 
     
@@ -56,7 +58,7 @@ class ReminderListTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCellWithIdentifier(Storyboard.CellReuseIdentifier, forIndexPath: indexPath) as! ReminderListTableViewCell
 
         // Configure the cell...
-        let reminderList = reminderLists[indexPath.row]
+        let reminderList = personalReminderList[indexPath.row]
         
         cell.reminderList = reminderList
         
@@ -99,14 +101,44 @@ class ReminderListTableViewController: UITableViewController {
     }
     */
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
+        
+        
     }
-    */
+    
+    
+    @IBAction func unwindAddPersonalList(segue: UIStoryboardSegue) {
+        
+        if let sourceViewController = segue.sourceViewController as? AddPersonalListViewController, list = sourceViewController.personalList {
+        
+            if let selectedIndexPath = tableView.indexPathForSelectedRow {
+                // update an existing list
+                
+                personalReminderList[selectedIndexPath.row] = list
+                
+                tableView.reloadRowsAtIndexPaths([selectedIndexPath], withRowAnimation: .None)
+                
+            } else {
+                // add a new list
+                
+                let newIndexPath = NSIndexPath(forRow: personalReminderList.count, inSection: 0)
+                
+                personalReminderList.append(list)
+                
+                tableView.insertRowsAtIndexPaths([newIndexPath], withRowAnimation: .Bottom)
+            }
+            
+            // Save the list to disc here
+            
+        }
+    }
+    
+    
 
 }
