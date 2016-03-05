@@ -107,7 +107,7 @@ class SharedReminderListTableViewController: UITableViewController {
             if let ReminderListTableViewController = segue.destinationViewController as? ReminderTableViewController {
                 
                 // Get the cell that generated this segue.
-                if let selectedCell = sender as? ReminderTableViewCell {
+                if let selectedCell = sender as? SharedReminderListTableViewCell {
                     // the location of the selected list from the table view
                     let indexPath = tableView.indexPathForCell(selectedCell)!
                     
@@ -116,11 +116,41 @@ class SharedReminderListTableViewController: UITableViewController {
                     
                     // sets the destinationVC's reminder list to the list that was selected
                     ReminderListTableViewController.reminderList = selectedReminderList
+                    
+                    ReminderListTableViewController.sendingViewController = "Shared"
                 }
             }
         }
     }
     
+    
+    @IBAction func unwindSharedReminderList(segue: UIStoryboardSegue) {
+        
+        if let sourceViewController = segue.sourceViewController as? ReminderTableViewController {
+            
+            let list = sourceViewController.reminderList
+            
+            if let selectedIndexPath = tableView.indexPathForSelectedRow {
+                // update an existing list
+                
+                sharedReminderList[selectedIndexPath.row] = list
+                
+                tableView.reloadRowsAtIndexPaths([selectedIndexPath], withRowAnimation: .None)
+                
+            } else {
+                // add a new list
+                
+                let newIndexPath = NSIndexPath(forRow: sharedReminderList.count, inSection: 0)
+                
+                sharedReminderList.append(list)
+                
+                tableView.insertRowsAtIndexPaths([newIndexPath], withRowAnimation: .Bottom)
+            }
+            
+            // Save the list to disc here
+            
+        }
+    }
     
     
     

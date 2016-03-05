@@ -87,6 +87,8 @@
                         </connections>
                     </tableView>
                     <tabBarItem key="tabBarItem" title="Personal" id="FkY-bT-gba"/>
+                    <toolbarItems/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QdA-zj-J8u" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -132,6 +134,11 @@
                     </tableView>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="tuv-1T-KxC">
+                        <barButtonItem key="leftBarButtonItem" title="Back" id="xay-CO-6df">
+                            <connections>
+                                <action selector="returnToParentViewController:" destination="T7D-xU-Akh" id="Q4h-Jx-7Jy"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="l41-Dy-FHL">
                             <connections>
                                 <action selector="addNewReminder:" destination="T7D-xU-Akh" id="JRa-WF-Vgz"/>
@@ -141,9 +148,12 @@
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="addNewReminderButton" destination="l41-Dy-FHL" id="lRj-g2-Aww"/>
+                        <segue destination="KrM-Uu-TQ6" kind="unwind" identifier="toPersonalReminderList" unwindAction="unwindReminderList:" id="cEa-br-RcP"/>
+                        <segue destination="KrM-Uu-TQ6" kind="unwind" identifier="toSharedReminderList" unwindAction="unwindSharedReminderList:" id="VcH-A1-biz"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eq2-2q-6D0" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="KrM-Uu-TQ6" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1083" y="259"/>
         </scene>

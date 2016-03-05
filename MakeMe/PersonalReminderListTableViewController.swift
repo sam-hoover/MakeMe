@@ -125,6 +125,7 @@ class PersonalReminderListTableViewController: UITableViewController {
                     // sets the destinationVC's reminder list to the list that was selected
                     ReminderListTableViewController.reminderList = selectedReminderList
                     
+                    ReminderListTableViewController.sendingViewController = "Personal"
                 }
             }
         }
@@ -136,6 +137,35 @@ class PersonalReminderListTableViewController: UITableViewController {
         
         if let sourceViewController = segue.sourceViewController as? AddPersonalListViewController, list = sourceViewController.personalList {
         
+            if let selectedIndexPath = tableView.indexPathForSelectedRow {
+                // update an existing list
+                
+                personalReminderList[selectedIndexPath.row] = list
+                
+                tableView.reloadRowsAtIndexPaths([selectedIndexPath], withRowAnimation: .None)
+                
+            } else {
+                // add a new list
+                
+                let newIndexPath = NSIndexPath(forRow: personalReminderList.count, inSection: 0)
+                
+                personalReminderList.append(list)
+                
+                tableView.insertRowsAtIndexPaths([newIndexPath], withRowAnimation: .Bottom)
+            }
+            
+            // Save the list to disc here
+            
+        }
+    }
+    
+    
+    @IBAction func unwindReminderList(segue: UIStoryboardSegue) {
+        
+        if let sourceViewController = segue.sourceViewController as? ReminderTableViewController {
+            
+            let list = sourceViewController.reminderList
+            
             if let selectedIndexPath = tableView.indexPathForSelectedRow {
                 // update an existing list
                 
