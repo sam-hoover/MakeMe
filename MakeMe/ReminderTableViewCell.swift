@@ -9,13 +9,15 @@
 import UIKit
 
 protocol ReminderTableViewCellDelegate {
-    func reminderHasBeenDeleted(reminder: Reminder)
+    func reminderHasBeenDeleted(reminder: Reminder, cell: UITableViewCell)
 }
 
 class ReminderTableViewCell: UITableViewCell, UITextFieldDelegate {
 
     var originalCenter = CGPoint()
     var deleteOnDragRelease = false
+    // The object that acts as delegate for this cell.
+    var delegate: ReminderTableViewCellDelegate?
     
     @IBOutlet weak var reminderText: UITextField!
     
@@ -113,6 +115,13 @@ class ReminderTableViewCell: UITableViewCell, UITextFieldDelegate {
             if !deleteOnDragRelease {
                 // if the item is not being deleted, snap back to the original location
                 UIView.animateWithDuration(0.2, animations: {self.frame = originalFrame})
+            }
+        }
+        
+        if deleteOnDragRelease {
+            if delegate != nil && reminder != nil {
+                // notify the delegate that this item should be deleted
+                delegate!.reminderHasBeenDeleted(reminder!, cell: self)
             }
         }
     }

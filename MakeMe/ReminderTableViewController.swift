@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ReminderTableViewController: UITableViewController {
+class ReminderTableViewController: UITableViewController, ReminderTableViewCellDelegate {
 
     var reminderList = ReminderList()
     var sendingViewController: String?
@@ -49,6 +49,7 @@ class ReminderTableViewController: UITableViewController {
         
         cell.reminder = reminder
         cell.selectionStyle = .None
+        cell.delegate = self
         
         return cell
     }
@@ -144,5 +145,21 @@ class ReminderTableViewController: UITableViewController {
     }
     
     
+    // MARK: - ReminderTableViewCellDelegate
+
+    func reminderHasBeenDeleted(reminder: Reminder, cell: UITableViewCell) {
+
+            if let index = self.tableView.indexPathForCell(cell) {
+        
+            // could removeAtIndex in the loop but keep it here for when indexOfObject works
+            reminderList.reminders.removeAtIndex(index.row)
+        
+            // use the UITableView to animate the removal of this row
+            tableView.beginUpdates()
+            let indexPathForRow = NSIndexPath(forRow: index.row, inSection: 0)
+            tableView.deleteRowsAtIndexPaths([indexPathForRow], withRowAnimation: .Fade)
+            tableView.endUpdates()
+        }
+    }
 
 }
