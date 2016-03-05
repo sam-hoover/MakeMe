@@ -8,10 +8,8 @@
 
 import UIKit
 
-class PersonalReminderListTableViewController: UITableViewController {
+class PersonalReminderListTableViewController: UITableViewController, MakeMeTableViewCellDelegate {
 
-    
-    
     var personalReminderList = [ReminderList]()
     
     var testHomeList = ReminderList(title: "Home")
@@ -62,7 +60,8 @@ class PersonalReminderListTableViewController: UITableViewController {
         let reminderList = personalReminderList[indexPath.row]
         
         cell.reminderList = reminderList
-                
+        cell.delegate = self
+        
         return cell
     }
 
@@ -74,21 +73,6 @@ class PersonalReminderListTableViewController: UITableViewController {
         return true
     }
     */
-
-    
-    // Override to support editing the table view.
-    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
-        if editingStyle == .Delete {
-            // Delete the row from the data source
-            personalReminderList.removeAtIndex(indexPath.row)
-        
-            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
-            
-        } else if editingStyle == .Insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }
-    }
-    
 
     /*
     // Override to support rearranging the table view.
@@ -177,6 +161,23 @@ class PersonalReminderListTableViewController: UITableViewController {
         let path = NSIndexPath(forRow: personalReminderList.count - 1, inSection: 0)
         if let cell = self.tableView.cellForRowAtIndexPath(path) as? PersonalReminderListTableViewCell {
             cell.textFieldDidBeginEditing(cell.titleTextBox)
+        }
+    }
+    
+    
+    // MARK: - MakeMeTableViewCellDelegate
+    
+    func cellHasBeenDeleted(cell: UITableViewCell) {
+        
+        if let index = self.tableView.indexPathForCell(cell) {
+            
+            personalReminderList.removeAtIndex(index.row)
+            
+            // use the UITableView to animate the removal of this row
+            tableView.beginUpdates()
+            let indexPathForRow = NSIndexPath(forRow: index.row, inSection: 0)
+            tableView.deleteRowsAtIndexPaths([indexPathForRow], withRowAnimation: .Fade)
+            tableView.endUpdates()
         }
     }
     
