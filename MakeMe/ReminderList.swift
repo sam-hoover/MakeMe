@@ -11,6 +11,7 @@ import Foundation
 class ReminderList {
  
     var title: String
+    
     var reminders: [Reminder]
     
     init() {
@@ -25,8 +26,25 @@ class ReminderList {
     }
     
     
+    func add(reminder: Reminder) {
+        reminders += [reminder]
+    }
+    
+    
+    func add(reminderArray: [Reminder]) {
+        reminders += reminderArray
+    }
+    
+    
+    func remove(atIndex: Int) {
+        reminders.removeAtIndex(atIndex)
+    }
+    
+    
     func count() -> Int {
         return reminders.count
     }
+    
+    
     
 }

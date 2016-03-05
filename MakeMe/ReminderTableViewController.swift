@@ -12,6 +12,15 @@ class ReminderTableViewController: UITableViewController {
 
     var reminderList = ReminderList()
     
+    @IBOutlet weak var addNewReminderButton: UIBarButtonItem!
+    
+    
+    func update() {
+        
+        self.tableView.reloadData()
+    }
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -27,6 +36,7 @@ class ReminderTableViewController: UITableViewController {
         // Dispose of any resources that can be recreated.
     }
 
+    
     // MARK: - Table view data source
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
@@ -102,5 +112,26 @@ class ReminderTableViewController: UITableViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    
+    
+    
+    // MARK: - Actions
+    
+    @IBAction func addNewReminder(sender: UIBarButtonItem) {
+        
+        let reminder = Reminder(txt: "")
+        
+        reminderList.add(reminder)
+        
+        self.tableView.reloadData()
+        
+        let path = NSIndexPath(forRow: reminderList.count() - 1, inSection: 0)
+        //self.tableView.selectRowAtIndexPath(path, animated: true, scrollPosition: UITableViewScrollPosition.Bottom)
+        if let cell = self.tableView.cellForRowAtIndexPath(path) as? ReminderTableViewCell {
+            cell.textFieldDidBeginEditing(cell.reminderText)
+        }
+        
+    }
+    
 
 }

@@ -36,7 +36,6 @@ class ReminderTableViewCell: UITableViewCell, UITextFieldDelegate {
 
     override func setSelected(selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
         // Configure the view for the selected state
         
     }
@@ -50,6 +49,10 @@ class ReminderTableViewCell: UITableViewCell, UITextFieldDelegate {
         textField.resignFirstResponder()
         
         return(true)
+    }
+    
+    func textFieldDidBeginEditing(textField: UITextField) {
+        textField.becomeFirstResponder()
     }
     
     func textFieldDidEndEditing(textField: UITextField) {

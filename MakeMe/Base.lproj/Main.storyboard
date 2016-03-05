@@ -132,9 +132,16 @@
                     </tableView>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="tuv-1T-KxC">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="l41-Dy-FHL"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="l41-Dy-FHL">
+                            <connections>
+                                <action selector="addNewReminder:" destination="T7D-xU-Akh" id="JRa-WF-Vgz"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="addNewReminderButton" destination="l41-Dy-FHL" id="lRj-g2-Aww"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eq2-2q-6D0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
