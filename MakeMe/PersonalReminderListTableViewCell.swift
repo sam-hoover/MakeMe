@@ -17,8 +17,8 @@ class PersonalReminderListTableViewCell: UITableViewCell {
         didSet {
             update()
         }
+        
     }
-    
     
     func update() {
         TitleLabel?.text = nil
@@ -28,7 +28,7 @@ class PersonalReminderListTableViewCell: UITableViewCell {
             TitleLabel?.text = reminderList.title
             
             // set to this value for testing, should be count of reminders in the ReminderList
-            CountLabel?.text = "0"
+            CountLabel?.text = "\(reminderList.count())"
         }
     }
     
@@ -44,5 +44,6 @@ class PersonalReminderListTableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
+    
 
 }

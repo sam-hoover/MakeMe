@@ -13,6 +13,7 @@ class PersonalReminderListTableViewController: UITableViewController {
     var personalReminderList = [ReminderList]()
     
     var testHomeList = ReminderList(title: "Home")
+    
     var testSchoolList = ReminderList(title: "School")
     
     private struct Storyboard {
@@ -30,9 +31,9 @@ class PersonalReminderListTableViewController: UITableViewController {
         
         
         // adding lists to be displayed
+        
         setupTestLists()
         personalReminderList += [testHomeList, testSchoolList]
-        
     }
 
     override func didReceiveMemoryWarning() {
@@ -59,7 +60,7 @@ class PersonalReminderListTableViewController: UITableViewController {
         let reminderList = personalReminderList[indexPath.row]
         
         cell.reminderList = reminderList
-        
+                
         return cell
     }
 
@@ -123,10 +124,12 @@ class PersonalReminderListTableViewController: UITableViewController {
                     
                     // sets the destinationVC's reminder list to the list that was selected
                     ReminderListTableViewController.reminderList = selectedReminderList
+                    
                 }
             }
         }
     }
+    
     
     
     @IBAction func unwindAddPersonalList(segue: UIStoryboardSegue) {

@@ -45,7 +45,6 @@ class ReminderTableViewCell: UITableViewCell, UITextFieldDelegate {
     
     func textFieldShouldReturn(textField: UITextField) -> Bool {
         // hide the keyboard
-        
         textField.resignFirstResponder()
         
         return(true)

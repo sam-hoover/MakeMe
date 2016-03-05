@@ -126,7 +126,6 @@ class ReminderTableViewController: UITableViewController {
         self.tableView.reloadData()
         
         let path = NSIndexPath(forRow: reminderList.count() - 1, inSection: 0)
-        //self.tableView.selectRowAtIndexPath(path, animated: true, scrollPosition: UITableViewScrollPosition.Bottom)
         if let cell = self.tableView.cellForRowAtIndexPath(path) as? ReminderTableViewCell {
             cell.textFieldDidBeginEditing(cell.reminderText)
         }
