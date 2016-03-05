@@ -19,7 +19,7 @@ class ReminderTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        
+        //tableView.backgroundColor = UIColor.blackColor()
     }
 
     override func didReceiveMemoryWarning() {
@@ -48,8 +48,7 @@ class ReminderTableViewController: UITableViewController {
         let reminder = reminderList.reminders[indexPath.row]
         
         cell.reminder = reminder
-        
-        cell.selectionStyle = UITableViewCellSelectionStyle.None
+        cell.selectionStyle = .None
         
         return cell
     }
@@ -63,7 +62,7 @@ class ReminderTableViewController: UITableViewController {
     }
     */
 
-    
+    /*
     // Override to support editing the table view.
     override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
         if editingStyle == .Delete {
@@ -76,6 +75,7 @@ class ReminderTableViewController: UITableViewController {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
         }
     }
+*/
 
 
     /*
