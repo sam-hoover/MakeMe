@@ -55,8 +55,13 @@ class ReminderTableViewCell: UITableViewCell, UITextFieldDelegate {
     }
     
     func textFieldDidEndEditing(textField: UITextField) {
-        if reminder != nil {
-            reminder?.text = textField.text!
+        if(reminder != nil) {
+            if(textField.text == "") {
+                // delete the cell
+            } else {
+                // set the reminders text as the text in the cell
+                reminder?.text = textField.text!
+            }
         }
     }
 

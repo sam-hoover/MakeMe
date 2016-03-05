@@ -16,20 +16,10 @@ class ReminderTableViewController: UITableViewController {
     @IBOutlet weak var addNewReminderButton: UIBarButtonItem!
     
     
-    func update() {
-        
-        self.tableView.reloadData()
-    }
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -53,7 +43,6 @@ class ReminderTableViewController: UITableViewController {
         // not sure why i have to downcast here ("as!") and cannot just use "as"
         let cellReuseIdentifier = "ReminderTableCell"
         let cell = tableView.dequeueReusableCellWithIdentifier(cellReuseIdentifier, forIndexPath: indexPath) as! ReminderTableViewCell
-        
         
         // Configure the cell...
         let reminder = reminderList.reminders[indexPath.row]
