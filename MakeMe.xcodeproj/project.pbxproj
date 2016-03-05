@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		885F2C271C8B709600A1F811 /* MakeMeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885F2C261C8B709600A1F811 /* MakeMeTableViewCell.swift */; };
 		889E62141C7FD6A00058E456 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 889E62131C7FD6A00058E456 /* AppDelegate.swift */; };
 		889E62191C7FD6A00058E456 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 889E62171C7FD6A00058E456 /* Main.storyboard */; };
 		889E621B1C7FD6A00058E456 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 889E621A1C7FD6A00058E456 /* Assets.xcassets */; };
@@ -34,6 +35,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		885F2C261C8B709600A1F811 /* MakeMeTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MakeMeTableViewCell.swift; sourceTree = "<group>"; };
 		889E62101C7FD6A00058E456 /* MakeMe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MakeMe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		889E62131C7FD6A00058E456 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		889E62181C7FD6A00058E456 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -107,6 +109,7 @@
 				889EBCEF1C8A4EB100BE1581 /* ReminderTableViewCell.swift */,
 				88F8B7ED1C866DC100EB389B /* ReminderList.swift */,
 				88D8B48B1C87F0E4004B1F34 /* Reminder.swift */,
+				885F2C261C8B709600A1F811 /* MakeMeTableViewCell.swift */,
 			);
 			path = MakeMe;
 			sourceTree = "<group>";
@@ -224,6 +227,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				889EBCEA1C8A409B00BE1581 /* SharedReminderListTableViewController.swift in Sources */,
+				885F2C271C8B709600A1F811 /* MakeMeTableViewCell.swift in Sources */,
 				889E62141C7FD6A00058E456 /* AppDelegate.swift in Sources */,
 				889EBCEC1C8A41A500BE1581 /* SharedReminderListTableViewCell.swift in Sources */,
 				88F8B7E81C86622200EB389B /* PersonalReminderListTableViewController.swift in Sources */,

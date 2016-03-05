@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ReminderTableViewController: UITableViewController, ReminderTableViewCellDelegate {
+class ReminderTableViewController: UITableViewController, MakeMeTableViewCellDelegate {
 
     var reminderList = ReminderList()
     var sendingViewController: String?
@@ -145,9 +145,9 @@ class ReminderTableViewController: UITableViewController, ReminderTableViewCellD
     }
     
     
-    // MARK: - ReminderTableViewCellDelegate
+    // MARK: - MakeMeTableViewCellDelegate
 
-    func reminderHasBeenDeleted(reminder: Reminder, cell: UITableViewCell) {
+    func cellHasBeenDeleted(cell: UITableViewCell) {
 
             if let index = self.tableView.indexPathForCell(cell) {
         
