@@ -10,6 +10,8 @@ import UIKit
 
 class PersonalReminderListTableViewController: UITableViewController {
 
+    
+    
     var personalReminderList = [ReminderList]()
     
     var testHomeList = ReminderList(title: "Home")
@@ -166,7 +168,16 @@ class PersonalReminderListTableViewController: UITableViewController {
     
     
     @IBAction func addNewReminderList(sender: UIBarButtonItem) {
-    
+        let reminders = ReminderList(title: "")
+        
+        personalReminderList += [reminders]
+        
+        self.tableView.reloadData()
+        
+        let path = NSIndexPath(forRow: personalReminderList.count - 1, inSection: 0)
+        if let cell = self.tableView.cellForRowAtIndexPath(path) as? PersonalReminderListTableViewCell {
+            cell.textFieldDidBeginEditing(cell.titleTextBox)
+        }
     }
     
     

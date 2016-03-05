@@ -119,7 +119,6 @@ class ReminderTableViewController: UITableViewController {
         if let cell = self.tableView.cellForRowAtIndexPath(path) as? ReminderTableViewCell {
             cell.textFieldDidBeginEditing(cell.reminderText)
         }
-        
     }
     
     

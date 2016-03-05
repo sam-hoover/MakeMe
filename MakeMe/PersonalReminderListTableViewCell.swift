@@ -8,9 +8,9 @@
 
 import UIKit
 
-class PersonalReminderListTableViewCell: UITableViewCell {
+class PersonalReminderListTableViewCell: UITableViewCell, UITextFieldDelegate {
 
-    @IBOutlet weak var TitleLabel: UILabel!
+    @IBOutlet weak var titleTextBox: UITextField!
     @IBOutlet weak var CountLabel: UILabel!
     
     var reminderList: ReminderList? {
@@ -21,11 +21,11 @@ class PersonalReminderListTableViewCell: UITableViewCell {
     }
     
     func update() {
-        TitleLabel?.text = nil
+        titleTextBox?.text = nil
         CountLabel?.text = nil
         
         if let reminderList = self.reminderList {
-            TitleLabel?.text = reminderList.title
+            titleTextBox?.text = reminderList.title
             
             // set to this value for testing, should be count of reminders in the ReminderList
             CountLabel?.text = "\(reminderList.count())"
@@ -36,6 +36,8 @@ class PersonalReminderListTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        titleTextBox.delegate = self
+        titleTextBox.userInteractionEnabled = false
     }
 
     
@@ -43,6 +45,33 @@ class PersonalReminderListTableViewCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
+    }
+    
+    
+    // MARK: - UITextFieldDelegate
+    
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        // hide the keyboard
+        textField.resignFirstResponder()
+        
+        return(true)
+    }
+    
+    func textFieldDidBeginEditing(textField: UITextField) {
+        titleTextBox.userInteractionEnabled = true
+        textField.becomeFirstResponder()
+    }
+    
+    func textFieldDidEndEditing(textField: UITextField) {
+        if(reminderList != nil) {
+            if(textField.text == "") {
+                // delete the cell
+            } else {
+                // set the reminder lists text as the text in the cell
+                reminderList?.title = textField.text!
+                titleTextBox.userInteractionEnabled = false
+            }
+        }
     }
     
 

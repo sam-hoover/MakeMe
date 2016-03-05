@@ -22,45 +22,39 @@
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="itu-qo-nXm">
-                                            <rect key="frame" x="8" y="12.5" width="31.5" height="19.5"/>
-                                            <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
-                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Count" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e6Z-Ue-eVs">
                                             <rect key="frame" x="547.5" y="12.5" width="44" height="19.5"/>
                                             <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ocP-EF-FA4">
+                                            <rect key="frame" x="8" y="13.5" width="531.5" height="17"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <textInputTraits key="textInputTraits"/>
+                                        </textField>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="itu-qo-nXm" firstAttribute="centerY" secondItem="WUV-T0-Ppw" secondAttribute="centerY" constant="-3" id="7Nb-5L-tI6"/>
-                                        <constraint firstAttribute="leadingMargin" secondItem="itu-qo-nXm" secondAttribute="leading" id="YF4-I8-NPc"/>
+                                        <constraint firstAttribute="leadingMargin" secondItem="ocP-EF-FA4" secondAttribute="leading" id="9mQ-f8-YtC"/>
+                                        <constraint firstItem="ocP-EF-FA4" firstAttribute="centerY" secondItem="WUV-T0-Ppw" secondAttribute="centerY" id="Ynp-bM-oVR"/>
                                         <constraint firstItem="e6Z-Ue-eVs" firstAttribute="centerY" secondItem="WUV-T0-Ppw" secondAttribute="centerY" id="Z9Q-Ee-PRp"/>
-                                        <constraint firstItem="itu-qo-nXm" firstAttribute="centerY" secondItem="WUV-T0-Ppw" secondAttribute="centerY" id="eDH-Qv-w5X"/>
+                                        <constraint firstItem="e6Z-Ue-eVs" firstAttribute="leading" secondItem="ocP-EF-FA4" secondAttribute="trailing" constant="8" symbolic="YES" id="dgF-lu-BOB"/>
                                         <constraint firstAttribute="topMargin" secondItem="e6Z-Ue-eVs" secondAttribute="top" id="gll-OL-nec"/>
                                         <constraint firstAttribute="trailingMargin" secondItem="e6Z-Ue-eVs" secondAttribute="trailing" id="hBu-hw-uiG"/>
-                                        <constraint firstAttribute="topMargin" secondItem="itu-qo-nXm" secondAttribute="top" id="odV-Gn-Fz9"/>
-                                        <constraint firstItem="itu-qo-nXm" firstAttribute="baseline" secondItem="e6Z-Ue-eVs" secondAttribute="baseline" id="qD2-ea-fkz"/>
+                                        <constraint firstItem="ocP-EF-FA4" firstAttribute="centerX" secondItem="WUV-T0-Ppw" secondAttribute="centerX" id="p5F-Fx-4R9"/>
                                         <constraint firstAttribute="trailingMargin" secondItem="e6Z-Ue-eVs" secondAttribute="trailing" id="vvp-Jt-bMU"/>
-                                        <constraint firstItem="e6Z-Ue-eVs" firstAttribute="leading" secondItem="itu-qo-nXm" secondAttribute="trailing" constant="500" id="wVB-vT-oTZ"/>
                                     </constraints>
                                     <variation key="default">
                                         <mask key="constraints">
-                                            <exclude reference="7Nb-5L-tI6"/>
-                                            <exclude reference="odV-Gn-Fz9"/>
-                                            <exclude reference="qD2-ea-fkz"/>
+                                            <exclude reference="p5F-Fx-4R9"/>
                                             <exclude reference="gll-OL-nec"/>
                                             <exclude reference="vvp-Jt-bMU"/>
-                                            <exclude reference="wVB-vT-oTZ"/>
                                         </mask>
                                     </variation>
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="CountLabel" destination="e6Z-Ue-eVs" id="bJ6-ac-89U"/>
-                                    <outlet property="TitleLabel" destination="itu-qo-nXm" id="QAp-Gf-xql"/>
+                                    <outlet property="titleTextBox" destination="ocP-EF-FA4" id="mtN-74-kGw"/>
                                     <segue destination="T7D-xU-Akh" kind="show" identifier="ShowPersonalList" id="Mk9-F0-Tdx"/>
                                 </connections>
                             </tableViewCell>
