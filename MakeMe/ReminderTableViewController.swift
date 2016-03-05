@@ -1,5 +1,5 @@
 //
-//  SharedReminderListTableViewController.swift
+//  ReminderTableViewController.swift
 //  MakeMe
 //
 //  Created by Vox on 3/4/16.
@@ -8,13 +8,9 @@
 
 import UIKit
 
-class SharedReminderListTableViewController: UITableViewController {
+class ReminderTableViewController: UITableViewController {
 
-    var sharedReminderList = [ReminderList]()
-    
-    var friend1 = ReminderList(title: "Lois Lane")
-    var friend2 = ReminderList(title: "Mary-Jane Watson")
-    var friend3 = ReminderList(title: "Selina Kyle")
+    var reminderList = ReminderList()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,9 +20,6 @@ class SharedReminderListTableViewController: UITableViewController {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
-        
-        // adding lists to be displayed
-        sharedReminderList += [friend1, friend2, friend3]
     }
 
     override func didReceiveMemoryWarning() {
@@ -41,21 +34,24 @@ class SharedReminderListTableViewController: UITableViewController {
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return sharedReminderList.count
+        return reminderList.count()
     }
 
+    
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         // not sure why i have to downcast here ("as!") and cannot just use "as"
-        let cellReuseIdentifier = "SharedReminderListCell"
-        let cell = tableView.dequeueReusableCellWithIdentifier(cellReuseIdentifier, forIndexPath: indexPath) as! SharedReminderListTableViewCell
+        let cellReuseIdentifier = "ReminderTableCell"
+        let cell = tableView.dequeueReusableCellWithIdentifier(cellReuseIdentifier, forIndexPath: indexPath) as! ReminderTableViewCell
+        
         
         // Configure the cell...
-        let reminderList = sharedReminderList[indexPath.row]
+        let reminder = reminderList.reminders[indexPath.row]
         
-        cell.reminderList = reminderList
+        cell.reminder = reminder
         
         return cell
     }
+
 
     /*
     // Override to support conditional editing of the table view.
@@ -70,7 +66,7 @@ class SharedReminderListTableViewController: UITableViewController {
     override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
         if editingStyle == .Delete {
             // Delete the row from the data source
-            sharedReminderList.removeAtIndex(indexPath.row)
+            reminderList.reminders.removeAtIndex(indexPath.row)
             
             tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
             
@@ -78,7 +74,7 @@ class SharedReminderListTableViewController: UITableViewController {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
         }
     }
-    
+
 
     /*
     // Override to support rearranging the table view.
@@ -95,33 +91,14 @@ class SharedReminderListTableViewController: UITableViewController {
     }
     */
 
-    
+    /*
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
-        
-        if(segue.identifier == "ShowSharedList") {
-            if let ReminderListTableViewController = segue.destinationViewController as? ReminderTableViewController {
-                
-                // Get the cell that generated this segue.
-                if let selectedCell = sender as? ReminderTableViewCell {
-                    // the location of the selected list from the table view
-                    let indexPath = tableView.indexPathForCell(selectedCell)!
-                    
-                    // gets the selected reminder list from the array
-                    let selectedReminderList = sharedReminderList[indexPath.row]
-                    
-                    // sets the destinationVC's reminder list to the list that was selected
-                    ReminderListTableViewController.reminderList = selectedReminderList
-                }
-            }
-        }
     }
-    
-    
-    
-    
-} // class
+    */
+
+}

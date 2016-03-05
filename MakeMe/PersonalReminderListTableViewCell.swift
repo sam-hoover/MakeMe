@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ReminderListTableViewCell: UITableViewCell {
+class PersonalReminderListTableViewCell: UITableViewCell {
 
     @IBOutlet weak var TitleLabel: UILabel!
     @IBOutlet weak var CountLabel: UILabel!

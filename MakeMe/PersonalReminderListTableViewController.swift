@@ -8,12 +8,11 @@
 
 import UIKit
 
-class ReminderListTableViewController: UITableViewController {
+class PersonalReminderListTableViewController: UITableViewController {
 
     var personalReminderList = [ReminderList]()
     
     var testHomeList = ReminderList(title: "Home")
-    
     var testSchoolList = ReminderList(title: "School")
     
     private struct Storyboard {
@@ -31,6 +30,7 @@ class ReminderListTableViewController: UITableViewController {
         
         
         // adding lists to be displayed
+        setupTestLists()
         personalReminderList += [testHomeList, testSchoolList]
         
     }
@@ -53,7 +53,7 @@ class ReminderListTableViewController: UITableViewController {
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         // not sure why i have to downcast here ("as!") and cannot just use "as"
-        let cell = tableView.dequeueReusableCellWithIdentifier(Storyboard.CellReuseIdentifier, forIndexPath: indexPath) as! ReminderListTableViewCell
+        let cell = tableView.dequeueReusableCellWithIdentifier(Storyboard.CellReuseIdentifier, forIndexPath: indexPath) as! PersonalReminderListTableViewCell
 
         // Configure the cell...
         let reminderList = personalReminderList[indexPath.row]
@@ -110,7 +110,22 @@ class ReminderListTableViewController: UITableViewController {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
         
-        
+        if(segue.identifier == "ShowPersonalList") {
+            if let ReminderListTableViewController = segue.destinationViewController as? ReminderTableViewController {
+                
+                // Get the cell that generated this segue.
+                if let selectedCell = sender as? PersonalReminderListTableViewCell {
+                    // the location of the selected list from the table view
+                    let indexPath = tableView.indexPathForCell(selectedCell)!
+                    
+                    // gets the selected reminder list from the array
+                    let selectedReminderList = personalReminderList[indexPath.row]
+                    
+                    // sets the destinationVC's reminder list to the list that was selected
+                    ReminderListTableViewController.reminderList = selectedReminderList
+                }
+            }
+        }
     }
     
     
@@ -141,5 +156,18 @@ class ReminderListTableViewController: UITableViewController {
     }
     
     
+    // MARK: - Testing
+    
+    func setupTestLists() {
+        let home1 = Reminder(txt: "go to store")
+        let home2 = Reminder(txt: "do laundry")
+        let school1 = Reminder(txt: "study for math test")
+        let school2 = Reminder(txt: "read Ender's Game")
+        
+        testHomeList.reminders += [home1, home2]
+        testSchoolList.reminders += [school1, school2]
+    }
+    
+    
 
-}
+} // class

@@ -24,4 +24,9 @@ class ReminderList {
         reminders = [Reminder]()
     }
     
+    
+    func count() -> Int {
+        return reminders.count
+    }
+    
 }
