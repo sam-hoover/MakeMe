@@ -108,33 +108,20 @@
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="51.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="reminder text" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HFN-7a-fHT">
-                                            <rect key="frame" x="8" y="16" width="584" height="19.5"/>
-                                            <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
+                                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6UD-5e-S7V">
+                                            <rect key="frame" x="8" y="17.5" width="584" height="17"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <textInputTraits key="textInputTraits"/>
+                                        </textField>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstAttribute="leadingMargin" secondItem="HFN-7a-fHT" secondAttribute="leading" id="8sv-uj-WHQ"/>
-                                        <constraint firstItem="HFN-7a-fHT" firstAttribute="top" secondItem="WRb-PD-Hjf" secondAttribute="topMargin" constant="7" id="AB6-ik-Aef"/>
-                                        <constraint firstAttribute="topMargin" secondItem="HFN-7a-fHT" secondAttribute="top" id="FDk-Fb-uPL"/>
-                                        <constraint firstItem="HFN-7a-fHT" firstAttribute="top" secondItem="WRb-PD-Hjf" secondAttribute="topMargin" constant="7" id="SHl-GI-je1"/>
-                                        <constraint firstItem="HFN-7a-fHT" firstAttribute="centerY" secondItem="WRb-PD-Hjf" secondAttribute="centerY" id="cz0-vi-vxF"/>
-                                        <constraint firstAttribute="leadingMargin" secondItem="HFN-7a-fHT" secondAttribute="leading" id="vYQ-hx-ay8"/>
-                                        <constraint firstItem="HFN-7a-fHT" firstAttribute="centerX" secondItem="WRb-PD-Hjf" secondAttribute="centerX" id="yW8-Z5-gBi"/>
+                                        <constraint firstAttribute="leadingMargin" secondItem="6UD-5e-S7V" secondAttribute="leading" id="UPd-ej-kf7"/>
+                                        <constraint firstItem="6UD-5e-S7V" firstAttribute="centerY" secondItem="WRb-PD-Hjf" secondAttribute="centerY" id="mId-ri-im8"/>
+                                        <constraint firstItem="6UD-5e-S7V" firstAttribute="centerX" secondItem="WRb-PD-Hjf" secondAttribute="centerX" id="zl2-dT-Ziu"/>
                                     </constraints>
-                                    <variation key="default">
-                                        <mask key="constraints">
-                                            <exclude reference="8sv-uj-WHQ"/>
-                                            <exclude reference="AB6-ik-Aef"/>
-                                            <exclude reference="FDk-Fb-uPL"/>
-                                            <exclude reference="SHl-GI-je1"/>
-                                        </mask>
-                                    </variation>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <outlet property="reminderLabel" destination="HFN-7a-fHT" id="a00-5u-07r"/>
+                                    <outlet property="reminderText" destination="6UD-5e-S7V" id="4BP-EC-5Id"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>

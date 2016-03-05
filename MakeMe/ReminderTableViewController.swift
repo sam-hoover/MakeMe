@@ -49,6 +49,8 @@ class ReminderTableViewController: UITableViewController {
         
         cell.reminder = reminder
         
+        cell.selectionStyle = UITableViewCellSelectionStyle.None
+        
         return cell
     }
 

@@ -8,9 +8,9 @@
 
 import UIKit
 
-class ReminderTableViewCell: UITableViewCell {
+class ReminderTableViewCell: UITableViewCell, UITextFieldDelegate {
 
-    @IBOutlet weak var reminderLabel: UILabel!
+    @IBOutlet weak var reminderText: UITextField!
     
     var reminder: Reminder? {
         didSet {
@@ -20,10 +20,10 @@ class ReminderTableViewCell: UITableViewCell {
     
     
     func update() {
-        reminderLabel?.text = nil
+        reminderText?.text = nil
         
         if let reminder = self.reminder {
-            reminderLabel?.text = reminder.text
+            reminderText?.text = reminder.text
         }
     }
     
@@ -31,12 +31,31 @@ class ReminderTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        reminderText.delegate = self
     }
 
     override func setSelected(selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
+        
+    }
+    
+    
+    // MARK: - UITextFieldDelegate
+    
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        // hide the keyboard
+        
+        textField.resignFirstResponder()
+        
+        return(true)
+    }
+    
+    func textFieldDidEndEditing(textField: UITextField) {
+        if reminder != nil {
+            reminder?.text = textField.text!
+        }
     }
 
 }
