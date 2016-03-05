@@ -23,15 +23,7 @@ class PersonalReminderListTableViewController: UITableViewController, MakeMeTabl
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
-        
-        
         // adding lists to be displayed
-        
         setupTestLists()
         personalReminderList += [testHomeList, testSchoolList]
     }
@@ -147,7 +139,7 @@ class PersonalReminderListTableViewController: UITableViewController, MakeMeTabl
     }
     
     
-    
+
     // MARK: - Actions
     
     
@@ -180,7 +172,6 @@ class PersonalReminderListTableViewController: UITableViewController, MakeMeTabl
             tableView.endUpdates()
         }
     }
-    
     
     
     

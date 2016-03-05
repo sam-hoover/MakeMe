@@ -35,6 +35,15 @@ class MakeMeTableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
+    
+    // utility method for creating the contextual cues
+    func createCueLabel() -> UILabel {
+        let label = UILabel(frame: CGRect.null)
+        label.textColor = UIColor.whiteColor()
+        label.font = UIFont.boldSystemFontOfSize(32.0)
+        label.backgroundColor = UIColor.clearColor()
+        return label
+    }
 
     // MARK: UIGestureRecognizer
     

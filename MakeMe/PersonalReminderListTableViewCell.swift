@@ -17,7 +17,6 @@ class PersonalReminderListTableViewCell: MakeMeTableViewCell, UITextFieldDelegat
         didSet {
             update()
         }
-        
     }
     
     func update() {
