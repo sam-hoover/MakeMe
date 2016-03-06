@@ -139,7 +139,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eq2-2q-6D0" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="KrM-Uu-TQ6" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1911" y="259"/>
+            <point key="canvasLocation" x="1879" y="-84"/>
         </scene>
         <!--Shared Reminder List-->
         <scene sceneID="eL3-lq-Z7b">
@@ -218,7 +218,7 @@
                                     <outlet property="titleLabel" destination="3uN-vY-bYy" id="o4r-H0-vUX"/>
                                     <outlet property="toCountLabel" destination="lAR-Nf-SUb" id="dRx-zg-pzL"/>
                                     <outlet property="toLabel" destination="Z9w-RR-UOY" id="pHe-Fn-Hpa"/>
-                                    <segue destination="T7D-xU-Akh" kind="show" identifier="ShowSharedList" id="7rk-c5-rwg"/>
+                                    <segue destination="jvV-SK-hUM" kind="show" identifier="ShowSharedList" id="zcU-TU-Vnj"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -232,6 +232,49 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="21m-oO-lZE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1123" y="610"/>
+        </scene>
+        <!--Share Reminder Table View Controller-->
+        <scene sceneID="beO-ZM-lgQ">
+            <objects>
+                <tableViewController id="jvV-SK-hUM" customClass="ShareReminderTableViewController" customModule="MakeMe" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="66" sectionHeaderHeight="28" sectionFooterHeight="28" id="6ph-Sa-70c">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ReminderTableCell" rowHeight="52" id="ury-xu-77D" customClass="ReminderTableViewCell" customModule="MakeMe" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="92" width="600" height="52"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ury-xu-77D" id="rWY-Tu-zVh">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="51.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="avA-UC-slQ">
+                                            <rect key="frame" x="8" y="17.5" width="584" height="17"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <textInputTraits key="textInputTraits"/>
+                                        </textField>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="avA-UC-slQ" firstAttribute="centerX" secondItem="rWY-Tu-zVh" secondAttribute="centerX" id="E9s-nq-N9Y"/>
+                                        <constraint firstItem="avA-UC-slQ" firstAttribute="centerY" secondItem="rWY-Tu-zVh" secondAttribute="centerY" id="i92-u9-ZBZ"/>
+                                        <constraint firstAttribute="leadingMargin" secondItem="avA-UC-slQ" secondAttribute="leading" id="pYz-RR-iOg"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="reminderText" destination="avA-UC-slQ" id="L8H-tN-EnJ"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="jvV-SK-hUM" id="1fX-hh-z3k"/>
+                            <outlet property="delegate" destination="jvV-SK-hUM" id="dfI-ne-k1T"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="MMI-c1-9we" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1879" y="610"/>
         </scene>
         <!--Reminder Lists-->
         <scene sceneID="Zk3-uU-k5T">
@@ -291,7 +334,4 @@
             <point key="canvasLocation" x="311" y="610"/>
         </scene>
     </scenes>
-    <inferredMetricsTieBreakers>
-        <segue reference="7rk-c5-rwg"/>
-    </inferredMetricsTieBreakers>
 </document>

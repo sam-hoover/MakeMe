@@ -26,6 +26,12 @@ class SharedReminderListTableViewController: UITableViewController, MakeMeTableV
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
         
         // adding lists to be displayed
+        friend1.reminders += [Reminder(txt: "do something"), Reminder(txt: "read something")];
+        friend2.reminders += [Reminder(txt: "do something"), Reminder(txt: "read something")];
+        friend3.reminders += [Reminder(txt: "do something"), Reminder(txt: "read something")];
+        friend1.reminders[0].from = "Lois Lane"
+        friend2.reminders[0].from = "Mary-Jane Watson"
+        friend2.reminders[0].from = "Selina Kyle"
         sharedReminderList += [friend1, friend2, friend3]
     }
 
@@ -106,7 +112,7 @@ class SharedReminderListTableViewController: UITableViewController, MakeMeTableV
         // Pass the selected object to the new view controller.
         
         if(segue.identifier == "ShowSharedList") {
-            if let ReminderListTableViewController = segue.destinationViewController as? ReminderTableViewController {
+            if let ReminderListTableViewController = segue.destinationViewController as? ShareReminderTableViewController {
                 
                 // Get the cell that generated this segue.
                 if let selectedCell = sender as? SharedReminderListTableViewCell {
@@ -117,9 +123,7 @@ class SharedReminderListTableViewController: UITableViewController, MakeMeTableV
                     let selectedReminderList = sharedReminderList[indexPath.row]
                     
                     // sets the destinationVC's reminder list to the list that was selected
-                    ReminderListTableViewController.reminderList = selectedReminderList
-                    
-                    ReminderListTableViewController.sendingViewController = "Shared"
+                    ReminderListTableViewController.setupReminders(selectedReminderList)
                 }
             }
         }
