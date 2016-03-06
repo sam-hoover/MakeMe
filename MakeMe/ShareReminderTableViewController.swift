@@ -11,12 +11,12 @@ import UIKit
 class ShareReminderTableViewController: UITableViewController, MakeMeTableViewCellDelegate {
 
     struct Index {
-        static let to = 0
-        static let from = 1
+        static let from = 0
+        static let to = 1
     }
     
     var reminders = [[Reminder](), [Reminder]()]
-    var sections = ["to you", "from you"]
+    var sections = ["from", "to"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -55,7 +55,6 @@ class ShareReminderTableViewController: UITableViewController, MakeMeTableViewCe
         }
     }
 
-    
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         // not sure why i have to downcast here ("as!") and cannot just use "as"
         let cellReuseIdentifier = "ReminderTableCell"
@@ -120,6 +119,22 @@ class ShareReminderTableViewController: UITableViewController, MakeMeTableViewCe
         // Pass the selected object to the new view controller.
     }
     */
+    
+    // MARK: - Actions
+    
+    @IBAction func addNewReminder(sender: UIBarButtonItem) {
+        let reminder = Reminder(txt: "")
+        
+        reminders[Index.to] += [reminder]
+        
+        self.tableView.reloadData()
+        
+        let path = NSIndexPath(forRow: reminders[Index.to].count - 1, inSection: Index.to)
+        if let cell = self.tableView.cellForRowAtIndexPath(path) as? ReminderTableViewCell {
+            cell.textFieldDidBeginEditing(cell.reminderText)
+        }
+    }
+    
     
     // MARK: - MakeMeTableViewCellDelegate
     

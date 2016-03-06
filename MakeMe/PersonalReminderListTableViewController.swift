@@ -142,7 +142,6 @@ class PersonalReminderListTableViewController: UITableViewController, MakeMeTabl
 
     // MARK: - Actions
     
-    
     @IBAction func addNewReminderList(sender: UIBarButtonItem) {
         let reminders = ReminderList(title: "")
         

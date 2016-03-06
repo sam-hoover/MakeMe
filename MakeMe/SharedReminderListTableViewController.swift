@@ -31,7 +31,7 @@ class SharedReminderListTableViewController: UITableViewController, MakeMeTableV
         friend3.reminders += [Reminder(txt: "do something"), Reminder(txt: "read something")];
         friend1.reminders[0].from = "Lois Lane"
         friend2.reminders[0].from = "Mary-Jane Watson"
-        friend2.reminders[0].from = "Selina Kyle"
+        friend3.reminders[0].from = "Selina Kyle"
         sharedReminderList += [friend1, friend2, friend3]
     }
 

@@ -218,7 +218,7 @@
                                     <outlet property="titleLabel" destination="3uN-vY-bYy" id="o4r-H0-vUX"/>
                                     <outlet property="toCountLabel" destination="lAR-Nf-SUb" id="dRx-zg-pzL"/>
                                     <outlet property="toLabel" destination="Z9w-RR-UOY" id="pHe-Fn-Hpa"/>
-                                    <segue destination="jvV-SK-hUM" kind="show" identifier="ShowSharedList" id="zcU-TU-Vnj"/>
+                                    <segue destination="jvV-SK-hUM" kind="show" identifier="ShowSharedList" id="2kF-iB-i5F"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -227,7 +227,9 @@
                             <outlet property="delegate" destination="jZN-9o-HPg" id="puq-EK-MnI"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Shared Lists" id="xtr-vi-Uim"/>
+                    <navigationItem key="navigationItem" title="Shared Lists" id="xtr-vi-Uim">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="Ohc-Rt-uMG"/>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="21m-oO-lZE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -271,6 +273,16 @@
                             <outlet property="delegate" destination="jvV-SK-hUM" id="dfI-ne-k1T"/>
                         </connections>
                     </tableView>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="IMX-ef-V2J">
+                        <barButtonItem key="leftBarButtonItem" title="Back" id="yiV-B0-JzG"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="CTy-3K-Q3b">
+                            <connections>
+                                <action selector="addNewReminder:" destination="jvV-SK-hUM" id="XQF-ue-NUr"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MMI-c1-9we" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
