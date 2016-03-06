@@ -133,7 +133,6 @@
                     <connections>
                         <outlet property="addNewReminderButton" destination="l41-Dy-FHL" id="lRj-g2-Aww"/>
                         <segue destination="KrM-Uu-TQ6" kind="unwind" identifier="toPersonalReminderList" unwindAction="unwindReminderList:" id="cEa-br-RcP"/>
-                        <segue destination="KrM-Uu-TQ6" kind="unwind" identifier="toSharedReminderList" unwindAction="unwindSharedReminderList:" id="VcH-A1-biz"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eq2-2q-6D0" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -275,7 +274,11 @@
                     </tableView>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="IMX-ef-V2J">
-                        <barButtonItem key="leftBarButtonItem" title="Back" id="yiV-B0-JzG"/>
+                        <barButtonItem key="leftBarButtonItem" title="Back" id="yiV-B0-JzG">
+                            <connections>
+                                <action selector="returnToParentViewController:" destination="jvV-SK-hUM" id="3dm-ju-UWW"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="CTy-3K-Q3b">
                             <connections>
                                 <action selector="addNewReminder:" destination="jvV-SK-hUM" id="XQF-ue-NUr"/>
@@ -283,8 +286,12 @@
                         </barButtonItem>
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <segue destination="oxj-mZ-bD5" kind="unwind" identifier="toSharedReminderList" unwindAction="unwindSharedReminderList:" id="3Or-G4-whN"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MMI-c1-9we" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="oxj-mZ-bD5" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1879" y="610"/>
         </scene>

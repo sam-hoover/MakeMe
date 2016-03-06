@@ -11,7 +11,7 @@ import UIKit
 class ReminderTableViewController: UITableViewController, MakeMeTableViewCellDelegate {
 
     var reminderList = ReminderList()
-    var sendingViewController: String?
+    //var sendingViewController: String?
     
     @IBOutlet weak var addNewReminderButton: UIBarButtonItem!
     
@@ -108,24 +108,7 @@ class ReminderTableViewController: UITableViewController, MakeMeTableViewCellDel
     
     
     @IBAction func returnToParentViewController(sender: UIBarButtonItem) {
-        
-        if(sendingViewController != nil) {
-            switch(sendingViewController!) {
-            
-                case "Personal":
-                    self.performSegueWithIdentifier("toPersonalReminderList", sender: self)
-                case "Shared":
-                    self.performSegueWithIdentifier("toSharedReminderList", sender: self)
-                default:
-                    print("ERROR: did not return from reminder list properly")
-                    self.performSegueWithIdentifier("toPersonalReminderList", sender: self)
-            }
-        } else {
-            print("ERROR: reminder sending view controller was nil")
-            self.performSegueWithIdentifier("toPersonalReminderList", sender: self)
-        }
-        
-        
+        self.performSegueWithIdentifier("toPersonalReminderList", sender: self)
     }
     
     

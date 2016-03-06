@@ -102,8 +102,6 @@ class PersonalReminderListTableViewController: UITableViewController, MakeMeTabl
                     
                     // sets the destinationVC's reminder list to the list that was selected
                     ReminderListTableViewController.reminderList = selectedReminderList
-                    
-                    ReminderListTableViewController.sendingViewController = "Personal"
                 }
             }
         }

@@ -136,6 +136,12 @@ class ShareReminderTableViewController: UITableViewController, MakeMeTableViewCe
     }
     
     
+    @IBAction func returnToParentViewController(sender: UIBarButtonItem) {
+         self.performSegueWithIdentifier("toSharedReminderList", sender: self)
+    }
+    
+    
+    
     // MARK: - MakeMeTableViewCellDelegate
     
     func cellHasBeenDeleted(cell: UITableViewCell) {
