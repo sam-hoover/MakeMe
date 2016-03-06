@@ -11,7 +11,10 @@ import Foundation
 class Reminder {
     
     var text: String
+    var completed: Bool = false
     var alert: String?
+    var to: String?
+    var from: String?
     
     init() {
         text = ""
@@ -19,6 +22,10 @@ class Reminder {
     
     init(txt: String) {
         text = txt
+    }
+    
+    func markAsCompleted() {
+        completed = true
     }
     
 }
