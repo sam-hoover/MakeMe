@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SharedReminderListTableViewController: UITableViewController {
+class SharedReminderListTableViewController: UITableViewController, MakeMeTableViewCellDelegate {
 
     var sharedReminderList = [ReminderList]()
     
@@ -53,6 +53,7 @@ class SharedReminderListTableViewController: UITableViewController {
         let reminderList = sharedReminderList[indexPath.row]
         
         cell.reminderList = reminderList
+        cell.delegate = self
         
         return cell
     }
@@ -65,7 +66,7 @@ class SharedReminderListTableViewController: UITableViewController {
     }
     */
 
-    
+    /*
     // Override to support editing the table view.
     override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
         if editingStyle == .Delete {
@@ -78,6 +79,7 @@ class SharedReminderListTableViewController: UITableViewController {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
         }
     }
+*/
     
 
     /*
@@ -151,6 +153,24 @@ class SharedReminderListTableViewController: UITableViewController {
             
         }
     }
+    
+    
+    // MARK: - MakeMeTableViewCellDelegate
+    
+    func cellHasBeenDeleted(cell: UITableViewCell) {
+        
+        if let index = self.tableView.indexPathForCell(cell) {
+            
+            sharedReminderList.removeAtIndex(index.row)
+            
+            // use the UITableView to animate the removal of this row
+            tableView.beginUpdates()
+            let indexPathForRow = NSIndexPath(forRow: index.row, inSection: 0)
+            tableView.deleteRowsAtIndexPaths([indexPathForRow], withRowAnimation: .Fade)
+            tableView.endUpdates()
+        }
+    }
+    
     
     
     
