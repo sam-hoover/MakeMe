@@ -27,6 +27,7 @@ class ShareReminderTableViewController: UITableViewController, MakeMeTableViewCe
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
         
+        setTitle()
     }
 
     override func didReceiveMemoryWarning() {
@@ -46,16 +47,9 @@ class ShareReminderTableViewController: UITableViewController, MakeMeTableViewCe
         return reminderLists[section].reminders.count
     }
     
-    func setupReminders(reminderList: ReminderList) {
-        self.listTitle = reminderList.title
-        for(var i = 0; i < reminderList.count(); i++) {
-            if(reminderList.reminders[i].from != nil) {
-                self.reminderLists[Index.from].reminders += [reminderList.reminders[i]]
-            } else {
-                self.reminderLists[Index.to].reminders += [reminderList.reminders[i]]
-            }
-        }
-    }
+    
+    
+    
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         // not sure why i have to downcast here ("as!") and cannot just use "as"
@@ -157,6 +151,28 @@ class ShareReminderTableViewController: UITableViewController, MakeMeTableViewCe
             let indexPathForRow = NSIndexPath(forRow: index.row, inSection: index.section)
             tableView.deleteRowsAtIndexPaths([indexPathForRow], withRowAnimation: .Fade)
             tableView.endUpdates()
+        }
+    }
+    
+    
+    // MARK: - Setup
+    
+    func setupReminders(reminderList: ReminderList) {
+        self.listTitle = reminderList.title
+        for(var i = 0; i < reminderList.count(); i++) {
+            if(reminderList.reminders[i].from != nil) {
+                self.reminderLists[Index.from].reminders += [reminderList.reminders[i]]
+            } else {
+                self.reminderLists[Index.to].reminders += [reminderList.reminders[i]]
+            }
+        }
+    }
+    
+    
+    func setTitle() {
+        if(listTitle != nil) {
+            //self.title = listTitle
+            self.navigationItem.title = listTitle
         }
     }
 
