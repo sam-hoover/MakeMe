@@ -15,8 +15,7 @@ class ShareReminderTableViewController: UITableViewController, MakeMeTableViewCe
         static let to = 1
     }
     
-    var reminders = [[Reminder](), [Reminder]()]
-    var sections = ["from", "to"]
+    var reminderLists = [ReminderList(title: "From"), ReminderList(title: "To")]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,6 +25,7 @@ class ShareReminderTableViewController: UITableViewController, MakeMeTableViewCe
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -37,20 +37,20 @@ class ShareReminderTableViewController: UITableViewController, MakeMeTableViewCe
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return sections.count
+        return reminderLists.count
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return reminders[section].count
+        return reminderLists[section].reminders.count
     }
     
     func setupReminders(reminderList: ReminderList) {
         for(var i = 0; i < reminderList.count(); i++) {
             if(reminderList.reminders[i].from != nil) {
-                self.reminders[Index.from] += [reminderList.reminders[i]]
+                self.reminderLists[Index.from].reminders += [reminderList.reminders[i]]
             } else {
-                self.reminders[Index.to] += [reminderList.reminders[i]]
+                self.reminderLists[Index.to].reminders += [reminderList.reminders[i]]
             }
         }
     }
@@ -61,7 +61,7 @@ class ShareReminderTableViewController: UITableViewController, MakeMeTableViewCe
         let cell = tableView.dequeueReusableCellWithIdentifier(cellReuseIdentifier, forIndexPath: indexPath) as! ReminderTableViewCell
         
         // Configure the cell...
-        let reminder = reminders[indexPath.section][indexPath.row]
+        let reminder = reminderLists[indexPath.section].reminders[indexPath.row]
         
         cell.reminder = reminder
         cell.selectionStyle = .None
@@ -71,7 +71,7 @@ class ShareReminderTableViewController: UITableViewController, MakeMeTableViewCe
     }
     
     override func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return "\(sections[section])"
+        return "\(reminderLists[section].title)"
     }
     
 
@@ -125,11 +125,11 @@ class ShareReminderTableViewController: UITableViewController, MakeMeTableViewCe
     @IBAction func addNewReminder(sender: UIBarButtonItem) {
         let reminder = Reminder(txt: "")
         
-        reminders[Index.to] += [reminder]
+        reminderLists[Index.to].reminders += [reminder]
         
         self.tableView.reloadData()
         
-        let path = NSIndexPath(forRow: reminders[Index.to].count - 1, inSection: Index.to)
+        let path = NSIndexPath(forRow: reminderLists[Index.to].reminders.count - 1, inSection: Index.to)
         if let cell = self.tableView.cellForRowAtIndexPath(path) as? ReminderTableViewCell {
             cell.textFieldDidBeginEditing(cell.reminderText)
         }
@@ -148,7 +148,7 @@ class ShareReminderTableViewController: UITableViewController, MakeMeTableViewCe
         
         if let index = self.tableView.indexPathForCell(cell) {
             
-            reminders[index.section].removeAtIndex(index.row)
+            reminderLists[index.section].reminders.removeAtIndex(index.row)
             
             // use the UITableView to animate the removal of this row
             tableView.beginUpdates()
