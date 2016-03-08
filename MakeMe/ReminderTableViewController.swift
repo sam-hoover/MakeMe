@@ -11,8 +11,7 @@ import UIKit
 class ReminderTableViewController: UITableViewController, MakeMeTableViewCellDelegate {
 
     var reminderList = ReminderList()
-    //var sendingViewController: String?
-    
+
     @IBOutlet weak var addNewReminderButton: UIBarButtonItem!
     
     
@@ -20,6 +19,7 @@ class ReminderTableViewController: UITableViewController, MakeMeTableViewCellDel
         super.viewDidLoad()
 
         //tableView.backgroundColor = UIColor.blackColor()
+        setTitle()
     }
 
     override func didReceiveMemoryWarning() {
@@ -127,6 +127,13 @@ class ReminderTableViewController: UITableViewController, MakeMeTableViewCellDel
             tableView.deleteRowsAtIndexPaths([indexPathForRow], withRowAnimation: .Fade)
             tableView.endUpdates()
         }
+    }
+    
+    
+    // MARK: - Setup
+    
+    func setTitle() {
+        self.navigationItem.title = reminderList.title
     }
 
 }
