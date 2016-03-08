@@ -20,6 +20,8 @@ class ReminderTableViewController: UITableViewController, MakeMeTableViewCellDel
 
         //tableView.backgroundColor = UIColor.blackColor()
         setTitle()
+        
+        self.tableView.rowHeight = UIScreen.mainScreen().bounds.height / 11
     }
 
     override func didReceiveMemoryWarning() {

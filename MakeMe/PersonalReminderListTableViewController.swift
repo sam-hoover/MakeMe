@@ -26,6 +26,8 @@ class PersonalReminderListTableViewController: UITableViewController, MakeMeTabl
         // adding lists to be displayed
         setupTestLists()
         personalReminderList += [testHomeList, testSchoolList]
+        
+        self.tableView.rowHeight = UIScreen.mainScreen().bounds.height / 11
     }
 
     override func didReceiveMemoryWarning() {

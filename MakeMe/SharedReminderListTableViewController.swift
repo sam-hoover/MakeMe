@@ -33,6 +33,8 @@ class SharedReminderListTableViewController: UITableViewController, MakeMeTableV
         friend2.reminders[0].from = "Mary-Jane Watson"
         friend3.reminders[0].from = "Selina Kyle"
         sharedReminderList += [friend1, friend2, friend3]
+        
+        self.tableView.rowHeight = UIScreen.mainScreen().bounds.height / 11
     }
 
     override func didReceiveMemoryWarning() {

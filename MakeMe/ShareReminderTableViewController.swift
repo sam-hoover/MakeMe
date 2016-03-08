@@ -28,6 +28,8 @@ class ShareReminderTableViewController: UITableViewController, MakeMeTableViewCe
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
         
         setTitle()
+        
+        self.tableView.rowHeight = UIScreen.mainScreen().bounds.height / 11
     }
 
     override func didReceiveMemoryWarning() {
