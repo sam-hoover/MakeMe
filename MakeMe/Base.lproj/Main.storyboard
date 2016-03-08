@@ -227,12 +227,62 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Shared Lists" id="xtr-vi-Uim">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="Ohc-Rt-uMG"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="Ohc-Rt-uMG">
+                            <connections>
+                                <segue destination="oSh-9A-PrR" kind="show" id="1NA-UY-ZT9"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="21m-oO-lZE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1123" y="610"/>
+        </scene>
+        <!--Friend Table View Controller-->
+        <scene sceneID="Hgb-ok-Ptl">
+            <objects>
+                <tableViewController id="oSh-9A-PrR" customClass="FriendTableViewController" customModule="MakeMe" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="Qzv-V3-uBc">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="FriendCell" rowHeight="52" id="DrK-ai-aoo" customClass="FriendTableViewCell" customModule="MakeMe" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="92" width="600" height="52"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="DrK-ai-aoo" id="6Fg-YI-bTI">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="51.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Friend" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vl5-oJ-1BN">
+                                            <rect key="frame" x="8" y="16" width="584" height="20"/>
+                                            <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="Vl5-oJ-1BN" firstAttribute="centerX" secondItem="6Fg-YI-bTI" secondAttribute="centerX" id="L6Q-zA-Dr2"/>
+                                        <constraint firstAttribute="leadingMargin" secondItem="Vl5-oJ-1BN" secondAttribute="leading" id="Qxe-NP-dAh"/>
+                                        <constraint firstItem="Vl5-oJ-1BN" firstAttribute="centerY" secondItem="6Fg-YI-bTI" secondAttribute="centerY" id="lCV-Pt-LG4"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="friendLabel" destination="Vl5-oJ-1BN" id="U5S-Db-5lu"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="oSh-9A-PrR" id="kCD-wQ-ZoJ"/>
+                            <outlet property="delegate" destination="oSh-9A-PrR" id="0RH-Bt-ycu"/>
+                        </connections>
+                    </tableView>
+                    <toolbarItems/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Sdy-qP-AYD" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1123" y="1368"/>
         </scene>
         <!--Share Reminder Table View Controller-->
         <scene sceneID="beO-ZM-lgQ">
