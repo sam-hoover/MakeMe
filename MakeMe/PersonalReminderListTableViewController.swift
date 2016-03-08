@@ -52,6 +52,7 @@ class PersonalReminderListTableViewController: UITableViewController, MakeMeTabl
         let reminderList = personalReminderList[indexPath.row]
         
         cell.reminderList = reminderList
+        cell.selectionStyle = .None
         cell.delegate = self
         
         return cell
