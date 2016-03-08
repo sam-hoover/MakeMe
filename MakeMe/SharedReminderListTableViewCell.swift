@@ -31,8 +31,9 @@ class SharedReminderListTableViewCell: MakeMeTableViewCell {
             titleLabel?.text = reminderList.title
             
             // set to this value for testing, should be count of reminders in the ReminderList
-            toCountLabel?.text = "0"
-            fromCountLabel?.text = "0"
+            let counts = getCounts()
+            fromCountLabel?.text = "\(counts.0)"
+            toCountLabel?.text = "\(counts.1)"
         }
     }
     
@@ -46,5 +47,21 @@ class SharedReminderListTableViewCell: MakeMeTableViewCell {
 
         // Configure the view for the selected state
     }
+    
+    
+    func getCounts() -> (Int, Int) {
+        var toCount = 0
+        var fromCount = 0
+        
+        for(var i = 0; i < self.reminderList!.count(); i++) {
+            if(reminderList!.reminders[i].from != nil) {
+                fromCount++
+            } else {
+                toCount++
+            }
+        }
+        return(fromCount, toCount)
+    }
+    
 
 }

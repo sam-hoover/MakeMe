@@ -16,6 +16,7 @@ class ShareReminderTableViewController: UITableViewController, MakeMeTableViewCe
     }
     
     var reminderLists = [ReminderList(title: "From"), ReminderList(title: "To")]
+    var listTitle: String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -46,6 +47,7 @@ class ShareReminderTableViewController: UITableViewController, MakeMeTableViewCe
     }
     
     func setupReminders(reminderList: ReminderList) {
+        self.listTitle = reminderList.title
         for(var i = 0; i < reminderList.count(); i++) {
             if(reminderList.reminders[i].from != nil) {
                 self.reminderLists[Index.from].reminders += [reminderList.reminders[i]]

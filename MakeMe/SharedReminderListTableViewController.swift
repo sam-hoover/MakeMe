@@ -131,13 +131,12 @@ class SharedReminderListTableViewController: UITableViewController, MakeMeTableV
     
     
     @IBAction func unwindSharedReminderList(segue: UIStoryboardSegue) {
-        
-        // *********************************************************
-        // NEED TO FIX THIS TO USE SharedReminderTableViewController
-        
-        if let sourceViewController = segue.sourceViewController as? ReminderTableViewController {
+
+        if let sourceViewController = segue.sourceViewController as? ShareReminderTableViewController {
             
-            let list = sourceViewController.reminderList
+            let list = ReminderList()
+            list.title = sourceViewController.listTitle!
+            list.add(sourceViewController.reminderLists[0].reminders + sourceViewController.reminderLists[1].reminders)
             
             if let selectedIndexPath = tableView.indexPathForSelectedRow {
                 // update an existing list

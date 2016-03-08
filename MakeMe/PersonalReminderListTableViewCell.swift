@@ -26,7 +26,6 @@ class PersonalReminderListTableViewCell: MakeMeTableViewCell, UITextFieldDelegat
         if let reminderList = self.reminderList {
             titleTextBox?.text = reminderList.title
             
-            // set to this value for testing, should be count of reminders in the ReminderList
             CountLabel?.text = "\(reminderList.count())"
         }
     }
