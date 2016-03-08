@@ -58,6 +58,7 @@ class ReminderTableViewCell: MakeMeTableViewCell, UITextFieldDelegate {
         if(reminder != nil) {
             if(textField.text == "") {
                 // delete the cell
+                delegate!.cellHasBeenDeleted(self)
             } else {
                 // set the reminders text as the text in the cell
                 reminder?.text = textField.text!

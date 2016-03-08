@@ -64,6 +64,7 @@ class PersonalReminderListTableViewCell: MakeMeTableViewCell, UITextFieldDelegat
         if(reminderList != nil) {
             if(textField.text == "") {
                 // delete the cell
+                delegate!.cellHasBeenDeleted(self)
             } else {
                 // set the reminder lists text as the text in the cell
                 reminderList?.title = textField.text!
