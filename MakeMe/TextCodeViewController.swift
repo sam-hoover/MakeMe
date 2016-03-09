@@ -18,23 +18,35 @@ class TextCodeViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var field4: UILabel!
     @IBOutlet weak var infoLabel: UILabel!
     @IBOutlet weak var round: UIView!
-    @IBOutlet weak var topBar: UIVisualEffectView!
+    @IBOutlet weak var topBar: UIView!
+    @IBOutlet weak var topBarTop: NSLayoutConstraint!
+    @IBOutlet weak var incorrectCodeWarning: UILabel!
+    @IBOutlet weak var textMessageContent: UILabel!
     
     @IBOutlet weak var hiddenTextField: UITextField!
     
     var fields = [UILabel]()
     var enteredNumbers = [Int]()
-    var correctNumbers = [9,3,0,7]
+    var correctNumbers: [Int] = []
+    var phoneNumber: String = ""
+    
+    override func prefersStatusBarHidden() -> Bool {
+        return true
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // Generate a code and set the text message up
+        correctNumbers = (1...4).map{_ in Int(arc4random_uniform(9))}
+        textMessageContent.text = "Your verification code is \(correctNumbers[0])\(correctNumbers[1])\(correctNumbers[2])\(correctNumbers[3])!"
         
         fields = [field1, field2, field3, field4]
         
         hiddenTextField.delegate = self
         hiddenTextField.text = "d"
-                
-        round.layer.cornerRadius = 4
+        
+        infoLabel.text = "We've texted you a verification code to \(phoneNumber). Please enter it here."
         
         for field in fields {
             field.backgroundColor = UIColor.whiteColor()
@@ -46,14 +58,41 @@ class TextCodeViewController: UIViewController, UITextFieldDelegate {
         
         clearFields()
         
+        topBar.hidden = false
+        
         hiddenTextField.becomeFirstResponder()
         
-
         // Do any additional setup after loading the view.
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        self.view.layoutIfNeeded()
+        self.topBarTop.constant = 0
+        
+        // This code emulates a text vibration
+        let delay = 2.0 * Double(NSEC_PER_SEC)
+        let time = dispatch_time(DISPATCH_TIME_NOW, Int64(delay))
+        
+        dispatch_after(time, dispatch_get_main_queue()) {
+            AudioServicesPlayAlertSound(SystemSoundID(kSystemSoundID_Vibrate))
+        }
+    
+        // This code drops the text message down
+        
+        UIView.animateWithDuration(0.5, delay: 2.0, usingSpringWithDamping: 1, initialSpringVelocity: 3, options: [], animations: {
+            self.view.layoutIfNeeded()
+            }, completion: nil)
+        
     }
 
     
     @IBAction func keyPress(sender: UITextField) {
+        
+        // This function does some weird shit. You can't display a keyboard without
+        // a text field and so we use a hidden text field to capture values from the keyboard.
+        // We always leave a "d" in the text field so that after a key is pressed we can
+        // check to see if a delete key was pressed.
+        // It's a little funk but it works well
         
         if let value = sender.text {
             if value == "" { deletePressed() }
@@ -67,11 +106,6 @@ class TextCodeViewController: UIViewController, UITextFieldDelegate {
         
         sender.text = "d"
         
-    }
-    
-    func setPhoneNumber(phoneNumber: String)
-    {
-        infoLabel.text = "We've texted you a verification code to \(phoneNumber). Please enter it here."
     }
     
     func clearFields()
@@ -97,7 +131,20 @@ class TextCodeViewController: UIViewController, UITextFieldDelegate {
             if enteredNumbers == correctNumbers {
                 self.performSegueWithIdentifier("tutorialSegue", sender: self)
             } else {
-                clearFields()
+                
+                let delay = 0.4 * Double(NSEC_PER_SEC)
+                let time = dispatch_time(DISPATCH_TIME_NOW, Int64(delay))
+                dispatch_after(time, dispatch_get_main_queue()) {
+                    self.clearFields()
+                }
+                
+                self.incorrectCodeWarning.alpha = 1.0
+                
+                UIView.animateWithDuration(1.0, delay: 1.0, options: [], animations: {
+                    self.incorrectCodeWarning.alpha = 0.0
+
+                    }, completion: nil)
+                
                 AudioServicesPlayAlertSound(SystemSoundID(kSystemSoundID_Vibrate))
             }
         }
@@ -122,10 +169,6 @@ class TextCodeViewController: UIViewController, UITextFieldDelegate {
         print("edited")
     }
 
-    required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
-        
-    }
 
 
 
