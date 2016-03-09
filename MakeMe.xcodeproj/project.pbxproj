@@ -21,6 +21,7 @@
 		88A1535D1C8F92070051FC1D /* FriendTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A1535C1C8F92070051FC1D /* FriendTableViewController.swift */; };
 		88A153611C8F964C0051FC1D /* FriendTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A153601C8F964C0051FC1D /* FriendTableViewCell.swift */; };
 		88D8B48C1C87F0E4004B1F34 /* Reminder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88D8B48B1C87F0E4004B1F34 /* Reminder.swift */; };
+		88D974161C8FD0C500EF8671 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88D974151C8FD0C500EF8671 /* Settings.swift */; };
 		88F614E31C8BC058005A9EE1 /* ShareReminderTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88F614E21C8BC058005A9EE1 /* ShareReminderTableViewController.swift */; };
 		88F8B7E81C86622200EB389B /* PersonalReminderListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88F8B7E71C86622200EB389B /* PersonalReminderListTableViewController.swift */; };
 		88F8B7EA1C86629B00EB389B /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88F8B7E91C86629B00EB389B /* MasterViewController.swift */; };
@@ -57,6 +58,7 @@
 		88A1535C1C8F92070051FC1D /* FriendTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendTableViewController.swift; sourceTree = "<group>"; };
 		88A153601C8F964C0051FC1D /* FriendTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendTableViewCell.swift; sourceTree = "<group>"; };
 		88D8B48B1C87F0E4004B1F34 /* Reminder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reminder.swift; sourceTree = "<group>"; };
+		88D974151C8FD0C500EF8671 /* Settings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 		88F614E21C8BC058005A9EE1 /* ShareReminderTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShareReminderTableViewController.swift; sourceTree = "<group>"; };
 		88F8B7E71C86622200EB389B /* PersonalReminderListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonalReminderListTableViewController.swift; sourceTree = "<group>"; };
 		88F8B7E91C86629B00EB389B /* MasterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MasterViewController.swift; sourceTree = "<group>"; };
@@ -121,6 +123,7 @@
 				88F8B7ED1C866DC100EB389B /* ReminderList.swift */,
 				88D8B48B1C87F0E4004B1F34 /* Reminder.swift */,
 				88A1535A1C8F90790051FC1D /* Friend.swift */,
+				88D974151C8FD0C500EF8671 /* Settings.swift */,
 				885F2C261C8B709600A1F811 /* MakeMeTableViewCell.swift */,
 			);
 			path = MakeMe;
@@ -248,6 +251,7 @@
 				88F8B7EA1C86629B00EB389B /* MasterViewController.swift in Sources */,
 				88F8B7EE1C866DC100EB389B /* ReminderList.swift in Sources */,
 				889EBCF01C8A4EB100BE1581 /* ReminderTableViewCell.swift in Sources */,
+				88D974161C8FD0C500EF8671 /* Settings.swift in Sources */,
 				88F8B7EC1C86631000EB389B /* PersonalReminderListTableViewCell.swift in Sources */,
 				88D8B48C1C87F0E4004B1F34 /* Reminder.swift in Sources */,
 				88A153611C8F964C0051FC1D /* FriendTableViewCell.swift in Sources */,

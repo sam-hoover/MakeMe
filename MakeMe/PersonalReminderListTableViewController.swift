@@ -16,6 +16,10 @@ class PersonalReminderListTableViewController: UITableViewController, MakeMeTabl
     
     var testSchoolList = ReminderList(title: "School")
     
+    let settings = SettingsProfile()
+    
+    let colors = SettingsProfile.ColorProfile()
+    
     private struct Storyboard {
         static let CellReuseIdentifier = "ReminderListTableCell"
     }
@@ -26,7 +30,7 @@ class PersonalReminderListTableViewController: UITableViewController, MakeMeTabl
         // adding lists to be displayed
         setupTestLists()
         personalReminderList += [testHomeList, testSchoolList]
-        
+
         self.tableView.rowHeight = UIScreen.mainScreen().bounds.height / 11
     }
 
@@ -45,6 +49,11 @@ class PersonalReminderListTableViewController: UITableViewController, MakeMeTabl
         return personalReminderList.count
     }
 
+    
+    
+    override func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
+    }
+    
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         // not sure why i have to downcast here ("as!") and cannot just use "as"

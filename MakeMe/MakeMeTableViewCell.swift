@@ -24,6 +24,8 @@ class MakeMeTableViewCell: UITableViewCell {
         super.awakeFromNib()
         // Initialization code
         
+        
+        
         // add a pan recognizer
         let recognizer = UIPanGestureRecognizer(target: self, action: "handlePan:")
         recognizer.delegate = self
@@ -34,6 +36,7 @@ class MakeMeTableViewCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
+        
     }
     
     // utility method for creating the contextual cues
