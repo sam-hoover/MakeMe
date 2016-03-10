@@ -368,7 +368,7 @@
         <scene sceneID="LGF-FH-sh0">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ieg-vF-6Nq" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Personal" id="FkY-bT-gba"/>
+                    <tabBarItem key="tabBarItem" title="Personal" image="PersonalBarButtonIcon" id="FkY-bT-gba"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Idk-P7-8SA">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -387,7 +387,7 @@
         <scene sceneID="Cnl-aG-Cbh">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="9GH-k5-EPx" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Shared" id="IH0-R7-RHq"/>
+                    <tabBarItem key="tabBarItem" title="Shared" image="SharedBarButtonIcon" id="IH0-R7-RHq"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="JaH-vi-Vu7">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -403,4 +403,8 @@
             <point key="canvasLocation" x="311" y="610"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="PersonalBarButtonIcon" width="22" height="25"/>
+        <image name="SharedBarButtonIcon" width="51" height="25"/>
+    </resources>
 </document>
