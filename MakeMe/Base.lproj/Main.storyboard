@@ -490,49 +490,71 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ReminderTableCell" rowHeight="52" id="e1f-HE-1v4" customClass="ReminderTableViewCell" customModule="MakeMe" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="72" width="600" height="52"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ReminderTableCell" rowHeight="71" id="Z32-g4-7rT" customClass="ReminderTableViewCell" customModule="MakeMe" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="72" width="600" height="71"/>
                                 <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="e1f-HE-1v4" id="GAx-vw-mUy">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="51.5"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Z32-g4-7rT" id="t2P-GG-Yhd">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="70.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="akO-tr-uhZ">
-                                            <rect key="frame" x="8" y="16" width="554" height="20"/>
+                                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Bon-Nr-r1f">
+                                            <rect key="frame" x="8" y="25" width="554" height="20"/>
                                             <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                             <textInputTraits key="textInputTraits"/>
                                         </textField>
-                                        <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="contactAdd" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Sp5-wJ-lDo">
-                                            <rect key="frame" x="570" y="14" width="22" height="22"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="erA-Td-WQM">
+                                            <rect key="frame" x="8" y="49" width="584" height="13.5"/>
+                                            <fontDescription key="fontDescription" style="UICTFontTextStyleCaption1"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="contactAdd" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OLk-x6-m5w">
+                                            <rect key="frame" x="570" y="21" width="22" height="28.5"/>
+                                            <connections>
+                                                <segue destination="Fw4-Y6-PeN" kind="show" id="vJZ-Cu-Lq2"/>
+                                            </connections>
                                         </button>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstAttribute="leadingMargin" secondItem="akO-tr-uhZ" secondAttribute="leading" id="0yV-ss-duy"/>
-                                        <constraint firstAttribute="trailingMargin" secondItem="Sp5-wJ-lDo" secondAttribute="trailing" id="2b9-LO-mdM"/>
-                                        <constraint firstItem="akO-tr-uhZ" firstAttribute="centerY" secondItem="GAx-vw-mUy" secondAttribute="centerY" id="4lX-m5-ZJV"/>
-                                        <constraint firstItem="akO-tr-uhZ" firstAttribute="centerX" secondItem="GAx-vw-mUy" secondAttribute="centerX" id="62S-2S-iY7"/>
-                                        <constraint firstItem="akO-tr-uhZ" firstAttribute="centerY" secondItem="GAx-vw-mUy" secondAttribute="centerY" id="N6Q-5p-rqr"/>
-                                        <constraint firstItem="akO-tr-uhZ" firstAttribute="centerX" secondItem="GAx-vw-mUy" secondAttribute="centerX" id="ZAA-p4-lbh"/>
-                                        <constraint firstItem="Sp5-wJ-lDo" firstAttribute="leading" secondItem="akO-tr-uhZ" secondAttribute="trailing" constant="8" symbolic="YES" id="hbW-0r-JdA"/>
-                                        <constraint firstItem="Sp5-wJ-lDo" firstAttribute="centerY" secondItem="GAx-vw-mUy" secondAttribute="centerY" id="kUF-6K-zTr"/>
-                                        <constraint firstItem="akO-tr-uhZ" firstAttribute="centerY" secondItem="GAx-vw-mUy" secondAttribute="centerY" id="nP3-74-b5g"/>
-                                        <constraint firstItem="akO-tr-uhZ" firstAttribute="centerY" secondItem="Sp5-wJ-lDo" secondAttribute="centerY" id="tlP-YN-qi1"/>
-                                        <constraint firstItem="Sp5-wJ-lDo" firstAttribute="leading" secondItem="akO-tr-uhZ" secondAttribute="trailing" constant="8" symbolic="YES" id="yEM-St-XE8"/>
+                                        <constraint firstItem="OLk-x6-m5w" firstAttribute="leading" secondItem="Bon-Nr-r1f" secondAttribute="trailing" constant="8" symbolic="YES" id="2TB-Ah-q4O"/>
+                                        <constraint firstItem="erA-Td-WQM" firstAttribute="width" secondItem="Bon-Nr-r1f" secondAttribute="width" id="7uV-sH-69o"/>
+                                        <constraint firstItem="erA-Td-WQM" firstAttribute="centerX" secondItem="t2P-GG-Yhd" secondAttribute="centerX" id="EkN-cV-HaE"/>
+                                        <constraint firstItem="erA-Td-WQM" firstAttribute="top" secondItem="Bon-Nr-r1f" secondAttribute="bottom" constant="8" symbolic="YES" id="PAO-H1-kN1"/>
+                                        <constraint firstItem="OLk-x6-m5w" firstAttribute="leading" secondItem="Bon-Nr-r1f" secondAttribute="trailing" constant="8" symbolic="YES" id="QwE-dl-auD"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="OLk-x6-m5w" secondAttribute="trailing" id="RWc-nK-btD"/>
+                                        <constraint firstAttribute="leadingMargin" secondItem="Bon-Nr-r1f" secondAttribute="leading" id="UJf-PX-yf1"/>
+                                        <constraint firstItem="Bon-Nr-r1f" firstAttribute="centerX" secondItem="t2P-GG-Yhd" secondAttribute="centerX" id="ZU6-fS-2nr"/>
+                                        <constraint firstItem="Bon-Nr-r1f" firstAttribute="centerY" secondItem="t2P-GG-Yhd" secondAttribute="centerY" id="fHc-bD-F7m"/>
+                                        <constraint firstItem="Bon-Nr-r1f" firstAttribute="centerY" secondItem="OLk-x6-m5w" secondAttribute="centerY" id="j3Y-wH-yJA"/>
+                                        <constraint firstItem="Bon-Nr-r1f" firstAttribute="centerY" secondItem="t2P-GG-Yhd" secondAttribute="centerY" id="mjV-S7-eOe"/>
+                                        <constraint firstAttribute="leadingMargin" secondItem="erA-Td-WQM" secondAttribute="leading" id="nYv-p2-trD"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="erA-Td-WQM" secondAttribute="bottom" id="pEy-Cr-AgX"/>
+                                        <constraint firstItem="erA-Td-WQM" firstAttribute="centerY" secondItem="Bon-Nr-r1f" secondAttribute="centerY" id="qBq-zF-yWS"/>
+                                        <constraint firstItem="Bon-Nr-r1f" firstAttribute="centerY" secondItem="t2P-GG-Yhd" secondAttribute="centerY" id="qor-Ik-npz"/>
+                                        <constraint firstItem="erA-Td-WQM" firstAttribute="centerX" secondItem="Bon-Nr-r1f" secondAttribute="centerX" id="sc5-9H-6dg"/>
+                                        <constraint firstItem="erA-Td-WQM" firstAttribute="top" secondItem="OLk-x6-m5w" secondAttribute="bottom" id="sph-S8-zgF"/>
+                                        <constraint firstItem="Bon-Nr-r1f" firstAttribute="centerX" secondItem="t2P-GG-Yhd" secondAttribute="centerX" id="xYK-Ww-GEb"/>
+                                        <constraint firstItem="OLk-x6-m5w" firstAttribute="centerY" secondItem="t2P-GG-Yhd" secondAttribute="centerY" id="yfK-rs-UDg"/>
                                     </constraints>
                                     <variation key="default">
                                         <mask key="constraints">
-                                            <exclude reference="N6Q-5p-rqr"/>
-                                            <exclude reference="tlP-YN-qi1"/>
-                                            <exclude reference="4lX-m5-ZJV"/>
-                                            <exclude reference="ZAA-p4-lbh"/>
-                                            <exclude reference="62S-2S-iY7"/>
-                                            <exclude reference="yEM-St-XE8"/>
+                                            <exclude reference="mjV-S7-eOe"/>
+                                            <exclude reference="j3Y-wH-yJA"/>
+                                            <exclude reference="qor-Ik-npz"/>
+                                            <exclude reference="ZU6-fS-2nr"/>
+                                            <exclude reference="xYK-Ww-GEb"/>
+                                            <exclude reference="qBq-zF-yWS"/>
+                                            <exclude reference="PAO-H1-kN1"/>
+                                            <exclude reference="7uV-sH-69o"/>
+                                            <exclude reference="sc5-9H-6dg"/>
+                                            <exclude reference="2TB-Ah-q4O"/>
                                         </mask>
                                     </variation>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <outlet property="addAlertButton" destination="Sp5-wJ-lDo" id="CUj-wK-s3B"/>
-                                    <outlet property="reminderText" destination="akO-tr-uhZ" id="0I0-q7-Ab2"/>
+                                    <outlet property="addAlertButton" destination="OLk-x6-m5w" id="jxT-gx-ybE"/>
+                                    <outlet property="alertLabel" destination="erA-Td-WQM" id="cMa-YI-kGe"/>
+                                    <outlet property="reminderText" destination="Bon-Nr-r1f" id="UCl-8K-OVt"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -1823,4 +1845,7 @@
         <image name="art.png" width="715" height="217"/>
         <image name="messageicon.png" width="300" height="300"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="vJZ-Cu-Lq2"/>
+    </inferredMetricsTieBreakers>
 </document>

@@ -116,6 +116,32 @@ class SharedReminderTableViewController: UITableViewController, MakeMeTableViewC
     }
     */
     
+    
+    @IBAction func unwindFromAddQuickAlert(segue: UIStoryboardSegue) {
+        
+        if let sourceViewController = segue.sourceViewController as? AddQuickAlertViewController {
+            
+            //let list = sourceViewController.reminderList
+            
+            //if let selectedIndexPath = sourceViewController.reminderIndex {
+                // update an existing list
+                
+                // set the reminder's alert at the selected cell
+                //reminderList.reminders[selectedIndexPath.row].alert = sourceViewController.alert
+                
+                //tableView.reloadRowsAtIndexPaths([selectedIndexPath], withRowAnimation: .None)
+                
+            //} else {
+                // add a new list
+                
+            //}
+            // Save the list to disc here
+            
+        }
+    }
+    
+    
+    
     // MARK: - Actions
     
     @IBAction func addNewReminder(sender: UIBarButtonItem) {
