@@ -24,8 +24,6 @@ class MakeMeTableViewCell: UITableViewCell {
         super.awakeFromNib()
         // Initialization code
         
-        
-        
         // add a pan recognizer
         let recognizer = UIPanGestureRecognizer(target: self, action: "handlePan:")
         recognizer.delegate = self

@@ -19,6 +19,7 @@ class PersonalCollectionTableViewCell: MakeMeTableViewCell, UITextFieldDelegate 
         }
     }
     
+    
     func update() {
         titleTextBox?.text = nil
         CountLabel?.text = nil
@@ -55,10 +56,12 @@ class PersonalCollectionTableViewCell: MakeMeTableViewCell, UITextFieldDelegate 
         return(true)
     }
     
+    
     func textFieldDidBeginEditing(textField: UITextField) {
         titleTextBox.userInteractionEnabled = true
         textField.becomeFirstResponder()
     }
+    
     
     func textFieldDidEndEditing(textField: UITextField) {
         if(reminderList != nil) {

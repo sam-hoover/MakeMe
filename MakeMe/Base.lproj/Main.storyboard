@@ -9,10 +9,10 @@
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
-        <!--Personal Reminder List-->
+        <!--Personal Collection-->
         <scene sceneID="3WS-Mh-Goc">
             <objects>
-                <tableViewController title="Personal Reminder List" id="ilT-Mx-uzs" customClass="PersonalCollectionTableViewController" customModule="MakeMe" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController title="Personal Collection" id="ilT-Mx-uzs" customClass="PersonalCollectionTableViewController" customModule="MakeMe" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="HKb-Oz-DuY">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -81,10 +81,10 @@
             </objects>
             <point key="canvasLocation" x="1123" y="-84"/>
         </scene>
-        <!--Reminder Table View Controller-->
+        <!--Personal Reminder Table View Controller-->
         <scene sceneID="9jJ-Cr-fSh">
             <objects>
-                <tableViewController id="T7D-xU-Akh" customClass="ReminderTableViewController" customModule="MakeMe" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="T7D-xU-Akh" customClass="PersonalReminderTableViewController" customModule="MakeMe" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="52" sectionHeaderHeight="28" sectionFooterHeight="28" id="QGy-No-122">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -98,18 +98,43 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6UD-5e-S7V">
-                                            <rect key="frame" x="8" y="16" width="584" height="20"/>
+                                            <rect key="frame" x="8" y="16" width="554" height="20"/>
                                             <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                             <textInputTraits key="textInputTraits"/>
                                         </textField>
+                                        <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="contactAdd" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qmd-HG-Udh">
+                                            <rect key="frame" x="570" y="14" width="22" height="22"/>
+                                            <connections>
+                                                <segue destination="Fw4-Y6-PeN" kind="show" id="Zk5-SA-2Rf"/>
+                                            </connections>
+                                        </button>
                                     </subviews>
                                     <constraints>
+                                        <constraint firstItem="qmd-HG-Udh" firstAttribute="centerY" secondItem="WRb-PD-Hjf" secondAttribute="centerY" id="2tp-Z5-Jof"/>
+                                        <constraint firstItem="6UD-5e-S7V" firstAttribute="centerY" secondItem="WRb-PD-Hjf" secondAttribute="centerY" id="9Iq-DG-0uV"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="qmd-HG-Udh" secondAttribute="trailing" id="Raz-bk-2Dd"/>
+                                        <constraint firstItem="6UD-5e-S7V" firstAttribute="centerY" secondItem="WRb-PD-Hjf" secondAttribute="centerY" id="RfP-ne-JM1"/>
                                         <constraint firstAttribute="leadingMargin" secondItem="6UD-5e-S7V" secondAttribute="leading" id="UPd-ej-kf7"/>
+                                        <constraint firstItem="6UD-5e-S7V" firstAttribute="centerY" secondItem="qmd-HG-Udh" secondAttribute="centerY" id="hMD-yK-rpS"/>
                                         <constraint firstItem="6UD-5e-S7V" firstAttribute="centerY" secondItem="WRb-PD-Hjf" secondAttribute="centerY" id="mId-ri-im8"/>
+                                        <constraint firstItem="qmd-HG-Udh" firstAttribute="leading" secondItem="6UD-5e-S7V" secondAttribute="trailing" constant="8" symbolic="YES" id="mUx-L2-2Na"/>
+                                        <constraint firstItem="qmd-HG-Udh" firstAttribute="leading" secondItem="6UD-5e-S7V" secondAttribute="trailing" constant="8" symbolic="YES" id="tBi-fD-7wx"/>
+                                        <constraint firstItem="6UD-5e-S7V" firstAttribute="centerX" secondItem="WRb-PD-Hjf" secondAttribute="centerX" id="uyS-EY-TfZ"/>
                                         <constraint firstItem="6UD-5e-S7V" firstAttribute="centerX" secondItem="WRb-PD-Hjf" secondAttribute="centerX" id="zl2-dT-Ziu"/>
                                     </constraints>
+                                    <variation key="default">
+                                        <mask key="constraints">
+                                            <exclude reference="9Iq-DG-0uV"/>
+                                            <exclude reference="hMD-yK-rpS"/>
+                                            <exclude reference="mId-ri-im8"/>
+                                            <exclude reference="uyS-EY-TfZ"/>
+                                            <exclude reference="zl2-dT-Ziu"/>
+                                            <exclude reference="tBi-fD-7wx"/>
+                                        </mask>
+                                    </variation>
                                 </tableViewCellContentView>
                                 <connections>
+                                    <outlet property="addAlertButton" destination="qmd-HG-Udh" id="krQ-TQ-fWO"/>
                                     <outlet property="reminderText" destination="6UD-5e-S7V" id="4BP-EC-5Id"/>
                                 </connections>
                             </tableViewCell>
@@ -143,10 +168,117 @@
             </objects>
             <point key="canvasLocation" x="1879" y="-84"/>
         </scene>
-        <!--Shared Reminder List-->
+        <!--Add Quick Alert View Controller-->
+        <scene sceneID="GtK-cF-vLD">
+            <objects>
+                <viewController id="Fw4-Y6-PeN" customClass="AddQuickAlertViewController" customModule="MakeMe" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="gwF-5R-XKu"/>
+                        <viewControllerLayoutGuide type="bottom" id="3om-ts-Tfo"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="f5I-at-vYd">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="ajf-Nw-nUD">
+                                <rect key="frame" x="212" y="220" width="176" height="160"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                <state key="normal" title="Tomorrow Evening"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="Xoe-U7-GDV">
+                                <rect key="frame" x="396" y="220" width="176" height="160"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                <state key="normal" title="In a couple days"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="ksL-xT-QPv">
+                                <rect key="frame" x="28" y="388" width="176" height="160"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                <state key="normal" title="Next Week"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="6Rg-PA-dse">
+                                <rect key="frame" x="212" y="388" width="176" height="160"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                <state key="normal" title="Next Month"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="yM9-Gq-TvT">
+                                <rect key="frame" x="396" y="388" width="176" height="160"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                <state key="normal" title="Custom Time"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="sgW-CJ-vbq">
+                                <rect key="frame" x="28" y="52" width="176" height="160"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                <state key="normal" title="Later"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="7kS-5G-mzJ">
+                                <rect key="frame" x="212" y="52" width="176" height="160"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                <state key="normal" title="Tonight"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="IL6-bJ-0T7">
+                                <rect key="frame" x="396" y="52" width="176" height="160"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                <state key="normal" title="Tomorrow Morning"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="xoc-zA-HTa">
+                                <rect key="frame" x="28" y="220" width="176" height="160"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                <state key="normal" title="Tomorrow Afternoon"/>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="sgW-CJ-vbq" firstAttribute="leading" secondItem="f5I-at-vYd" secondAttribute="leadingMargin" constant="8" id="0es-Oj-4qQ"/>
+                            <constraint firstItem="6Rg-PA-dse" firstAttribute="top" secondItem="ajf-Nw-nUD" secondAttribute="bottom" constant="8" id="12v-4h-HEd"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="yM9-Gq-TvT" secondAttribute="trailing" constant="8" id="2cj-Y7-DCL"/>
+                            <constraint firstItem="7kS-5G-mzJ" firstAttribute="leading" secondItem="sgW-CJ-vbq" secondAttribute="trailing" constant="8" id="6tQ-pS-tn6"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Xoe-U7-GDV" secondAttribute="trailing" constant="8" id="7LV-kd-F6x"/>
+                            <constraint firstItem="7kS-5G-mzJ" firstAttribute="width" secondItem="sgW-CJ-vbq" secondAttribute="width" id="7xV-O8-0Z3"/>
+                            <constraint firstItem="Xoe-U7-GDV" firstAttribute="leading" secondItem="ajf-Nw-nUD" secondAttribute="trailing" constant="8" id="9Kd-FG-MQC"/>
+                            <constraint firstItem="yM9-Gq-TvT" firstAttribute="width" secondItem="sgW-CJ-vbq" secondAttribute="width" id="BFB-je-BfQ"/>
+                            <constraint firstItem="xoc-zA-HTa" firstAttribute="leading" secondItem="f5I-at-vYd" secondAttribute="leadingMargin" constant="8" id="Cjh-ru-8r7"/>
+                            <constraint firstItem="yM9-Gq-TvT" firstAttribute="height" secondItem="sgW-CJ-vbq" secondAttribute="height" id="EeQ-vt-z6J"/>
+                            <constraint firstItem="3om-ts-Tfo" firstAttribute="top" secondItem="yM9-Gq-TvT" secondAttribute="bottom" constant="8" id="F5j-4J-ehX"/>
+                            <constraint firstItem="yM9-Gq-TvT" firstAttribute="leading" secondItem="6Rg-PA-dse" secondAttribute="trailing" constant="8" id="GqP-2n-3SW"/>
+                            <constraint firstItem="xoc-zA-HTa" firstAttribute="width" secondItem="sgW-CJ-vbq" secondAttribute="width" id="JYL-o0-Abl"/>
+                            <constraint firstItem="3om-ts-Tfo" firstAttribute="top" secondItem="6Rg-PA-dse" secondAttribute="bottom" constant="8" id="Kgo-53-8d6"/>
+                            <constraint firstItem="ksL-xT-QPv" firstAttribute="top" secondItem="xoc-zA-HTa" secondAttribute="bottom" constant="8" id="Tne-st-0AK"/>
+                            <constraint firstItem="IL6-bJ-0T7" firstAttribute="top" secondItem="gwF-5R-XKu" secondAttribute="bottom" constant="8" id="U0m-qS-w6m"/>
+                            <constraint firstItem="ksL-xT-QPv" firstAttribute="width" secondItem="sgW-CJ-vbq" secondAttribute="width" id="U9N-xN-T2Z"/>
+                            <constraint firstItem="xoc-zA-HTa" firstAttribute="top" secondItem="sgW-CJ-vbq" secondAttribute="bottom" constant="8" id="VYb-0f-QTM"/>
+                            <constraint firstItem="7kS-5G-mzJ" firstAttribute="height" secondItem="sgW-CJ-vbq" secondAttribute="height" id="aEm-qa-C8V"/>
+                            <constraint firstItem="7kS-5G-mzJ" firstAttribute="top" secondItem="gwF-5R-XKu" secondAttribute="bottom" constant="8" id="b5z-4S-sAz"/>
+                            <constraint firstItem="Xoe-U7-GDV" firstAttribute="height" secondItem="sgW-CJ-vbq" secondAttribute="height" id="cDZ-Y2-gyT"/>
+                            <constraint firstItem="IL6-bJ-0T7" firstAttribute="height" secondItem="sgW-CJ-vbq" secondAttribute="height" id="cHR-HJ-d4V"/>
+                            <constraint firstItem="sgW-CJ-vbq" firstAttribute="top" secondItem="gwF-5R-XKu" secondAttribute="bottom" constant="8" id="d2F-kV-CgD"/>
+                            <constraint firstItem="6Rg-PA-dse" firstAttribute="height" secondItem="sgW-CJ-vbq" secondAttribute="height" id="dhg-vE-zCY"/>
+                            <constraint firstItem="ksL-xT-QPv" firstAttribute="height" secondItem="sgW-CJ-vbq" secondAttribute="height" id="e4m-Kl-vvM"/>
+                            <constraint firstItem="ksL-xT-QPv" firstAttribute="leading" secondItem="f5I-at-vYd" secondAttribute="leadingMargin" constant="8" id="eU1-7C-Nxs"/>
+                            <constraint firstItem="ajf-Nw-nUD" firstAttribute="top" secondItem="7kS-5G-mzJ" secondAttribute="bottom" constant="8" id="f8c-5t-NTD"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="IL6-bJ-0T7" secondAttribute="trailing" constant="8" id="fkb-0s-8WA"/>
+                            <constraint firstItem="xoc-zA-HTa" firstAttribute="height" secondItem="sgW-CJ-vbq" secondAttribute="height" id="gWk-V3-JVO"/>
+                            <constraint firstItem="IL6-bJ-0T7" firstAttribute="leading" secondItem="7kS-5G-mzJ" secondAttribute="trailing" constant="8" id="gnx-xO-wxn"/>
+                            <constraint firstItem="3om-ts-Tfo" firstAttribute="top" secondItem="ksL-xT-QPv" secondAttribute="bottom" constant="8" id="jfT-6U-uYf"/>
+                            <constraint firstItem="yM9-Gq-TvT" firstAttribute="top" secondItem="Xoe-U7-GDV" secondAttribute="bottom" constant="8" id="lNg-wy-M1C"/>
+                            <constraint firstItem="ajf-Nw-nUD" firstAttribute="width" secondItem="sgW-CJ-vbq" secondAttribute="width" id="mss-WX-zkY"/>
+                            <constraint firstItem="Xoe-U7-GDV" firstAttribute="width" secondItem="sgW-CJ-vbq" secondAttribute="width" id="tpH-s6-zy7"/>
+                            <constraint firstItem="6Rg-PA-dse" firstAttribute="leading" secondItem="ksL-xT-QPv" secondAttribute="trailing" constant="8" id="u7b-dA-5KR"/>
+                            <constraint firstItem="Xoe-U7-GDV" firstAttribute="top" secondItem="IL6-bJ-0T7" secondAttribute="bottom" constant="8" id="vQo-X8-K4J"/>
+                            <constraint firstItem="6Rg-PA-dse" firstAttribute="width" secondItem="sgW-CJ-vbq" secondAttribute="width" id="wds-LD-6s2"/>
+                            <constraint firstItem="IL6-bJ-0T7" firstAttribute="width" secondItem="sgW-CJ-vbq" secondAttribute="width" id="xA9-DP-P8H"/>
+                            <constraint firstItem="ajf-Nw-nUD" firstAttribute="leading" secondItem="xoc-zA-HTa" secondAttribute="trailing" constant="8" id="xCy-ci-fwz"/>
+                            <constraint firstItem="ajf-Nw-nUD" firstAttribute="height" secondItem="sgW-CJ-vbq" secondAttribute="height" id="xt0-6R-zVA"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wWm-jk-pfS" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2695" y="259"/>
+        </scene>
+        <!--Shared Collection-->
         <scene sceneID="eL3-lq-Z7b">
             <objects>
-                <tableViewController title="Shared Reminder List" id="jZN-9o-HPg" customClass="SharedCollectionTableViewController" customModule="MakeMe" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController title="Shared Collection" id="jZN-9o-HPg" customClass="SharedCollectionTableViewController" customModule="MakeMe" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="61" sectionHeaderHeight="28" sectionFooterHeight="28" id="4tP-Xf-8aR">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -289,36 +421,58 @@
             </objects>
             <point key="canvasLocation" x="1123" y="1368"/>
         </scene>
-        <!--Share Reminder Table View Controller-->
+        <!--Shared Reminder Table View Controller-->
         <scene sceneID="beO-ZM-lgQ">
             <objects>
-                <tableViewController id="jvV-SK-hUM" customClass="ShareReminderTableViewController" customModule="MakeMe" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="jvV-SK-hUM" customClass="SharedReminderTableViewController" customModule="MakeMe" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="66" sectionHeaderHeight="28" sectionFooterHeight="28" id="6ph-Sa-70c">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ReminderTableCell" rowHeight="52" id="ury-xu-77D" customClass="ReminderTableViewCell" customModule="MakeMe" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ReminderTableCell" rowHeight="52" id="e1f-HE-1v4" customClass="ReminderTableViewCell" customModule="MakeMe" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="72" width="600" height="52"/>
                                 <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ury-xu-77D" id="rWY-Tu-zVh">
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="e1f-HE-1v4" id="GAx-vw-mUy">
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="51.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="avA-UC-slQ">
-                                            <rect key="frame" x="8" y="16" width="584" height="20"/>
+                                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="akO-tr-uhZ">
+                                            <rect key="frame" x="8" y="16" width="554" height="20"/>
                                             <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                             <textInputTraits key="textInputTraits"/>
                                         </textField>
+                                        <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="contactAdd" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Sp5-wJ-lDo">
+                                            <rect key="frame" x="570" y="14" width="22" height="22"/>
+                                        </button>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="avA-UC-slQ" firstAttribute="centerX" secondItem="rWY-Tu-zVh" secondAttribute="centerX" id="E9s-nq-N9Y"/>
-                                        <constraint firstItem="avA-UC-slQ" firstAttribute="centerY" secondItem="rWY-Tu-zVh" secondAttribute="centerY" id="i92-u9-ZBZ"/>
-                                        <constraint firstAttribute="leadingMargin" secondItem="avA-UC-slQ" secondAttribute="leading" id="pYz-RR-iOg"/>
+                                        <constraint firstAttribute="leadingMargin" secondItem="akO-tr-uhZ" secondAttribute="leading" id="0yV-ss-duy"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="Sp5-wJ-lDo" secondAttribute="trailing" id="2b9-LO-mdM"/>
+                                        <constraint firstItem="akO-tr-uhZ" firstAttribute="centerY" secondItem="GAx-vw-mUy" secondAttribute="centerY" id="4lX-m5-ZJV"/>
+                                        <constraint firstItem="akO-tr-uhZ" firstAttribute="centerX" secondItem="GAx-vw-mUy" secondAttribute="centerX" id="62S-2S-iY7"/>
+                                        <constraint firstItem="akO-tr-uhZ" firstAttribute="centerY" secondItem="GAx-vw-mUy" secondAttribute="centerY" id="N6Q-5p-rqr"/>
+                                        <constraint firstItem="akO-tr-uhZ" firstAttribute="centerX" secondItem="GAx-vw-mUy" secondAttribute="centerX" id="ZAA-p4-lbh"/>
+                                        <constraint firstItem="Sp5-wJ-lDo" firstAttribute="leading" secondItem="akO-tr-uhZ" secondAttribute="trailing" constant="8" symbolic="YES" id="hbW-0r-JdA"/>
+                                        <constraint firstItem="Sp5-wJ-lDo" firstAttribute="centerY" secondItem="GAx-vw-mUy" secondAttribute="centerY" id="kUF-6K-zTr"/>
+                                        <constraint firstItem="akO-tr-uhZ" firstAttribute="centerY" secondItem="GAx-vw-mUy" secondAttribute="centerY" id="nP3-74-b5g"/>
+                                        <constraint firstItem="akO-tr-uhZ" firstAttribute="centerY" secondItem="Sp5-wJ-lDo" secondAttribute="centerY" id="tlP-YN-qi1"/>
+                                        <constraint firstItem="Sp5-wJ-lDo" firstAttribute="leading" secondItem="akO-tr-uhZ" secondAttribute="trailing" constant="8" symbolic="YES" id="yEM-St-XE8"/>
                                     </constraints>
+                                    <variation key="default">
+                                        <mask key="constraints">
+                                            <exclude reference="N6Q-5p-rqr"/>
+                                            <exclude reference="tlP-YN-qi1"/>
+                                            <exclude reference="4lX-m5-ZJV"/>
+                                            <exclude reference="ZAA-p4-lbh"/>
+                                            <exclude reference="62S-2S-iY7"/>
+                                            <exclude reference="yEM-St-XE8"/>
+                                        </mask>
+                                    </variation>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <outlet property="reminderText" destination="avA-UC-slQ" id="L8H-tN-EnJ"/>
+                                    <outlet property="addAlertButton" destination="Sp5-wJ-lDo" id="CUj-wK-s3B"/>
+                                    <outlet property="reminderText" destination="akO-tr-uhZ" id="0I0-q7-Ab2"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>

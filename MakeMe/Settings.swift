@@ -17,4 +17,8 @@ class SettingsProfile {
         let cellBackground = UIColor.greenColor()
     }
     
+    struct SizeProfile {
+        let tableViewRowHeight = UIScreen.mainScreen().bounds.height / 11
+    }
+    
 }

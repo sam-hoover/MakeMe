@@ -11,6 +11,7 @@ import UIKit
 class ReminderTableViewCell: MakeMeTableViewCell, UITextFieldDelegate {
 
     @IBOutlet weak var reminderText: UITextField!
+    @IBOutlet weak var addAlertButton: UIButton!
     
     var reminder: Reminder? {
         didSet {
@@ -38,6 +39,7 @@ class ReminderTableViewCell: MakeMeTableViewCell, UITextFieldDelegate {
     override func setSelected(selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
         // Configure the view for the selected state
+        addAlertButton.hidden = true
     }
     
     
@@ -51,6 +53,7 @@ class ReminderTableViewCell: MakeMeTableViewCell, UITextFieldDelegate {
     }
     
     func textFieldDidBeginEditing(textField: UITextField) {
+        addAlertButton.hidden = false
         textField.becomeFirstResponder()
     }
     
@@ -64,6 +67,8 @@ class ReminderTableViewCell: MakeMeTableViewCell, UITextFieldDelegate {
                 reminder?.text = textField.text!
             }
         }
+        
+        addAlertButton.hidden = true
     }
 
     

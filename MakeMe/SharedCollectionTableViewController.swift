@@ -31,27 +31,10 @@ class SharedCollectionTableViewController: UITableViewController, MakeMeTableVie
 
     var sharedReminderList = [ReminderList]()
     
-    var friend1 = ReminderList(title: "Lois Lane")
-    var friend2 = ReminderList(title: "Mary-Jane Watson")
-    var friend3 = ReminderList(title: "Selina Kyle")
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
         
-        // adding lists to be displayed
-        friend1.reminders += [Reminder(txt: "do something"), Reminder(txt: "read something")];
-        friend2.reminders += [Reminder(txt: "do something"), Reminder(txt: "read something")];
-        friend3.reminders += [Reminder(txt: "do something"), Reminder(txt: "read something")];
-        friend1.reminders[0].from = "Lois Lane"
-        friend2.reminders[0].from = "Mary-Jane Watson"
-        friend3.reminders[0].from = "Selina Kyle"
-        sharedReminderList += [friend1, friend2, friend3]
+        setupTestLists()
         
         self.tableView.rowHeight = UIScreen.mainScreen().bounds.height / 11
     }
@@ -94,22 +77,6 @@ class SharedCollectionTableViewController: UITableViewController, MakeMeTableVie
     */
 
     /*
-    // Override to support editing the table view.
-    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
-        if editingStyle == .Delete {
-            // Delete the row from the data source
-            sharedReminderList.removeAtIndex(indexPath.row)
-            
-            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
-            
-        } else if editingStyle == .Insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }
-    }
-*/
-    
-
-    /*
     // Override to support rearranging the table view.
     override func tableView(tableView: UITableView, moveRowAtIndexPath fromIndexPath: NSIndexPath, toIndexPath: NSIndexPath) {
 
@@ -133,7 +100,7 @@ class SharedCollectionTableViewController: UITableViewController, MakeMeTableVie
         // Pass the selected object to the new view controller.
         
         if(segue.identifier == "ShowSharedList") {
-            if let ReminderListTableViewController = segue.destinationViewController as? ShareReminderTableViewController {
+            if let ReminderListTableViewController = segue.destinationViewController as? SharedReminderTableViewController {
                 
                 // Get the cell that generated this segue.
                 if let selectedCell = sender as? SharedCollectionTableViewCell {
@@ -153,7 +120,7 @@ class SharedCollectionTableViewController: UITableViewController, MakeMeTableVie
     
     @IBAction func unwindSharedReminderList(segue: UIStoryboardSegue) {
 
-        if let sourceViewController = segue.sourceViewController as? ShareReminderTableViewController {
+        if let sourceViewController = segue.sourceViewController as? SharedReminderTableViewController {
             
             let list = ReminderList()
             
@@ -202,8 +169,6 @@ class SharedCollectionTableViewController: UITableViewController, MakeMeTableVie
     // MARK: - Helper functions
     
     
-    
-    
     func addReminderListToCollection(reminderList: ReminderList) {
         
         // get the in order index of where the new list should be added to the shared reminders lists
@@ -220,6 +185,26 @@ class SharedCollectionTableViewController: UITableViewController, MakeMeTableVie
         self.sharedReminderList.insert(reminderList, atIndex: index)
         
         tableView.insertRowsAtIndexPaths([newIndexPath], withRowAnimation: .Bottom)
+        
+    }
+    
+    
+    
+    // MARK: - Testing
+    var friend1 = ReminderList(title: "Lois Lane")
+    var friend2 = ReminderList(title: "Mary-Jane Watson")
+    var friend3 = ReminderList(title: "Selina Kyle")
+    
+    func setupTestLists() {
+        
+        // adding lists to be displayed
+        friend1.reminders += [Reminder(txt: "do something"), Reminder(txt: "read something")];
+        friend2.reminders += [Reminder(txt: "do something"), Reminder(txt: "read something")];
+        friend3.reminders += [Reminder(txt: "do something"), Reminder(txt: "read something")];
+        friend1.reminders[0].from = "Lois Lane"
+        friend2.reminders[0].from = "Mary-Jane Watson"
+        friend3.reminders[0].from = "Selina Kyle"
+        sharedReminderList += [friend1, friend2, friend3]
         
     }
     

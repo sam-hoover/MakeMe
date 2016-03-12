@@ -12,12 +12,7 @@ class PersonalCollectionTableViewController: UITableViewController, MakeMeTableV
 
     var personalReminderList = [ReminderList]()
     
-    var testHomeList = ReminderList(title: "Home")
-    
-    var testSchoolList = ReminderList(title: "School")
-    
-    let settings = SettingsProfile()
-    
+    //let settings = SettingsProfile()
     let colors = SettingsProfile.ColorProfile()
     
     private struct Storyboard {
@@ -41,19 +36,16 @@ class PersonalCollectionTableViewController: UITableViewController, MakeMeTableV
 
     // MARK: - Table view data source
 
+    
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return 1
     }
 
+    
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return personalReminderList.count
     }
 
-    
-    
-    override func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
-    }
-    
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         // not sure why i have to downcast here ("as!") and cannot just use "as"
@@ -69,40 +61,15 @@ class PersonalCollectionTableViewController: UITableViewController, MakeMeTableV
         return cell
     }
 
-
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
-    }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(tableView: UITableView, moveRowAtIndexPath fromIndexPath: NSIndexPath, toIndexPath: NSIndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(tableView: UITableView, canMoveRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
     
     // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
         
         if(segue.identifier == "ShowPersonalList") {
-            if let ReminderListTableViewController = segue.destinationViewController as? ReminderTableViewController {
+            if let ReminderListTableViewController = segue.destinationViewController as? PersonalReminderTableViewController {
                 
                 // Get the cell that generated this segue.
                 if let selectedCell = sender as? PersonalCollectionTableViewCell {
@@ -120,10 +87,9 @@ class PersonalCollectionTableViewController: UITableViewController, MakeMeTableV
     }
     
     
-    
     @IBAction func unwindReminderList(segue: UIStoryboardSegue) {
         
-        if let sourceViewController = segue.sourceViewController as? ReminderTableViewController {
+        if let sourceViewController = segue.sourceViewController as? PersonalReminderTableViewController {
             
             let list = sourceViewController.reminderList
             
@@ -148,7 +114,6 @@ class PersonalCollectionTableViewController: UITableViewController, MakeMeTableV
             
         }
     }
-    
     
 
     // MARK: - Actions
@@ -186,6 +151,9 @@ class PersonalCollectionTableViewController: UITableViewController, MakeMeTableV
     
     
     // MARK: - Testing
+    
+    var testHomeList = ReminderList(title: "Home")
+    var testSchoolList = ReminderList(title: "School")
     
     func setupTestLists() {
         let home1 = Reminder(txt: "go to store")

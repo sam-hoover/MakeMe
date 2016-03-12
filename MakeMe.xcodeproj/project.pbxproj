@@ -14,20 +14,22 @@
 		6AF069AC1C8EA266006659AD /* messageicon.png in Resources */ = {isa = PBXBuildFile; fileRef = 6AF069AB1C8EA266006659AD /* messageicon.png */; };
 		8803DB681C91399E008E869B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8803DB671C91399E008E869B /* Assets.xcassets */; };
 		885F2C271C8B709600A1F811 /* MakeMeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885F2C261C8B709600A1F811 /* MakeMeTableViewCell.swift */; };
+		8873CFDD1C949ADD001153F0 /* AddQuickAlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8873CFDC1C949ADD001153F0 /* AddQuickAlertViewController.swift */; };
+		8873CFDF1C949FD4001153F0 /* MakeMeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8873CFDE1C949FD4001153F0 /* MakeMeTableViewController.swift */; };
 		889E62141C7FD6A00058E456 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 889E62131C7FD6A00058E456 /* AppDelegate.swift */; };
 		889E62191C7FD6A00058E456 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 889E62171C7FD6A00058E456 /* Main.storyboard */; };
 		889E621E1C7FD6A00058E456 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 889E621C1C7FD6A00058E456 /* LaunchScreen.storyboard */; };
 		889E62291C7FD6A00058E456 /* MakeMeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 889E62281C7FD6A00058E456 /* MakeMeTests.swift */; };
 		889EBCEA1C8A409B00BE1581 /* SharedCollectionTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 889EBCE91C8A409B00BE1581 /* SharedCollectionTableViewController.swift */; };
 		889EBCEC1C8A41A500BE1581 /* SharedCollectionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 889EBCEB1C8A41A500BE1581 /* SharedCollectionTableViewCell.swift */; };
-		889EBCEE1C8A4E8500BE1581 /* ReminderTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 889EBCED1C8A4E8500BE1581 /* ReminderTableViewController.swift */; };
+		889EBCEE1C8A4E8500BE1581 /* PersonalReminderTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 889EBCED1C8A4E8500BE1581 /* PersonalReminderTableViewController.swift */; };
 		889EBCF01C8A4EB100BE1581 /* ReminderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 889EBCEF1C8A4EB100BE1581 /* ReminderTableViewCell.swift */; };
 		88A1535B1C8F90790051FC1D /* Friend.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A1535A1C8F90790051FC1D /* Friend.swift */; };
 		88A1535D1C8F92070051FC1D /* FriendTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A1535C1C8F92070051FC1D /* FriendTableViewController.swift */; };
 		88A153611C8F964C0051FC1D /* FriendTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A153601C8F964C0051FC1D /* FriendTableViewCell.swift */; };
 		88D8B48C1C87F0E4004B1F34 /* Reminder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88D8B48B1C87F0E4004B1F34 /* Reminder.swift */; };
 		88D974161C8FD0C500EF8671 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88D974151C8FD0C500EF8671 /* Settings.swift */; };
-		88F614E31C8BC058005A9EE1 /* ShareReminderTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88F614E21C8BC058005A9EE1 /* ShareReminderTableViewController.swift */; };
+		88F614E31C8BC058005A9EE1 /* SharedReminderTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88F614E21C8BC058005A9EE1 /* SharedReminderTableViewController.swift */; };
 		88F8B7E81C86622200EB389B /* PersonalCollectionTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88F8B7E71C86622200EB389B /* PersonalCollectionTableViewController.swift */; };
 		88F8B7EA1C86629B00EB389B /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88F8B7E91C86629B00EB389B /* MasterViewController.swift */; };
 		88F8B7EC1C86631000EB389B /* PersonalCollectionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88F8B7EB1C86631000EB389B /* PersonalCollectionTableViewCell.swift */; };
@@ -52,6 +54,8 @@
 		6AF069AB1C8EA266006659AD /* messageicon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = messageicon.png; sourceTree = "<group>"; };
 		8803DB671C91399E008E869B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		885F2C261C8B709600A1F811 /* MakeMeTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MakeMeTableViewCell.swift; sourceTree = "<group>"; };
+		8873CFDC1C949ADD001153F0 /* AddQuickAlertViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddQuickAlertViewController.swift; sourceTree = "<group>"; };
+		8873CFDE1C949FD4001153F0 /* MakeMeTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MakeMeTableViewController.swift; sourceTree = "<group>"; };
 		889E62101C7FD6A00058E456 /* MakeMe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MakeMe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		889E62131C7FD6A00058E456 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		889E62181C7FD6A00058E456 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -62,14 +66,14 @@
 		889E622A1C7FD6A00058E456 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		889EBCE91C8A409B00BE1581 /* SharedCollectionTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SharedCollectionTableViewController.swift; sourceTree = "<group>"; };
 		889EBCEB1C8A41A500BE1581 /* SharedCollectionTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SharedCollectionTableViewCell.swift; sourceTree = "<group>"; };
-		889EBCED1C8A4E8500BE1581 /* ReminderTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReminderTableViewController.swift; sourceTree = "<group>"; };
+		889EBCED1C8A4E8500BE1581 /* PersonalReminderTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonalReminderTableViewController.swift; sourceTree = "<group>"; };
 		889EBCEF1C8A4EB100BE1581 /* ReminderTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReminderTableViewCell.swift; sourceTree = "<group>"; };
 		88A1535A1C8F90790051FC1D /* Friend.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Friend.swift; sourceTree = "<group>"; };
 		88A1535C1C8F92070051FC1D /* FriendTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendTableViewController.swift; sourceTree = "<group>"; };
 		88A153601C8F964C0051FC1D /* FriendTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendTableViewCell.swift; sourceTree = "<group>"; };
 		88D8B48B1C87F0E4004B1F34 /* Reminder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reminder.swift; sourceTree = "<group>"; };
 		88D974151C8FD0C500EF8671 /* Settings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
-		88F614E21C8BC058005A9EE1 /* ShareReminderTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShareReminderTableViewController.swift; sourceTree = "<group>"; };
+		88F614E21C8BC058005A9EE1 /* SharedReminderTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SharedReminderTableViewController.swift; sourceTree = "<group>"; };
 		88F8B7E71C86622200EB389B /* PersonalCollectionTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonalCollectionTableViewController.swift; sourceTree = "<group>"; };
 		88F8B7E91C86629B00EB389B /* MasterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MasterViewController.swift; sourceTree = "<group>"; };
 		88F8B7EB1C86631000EB389B /* PersonalCollectionTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonalCollectionTableViewCell.swift; sourceTree = "<group>"; };
@@ -138,16 +142,18 @@
 				88F8B7EB1C86631000EB389B /* PersonalCollectionTableViewCell.swift */,
 				889EBCE91C8A409B00BE1581 /* SharedCollectionTableViewController.swift */,
 				889EBCEB1C8A41A500BE1581 /* SharedCollectionTableViewCell.swift */,
-				889EBCED1C8A4E8500BE1581 /* ReminderTableViewController.swift */,
+				889EBCED1C8A4E8500BE1581 /* PersonalReminderTableViewController.swift */,
+				88F614E21C8BC058005A9EE1 /* SharedReminderTableViewController.swift */,
 				889EBCEF1C8A4EB100BE1581 /* ReminderTableViewCell.swift */,
-				88F614E21C8BC058005A9EE1 /* ShareReminderTableViewController.swift */,
 				88A1535C1C8F92070051FC1D /* FriendTableViewController.swift */,
 				88A153601C8F964C0051FC1D /* FriendTableViewCell.swift */,
+				8873CFDC1C949ADD001153F0 /* AddQuickAlertViewController.swift */,
 				88F8B7ED1C866DC100EB389B /* ReminderList.swift */,
 				88D8B48B1C87F0E4004B1F34 /* Reminder.swift */,
 				88A1535A1C8F90790051FC1D /* Friend.swift */,
 				88D974151C8FD0C500EF8671 /* Settings.swift */,
 				885F2C261C8B709600A1F811 /* MakeMeTableViewCell.swift */,
+				8873CFDE1C949FD4001153F0 /* MakeMeTableViewController.swift */,
 			);
 			path = MakeMe;
 			sourceTree = "<group>";
@@ -268,11 +274,13 @@
 			files = (
 				6AF069A81C8E6D68006659AD /* SignInViewController.swift in Sources */,
 				889EBCEA1C8A409B00BE1581 /* SharedCollectionTableViewController.swift in Sources */,
-				88F614E31C8BC058005A9EE1 /* ShareReminderTableViewController.swift in Sources */,
+				88F614E31C8BC058005A9EE1 /* SharedReminderTableViewController.swift in Sources */,
 				885F2C271C8B709600A1F811 /* MakeMeTableViewCell.swift in Sources */,
 				88A1535D1C8F92070051FC1D /* FriendTableViewController.swift in Sources */,
 				889E62141C7FD6A00058E456 /* AppDelegate.swift in Sources */,
+				8873CFDF1C949FD4001153F0 /* MakeMeTableViewController.swift in Sources */,
 				889EBCEC1C8A41A500BE1581 /* SharedCollectionTableViewCell.swift in Sources */,
+				8873CFDD1C949ADD001153F0 /* AddQuickAlertViewController.swift in Sources */,
 				88F8B7E81C86622200EB389B /* PersonalCollectionTableViewController.swift in Sources */,
 				6AF069AA1C8E7E03006659AD /* TextCodeViewController.swift in Sources */,
 				88F8B7EA1C86629B00EB389B /* MasterViewController.swift in Sources */,
@@ -284,7 +292,7 @@
 				88A153611C8F964C0051FC1D /* FriendTableViewCell.swift in Sources */,
 				88A1535B1C8F90790051FC1D /* Friend.swift in Sources */,
 				6AF069A31C8E64E2006659AD /* SignUpViewController.swift in Sources */,
-				889EBCEE1C8A4E8500BE1581 /* ReminderTableViewController.swift in Sources */,
+				889EBCEE1C8A4E8500BE1581 /* PersonalReminderTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

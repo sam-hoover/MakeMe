@@ -15,11 +15,6 @@ class FriendTableViewController: UITableViewController, MakeMeTableViewCellDeleg
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
         
         loadFriends()
         
@@ -101,7 +96,7 @@ class FriendTableViewController: UITableViewController, MakeMeTableViewCellDeleg
         // Pass the selected object to the new view controller.
         
         if(segue.identifier == "AddSelectedFriend") {
-            if let SharedReminderListTableViewController = segue.destinationViewController as? SharedReminderListTableViewController {
+            if let SharedReminderListTableViewController = segue.destinationViewController as? SharedCollectionTableViewController {
                 
                 // Get the cell that generated this segue.
                 if let selectedCell = sender as? FriendTableViewCell {

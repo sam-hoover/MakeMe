@@ -8,12 +8,11 @@
 
 import UIKit
 
-class ReminderTableViewController: UITableViewController, MakeMeTableViewCellDelegate {
+class PersonalReminderTableViewController: UITableViewController, MakeMeTableViewCellDelegate {
 
     var reminderList = ReminderList()
 
     @IBOutlet weak var addNewReminderButton: UIBarButtonItem!
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()

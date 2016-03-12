@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ShareReminderTableViewController: UITableViewController, MakeMeTableViewCellDelegate {
+class SharedReminderTableViewController: UITableViewController, MakeMeTableViewCellDelegate {
 
     struct Index {
         static let from = 0
@@ -51,8 +51,6 @@ class ShareReminderTableViewController: UITableViewController, MakeMeTableViewCe
     
     
     
-    
-
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         // not sure why i have to downcast here ("as!") and cannot just use "as"
         let cellReuseIdentifier = "ReminderTableCell"
