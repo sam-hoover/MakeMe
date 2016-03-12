@@ -85,41 +85,55 @@
         <scene sceneID="9jJ-Cr-fSh">
             <objects>
                 <tableViewController id="T7D-xU-Akh" customClass="PersonalReminderTableViewController" customModule="MakeMe" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="52" sectionHeaderHeight="28" sectionFooterHeight="28" id="QGy-No-122">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="71" sectionHeaderHeight="28" sectionFooterHeight="28" id="QGy-No-122">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ReminderTableCell" rowHeight="52" id="IXo-oS-9DQ" customClass="ReminderTableViewCell" customModule="MakeMe" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="72" width="600" height="52"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ReminderTableCell" rowHeight="71" id="IXo-oS-9DQ" customClass="ReminderTableViewCell" customModule="MakeMe" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="72" width="600" height="71"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="IXo-oS-9DQ" id="WRb-PD-Hjf">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="51.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="70.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6UD-5e-S7V">
-                                            <rect key="frame" x="8" y="16" width="554" height="20"/>
+                                            <rect key="frame" x="8" y="25" width="554" height="20"/>
                                             <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                             <textInputTraits key="textInputTraits"/>
                                         </textField>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ccm-3A-Xz4">
+                                            <rect key="frame" x="8" y="49" width="584" height="13.5"/>
+                                            <fontDescription key="fontDescription" style="UICTFontTextStyleCaption1"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
                                         <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="contactAdd" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qmd-HG-Udh">
-                                            <rect key="frame" x="570" y="14" width="22" height="22"/>
+                                            <rect key="frame" x="570" y="21" width="22" height="28.5"/>
                                             <connections>
-                                                <segue destination="Fw4-Y6-PeN" kind="show" id="Zk5-SA-2Rf"/>
+                                                <segue destination="Fw4-Y6-PeN" kind="show" identifier="showAddQuickAlarm" id="Zk5-SA-2Rf"/>
                                             </connections>
                                         </button>
                                     </subviews>
                                     <constraints>
+                                        <constraint firstItem="Ccm-3A-Xz4" firstAttribute="centerY" secondItem="6UD-5e-S7V" secondAttribute="centerY" id="024-uR-YZk"/>
+                                        <constraint firstItem="Ccm-3A-Xz4" firstAttribute="centerX" secondItem="WRb-PD-Hjf" secondAttribute="centerX" id="0P0-lM-wk6"/>
                                         <constraint firstItem="qmd-HG-Udh" firstAttribute="centerY" secondItem="WRb-PD-Hjf" secondAttribute="centerY" id="2tp-Z5-Jof"/>
+                                        <constraint firstItem="Ccm-3A-Xz4" firstAttribute="top" secondItem="6UD-5e-S7V" secondAttribute="bottom" constant="8" symbolic="YES" id="5x3-8L-jV2"/>
+                                        <constraint firstItem="Ccm-3A-Xz4" firstAttribute="width" secondItem="6UD-5e-S7V" secondAttribute="width" id="75O-CQ-9Fg"/>
+                                        <constraint firstItem="Ccm-3A-Xz4" firstAttribute="top" secondItem="qmd-HG-Udh" secondAttribute="bottom" id="9I4-nQ-zfi"/>
                                         <constraint firstItem="6UD-5e-S7V" firstAttribute="centerY" secondItem="WRb-PD-Hjf" secondAttribute="centerY" id="9Iq-DG-0uV"/>
+                                        <constraint firstAttribute="leadingMargin" secondItem="Ccm-3A-Xz4" secondAttribute="leading" id="HeU-4r-PmT"/>
                                         <constraint firstAttribute="trailingMargin" secondItem="qmd-HG-Udh" secondAttribute="trailing" id="Raz-bk-2Dd"/>
                                         <constraint firstItem="6UD-5e-S7V" firstAttribute="centerY" secondItem="WRb-PD-Hjf" secondAttribute="centerY" id="RfP-ne-JM1"/>
                                         <constraint firstAttribute="leadingMargin" secondItem="6UD-5e-S7V" secondAttribute="leading" id="UPd-ej-kf7"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="Ccm-3A-Xz4" secondAttribute="bottom" id="YsM-Bt-cM7"/>
                                         <constraint firstItem="6UD-5e-S7V" firstAttribute="centerY" secondItem="qmd-HG-Udh" secondAttribute="centerY" id="hMD-yK-rpS"/>
                                         <constraint firstItem="6UD-5e-S7V" firstAttribute="centerY" secondItem="WRb-PD-Hjf" secondAttribute="centerY" id="mId-ri-im8"/>
                                         <constraint firstItem="qmd-HG-Udh" firstAttribute="leading" secondItem="6UD-5e-S7V" secondAttribute="trailing" constant="8" symbolic="YES" id="mUx-L2-2Na"/>
                                         <constraint firstItem="qmd-HG-Udh" firstAttribute="leading" secondItem="6UD-5e-S7V" secondAttribute="trailing" constant="8" symbolic="YES" id="tBi-fD-7wx"/>
                                         <constraint firstItem="6UD-5e-S7V" firstAttribute="centerX" secondItem="WRb-PD-Hjf" secondAttribute="centerX" id="uyS-EY-TfZ"/>
+                                        <constraint firstItem="Ccm-3A-Xz4" firstAttribute="centerX" secondItem="6UD-5e-S7V" secondAttribute="centerX" id="yuA-dy-7t9"/>
                                         <constraint firstItem="6UD-5e-S7V" firstAttribute="centerX" secondItem="WRb-PD-Hjf" secondAttribute="centerX" id="zl2-dT-Ziu"/>
                                     </constraints>
                                     <variation key="default">
@@ -129,12 +143,17 @@
                                             <exclude reference="mId-ri-im8"/>
                                             <exclude reference="uyS-EY-TfZ"/>
                                             <exclude reference="zl2-dT-Ziu"/>
+                                            <exclude reference="024-uR-YZk"/>
+                                            <exclude reference="5x3-8L-jV2"/>
+                                            <exclude reference="75O-CQ-9Fg"/>
+                                            <exclude reference="yuA-dy-7t9"/>
                                             <exclude reference="tBi-fD-7wx"/>
                                         </mask>
                                     </variation>
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="addAlertButton" destination="qmd-HG-Udh" id="krQ-TQ-fWO"/>
+                                    <outlet property="alertLabel" destination="Ccm-3A-Xz4" id="EDb-Hh-D45"/>
                                     <outlet property="reminderText" destination="6UD-5e-S7V" id="4BP-EC-5Id"/>
                                 </connections>
                             </tableViewCell>
@@ -180,50 +199,90 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="ajf-Nw-nUD">
+                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="sgW-CJ-vbq">
+                                <rect key="frame" x="28" y="52" width="176" height="160"/>
+                                <accessibility key="accessibilityConfiguration" identifier="Later"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                <state key="normal" title="Later"/>
+                                <connections>
+                                    <action selector="addAlert:" destination="Fw4-Y6-PeN" eventType="touchUpInside" id="Xqo-ph-ciD"/>
+                                    <segue destination="ZG5-Wz-faB" kind="unwind" unwindAction="unwindFromAddQuickAlert:" id="Q7F-hA-rq2"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="7kS-5G-mzJ">
+                                <rect key="frame" x="212" y="52" width="176" height="160"/>
+                                <accessibility key="accessibilityConfiguration" identifier="Tonight"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                <state key="normal" title="Tonight"/>
+                                <connections>
+                                    <action selector="addAlert:" destination="Fw4-Y6-PeN" eventType="touchUpInside" id="Fkc-fc-xTa"/>
+                                    <segue destination="ZG5-Wz-faB" kind="unwind" unwindAction="unwindFromAddQuickAlert:" id="aeR-3g-azh"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="IL6-bJ-0T7">
+                                <rect key="frame" x="396" y="52" width="176" height="160"/>
+                                <accessibility key="accessibilityConfiguration" identifier="TomorrowMorning"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                <state key="normal" title="Tomorrow Morning"/>
+                                <connections>
+                                    <action selector="addAlert:" destination="Fw4-Y6-PeN" eventType="touchUpInside" id="k62-O7-R02"/>
+                                    <segue destination="ZG5-Wz-faB" kind="unwind" unwindAction="unwindFromAddQuickAlert:" id="e32-9g-dWg"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="xoc-zA-HTa">
+                                <rect key="frame" x="28" y="220" width="176" height="160"/>
+                                <accessibility key="accessibilityConfiguration" identifier="TomorrowAfternoon"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                <state key="normal" title="Tomorrow Afternoon"/>
+                                <connections>
+                                    <action selector="addAlert:" destination="Fw4-Y6-PeN" eventType="touchUpInside" id="gvz-YF-Qr6"/>
+                                    <segue destination="ZG5-Wz-faB" kind="unwind" unwindAction="unwindFromAddQuickAlert:" id="5ae-KN-qgZ"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="ajf-Nw-nUD">
                                 <rect key="frame" x="212" y="220" width="176" height="160"/>
+                                <accessibility key="accessibilityConfiguration" identifier="TomorrowEvening"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                 <state key="normal" title="Tomorrow Evening"/>
+                                <connections>
+                                    <action selector="addAlert:" destination="Fw4-Y6-PeN" eventType="touchUpInside" id="W1m-0g-a5J"/>
+                                    <segue destination="ZG5-Wz-faB" kind="unwind" unwindAction="unwindFromAddQuickAlert:" id="IZw-qd-gE6"/>
+                                </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="Xoe-U7-GDV">
+                            <button opaque="NO" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="Xoe-U7-GDV">
                                 <rect key="frame" x="396" y="220" width="176" height="160"/>
+                                <accessibility key="accessibilityConfiguration" identifier="CoupleDays"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                 <state key="normal" title="In a couple days"/>
+                                <connections>
+                                    <action selector="addAlert:" destination="Fw4-Y6-PeN" eventType="touchUpInside" id="EG9-qB-dVN"/>
+                                    <segue destination="ZG5-Wz-faB" kind="unwind" unwindAction="unwindFromAddQuickAlert:" id="WcD-7b-cC1"/>
+                                </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="ksL-xT-QPv">
+                            <button opaque="NO" tag="7" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="ksL-xT-QPv">
                                 <rect key="frame" x="28" y="388" width="176" height="160"/>
+                                <accessibility key="accessibilityConfiguration" identifier="NextWeek"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                 <state key="normal" title="Next Week"/>
+                                <connections>
+                                    <action selector="addAlert:" destination="Fw4-Y6-PeN" eventType="touchUpInside" id="pHq-Qy-88T"/>
+                                    <segue destination="ZG5-Wz-faB" kind="unwind" unwindAction="unwindFromAddQuickAlert:" id="etC-me-Ypr"/>
+                                </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="6Rg-PA-dse">
+                            <button opaque="NO" tag="8" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="6Rg-PA-dse">
                                 <rect key="frame" x="212" y="388" width="176" height="160"/>
+                                <accessibility key="accessibilityConfiguration" identifier="NextMonth"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                 <state key="normal" title="Next Month"/>
+                                <connections>
+                                    <action selector="addAlert:" destination="Fw4-Y6-PeN" eventType="touchUpInside" id="K1E-48-9qd"/>
+                                    <segue destination="ZG5-Wz-faB" kind="unwind" unwindAction="unwindFromAddQuickAlert:" id="SPa-uq-nDx"/>
+                                </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="yM9-Gq-TvT">
+                            <button opaque="NO" tag="9" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="yM9-Gq-TvT">
                                 <rect key="frame" x="396" y="388" width="176" height="160"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                 <state key="normal" title="Custom Time"/>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="sgW-CJ-vbq">
-                                <rect key="frame" x="28" y="52" width="176" height="160"/>
-                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
-                                <state key="normal" title="Later"/>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="7kS-5G-mzJ">
-                                <rect key="frame" x="212" y="52" width="176" height="160"/>
-                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
-                                <state key="normal" title="Tonight"/>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="IL6-bJ-0T7">
-                                <rect key="frame" x="396" y="52" width="176" height="160"/>
-                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
-                                <state key="normal" title="Tomorrow Morning"/>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="xoc-zA-HTa">
-                                <rect key="frame" x="28" y="220" width="176" height="160"/>
-                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
-                                <state key="normal" title="Tomorrow Afternoon"/>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -272,6 +331,7 @@
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wWm-jk-pfS" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="ZG5-Wz-faB" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="2695" y="259"/>
         </scene>

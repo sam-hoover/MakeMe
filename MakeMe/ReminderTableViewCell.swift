@@ -12,6 +12,7 @@ class ReminderTableViewCell: MakeMeTableViewCell, UITextFieldDelegate {
 
     @IBOutlet weak var reminderText: UITextField!
     @IBOutlet weak var addAlertButton: UIButton!
+    @IBOutlet weak var alertLabel: UILabel!
     
     var reminder: Reminder? {
         didSet {
@@ -22,9 +23,11 @@ class ReminderTableViewCell: MakeMeTableViewCell, UITextFieldDelegate {
     
     func update() {
         reminderText?.text = nil
+        alertLabel?.text = nil
         
         if let reminder = self.reminder {
             reminderText?.text = reminder.text
+            alertLabel?.text = reminder.alert
         }
     }
     
@@ -70,6 +73,7 @@ class ReminderTableViewCell: MakeMeTableViewCell, UITextFieldDelegate {
         
         addAlertButton.hidden = true
     }
+    
 
     
 } // class

@@ -11,6 +11,7 @@ import UIKit
 class PersonalReminderTableViewController: UITableViewController, MakeMeTableViewCellDelegate {
 
     var reminderList = ReminderList()
+    var indexOfSelectedCell: NSIndexPath?
 
     @IBOutlet weak var addNewReminderButton: UIBarButtonItem!
     
@@ -47,6 +48,8 @@ class PersonalReminderTableViewController: UITableViewController, MakeMeTableVie
         // Configure the cell...
         let reminder = reminderList.reminders[indexPath.row]
         
+        reminder.alert = "Alert"
+        
         cell.reminder = reminder
         cell.selectionStyle = .None
         cell.delegate = self
@@ -54,7 +57,7 @@ class PersonalReminderTableViewController: UITableViewController, MakeMeTableVie
         return cell
     }
 
-
+    
     /*
     // Override to support conditional editing of the table view.
     override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
@@ -78,16 +81,51 @@ class PersonalReminderTableViewController: UITableViewController, MakeMeTableVie
     }
     */
 
-    /*
+    
     // MARK: - Navigation
-
+    
+    
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
+        
+        
+        /*
+        if(segue.identifier == "showAddQuickAlarm") {
+            if let destinationViewController = segue.destinationViewController as? AddQuickAlertViewController {
+                
+        // TODO: Need to find a way to get the index of the current cell to be able to add alert to the correct reminder
+        
+        
+            }
+        }
+        */
     }
-    */
     
+    
+    @IBAction func unwindFromAddQuickAlert(segue: UIStoryboardSegue) {
+        
+        if let sourceViewController = segue.sourceViewController as? AddQuickAlertViewController {
+            
+            //let list = sourceViewController.reminderList
+            
+            if let selectedIndexPath = sourceViewController.reminderIndex {
+                // update an existing list
+                
+                // set the reminder's alert at the selected cell
+                reminderList.reminders[selectedIndexPath.row].alert = sourceViewController.alert
+                
+                tableView.reloadRowsAtIndexPaths([selectedIndexPath], withRowAnimation: .None)
+                
+            } else {
+                // add a new list
+                
+            }
+            // Save the list to disc here
+            
+        }
+    }
     
     
     // MARK: - Actions
