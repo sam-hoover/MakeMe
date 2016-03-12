@@ -27,7 +27,7 @@ extension Array {
 }
 
 
-class SharedReminderListTableViewController: UITableViewController, MakeMeTableViewCellDelegate {
+class SharedCollectionTableViewController: UITableViewController, MakeMeTableViewCellDelegate {
 
     var sharedReminderList = [ReminderList]()
     
@@ -74,7 +74,7 @@ class SharedReminderListTableViewController: UITableViewController, MakeMeTableV
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         // not sure why i have to downcast here ("as!") and cannot just use "as"
         let cellReuseIdentifier = "SharedReminderListCell"
-        let cell = tableView.dequeueReusableCellWithIdentifier(cellReuseIdentifier, forIndexPath: indexPath) as! SharedReminderListTableViewCell
+        let cell = tableView.dequeueReusableCellWithIdentifier(cellReuseIdentifier, forIndexPath: indexPath) as! SharedCollectionTableViewCell
         
         // Configure the cell...
         let reminderList = sharedReminderList[indexPath.row]
@@ -136,7 +136,7 @@ class SharedReminderListTableViewController: UITableViewController, MakeMeTableV
             if let ReminderListTableViewController = segue.destinationViewController as? ShareReminderTableViewController {
                 
                 // Get the cell that generated this segue.
-                if let selectedCell = sender as? SharedReminderListTableViewCell {
+                if let selectedCell = sender as? SharedCollectionTableViewCell {
                     // the location of the selected list from the table view
                     let indexPath = tableView.indexPathForCell(selectedCell)!
                     

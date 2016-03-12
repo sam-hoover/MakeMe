@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SharedReminderListTableViewCell: MakeMeTableViewCell {
+class SharedCollectionTableViewCell: MakeMeTableViewCell {
     
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var toLabel: UILabel!

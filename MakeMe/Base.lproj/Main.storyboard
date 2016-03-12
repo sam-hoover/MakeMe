@@ -146,13 +146,13 @@
         <!--Shared Reminder List-->
         <scene sceneID="eL3-lq-Z7b">
             <objects>
-                <tableViewController title="Shared Reminder List" id="jZN-9o-HPg" customClass="SharedReminderListTableViewController" customModule="MakeMe" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController title="Shared Reminder List" id="jZN-9o-HPg" customClass="SharedCollectionTableViewController" customModule="MakeMe" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="61" sectionHeaderHeight="28" sectionFooterHeight="28" id="4tP-Xf-8aR">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="SharedReminderListCell" rowHeight="61" id="tAP-Hv-nbi" customClass="SharedReminderListTableViewCell" customModule="MakeMe" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="SharedReminderListCell" rowHeight="61" id="tAP-Hv-nbi" customClass="SharedCollectionTableViewCell" customModule="MakeMe" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="72" width="600" height="61"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="tAP-Hv-nbi" id="kmz-64-PgK">
