@@ -92,15 +92,34 @@ class FriendTableViewController: UITableViewController, MakeMeTableViewCellDeleg
     }
     */
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
+        
+        if(segue.identifier == "AddSelectedFriend") {
+            if let SharedReminderListTableViewController = segue.destinationViewController as? SharedReminderListTableViewController {
+                
+                // Get the cell that generated this segue.
+                if let selectedCell = sender as? FriendTableViewCell {
+                    // the location of the selected list from the table view
+                    let indexPath = tableView.indexPathForCell(selectedCell)!
+                    
+                    // gets the selected reminder list from the array
+                    let selectedFriend = friends[indexPath.row]
+                    
+                    let newList = ReminderList(title: "\(selectedFriend.name!)")
+                    
+                    // sets the destinationVC's reminder list to the list that was selected
+                    SharedReminderListTableViewController.addReminderListToCollection(newList)
+                }
+            }
+        }
     }
-    */
+    
     
     
     // MARK: - MakeMeTableViewCellDelegate

@@ -149,7 +149,8 @@ class TextCodeViewController: UIViewController, UITextFieldDelegate {
             }
         }
         
-        print(enteredNumbers)
+        // for testing
+        //print(enteredNumbers)
     }
     
     func deletePressed()

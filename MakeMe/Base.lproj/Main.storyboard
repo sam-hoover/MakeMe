@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10115" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="DL4-me-Vzj">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="eGb-oZ-V6q">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10084"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
         <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -153,7 +153,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="SharedReminderListCell" rowHeight="61" id="tAP-Hv-nbi" customClass="SharedReminderListTableViewCell" customModule="MakeMe" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="72" width="600" height="61"/>
+                                <rect key="frame" x="0.0" y="28" width="600" height="61"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="tAP-Hv-nbi" id="kmz-64-PgK">
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="60.5"/>
@@ -251,7 +251,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="FriendCell" rowHeight="52" id="DrK-ai-aoo" customClass="FriendTableViewCell" customModule="MakeMe" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="92" width="600" height="52"/>
+                                <rect key="frame" x="0.0" y="28" width="600" height="52"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="DrK-ai-aoo" id="6Fg-YI-bTI">
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="51.5"/>
@@ -272,6 +272,7 @@
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="friendLabel" destination="Vl5-oJ-1BN" id="U5S-Db-5lu"/>
+                                    <segue destination="jZN-9o-HPg" kind="show" identifier="AddSelectedFriend" id="Ivk-ve-rTo"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -297,7 +298,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ReminderTableCell" rowHeight="52" id="ury-xu-77D" customClass="ReminderTableViewCell" customModule="MakeMe" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="72" width="600" height="52"/>
+                                <rect key="frame" x="0.0" y="28" width="600" height="52"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ury-xu-77D" id="rWY-Tu-zVh">
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="51.5"/>
@@ -770,7 +771,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="-1977" y="76.5"/>
+            <point key="canvasLocation" x="-2037" y="-84"/>
         </scene>
         <!--Text Code View Controller-->
         <scene sceneID="xbB-jF-Vhh">
@@ -1086,7 +1087,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Zre-DL-Z1n" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1749" y="846.75"/>
+            <point key="canvasLocation" x="-2037" y="610"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="Vf0-gF-4xA">
@@ -1149,7 +1150,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KSL-Zk-QAI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1047" y="800.25"/>
+            <point key="canvasLocation" x="-1261" y="610"/>
         </scene>
         <!--Reminder Lists-->
         <scene sceneID="Zk3-uU-k5T">
@@ -1598,7 +1599,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="-1209" y="76.5"/>
+            <point key="canvasLocation" x="-1261" y="-84"/>
         </scene>
     </scenes>
     <resources>
@@ -1607,4 +1608,7 @@
         <image name="art.png" width="715" height="217"/>
         <image name="messageicon.png" width="300" height="300"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="Ivk-ve-rTo"/>
+    </inferredMetricsTieBreakers>
 </document>

@@ -114,9 +114,11 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         
+        /*
         if segue.destinationViewController is TextCodeViewController {
             let vc = segue.destinationViewController as! TextCodeViewController
         }
+        */
         
         //vc.setPhoneNumber(phoneField.text!)
     }

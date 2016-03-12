@@ -177,5 +177,6 @@ class ShareReminderTableViewController: UITableViewController, MakeMeTableViewCe
             self.navigationItem.title = listTitle
         }
     }
+    
 
 }

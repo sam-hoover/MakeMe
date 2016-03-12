@@ -180,6 +180,14 @@ class SharedReminderListTableViewController: UITableViewController, MakeMeTableV
     }
     
     
+    // MARK: - Helper functions
+    
+    func addReminderListToCollection(reminderList: ReminderList) {
+        
+        // TODO: add in order insert
+        sharedReminderList += [reminderList]
+        
+    }
     
     
 } // class
