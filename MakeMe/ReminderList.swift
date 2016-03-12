@@ -45,6 +45,4 @@ class ReminderList {
         return reminders.count
     }
     
-    
-    
 }

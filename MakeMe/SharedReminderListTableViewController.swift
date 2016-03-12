@@ -8,6 +8,25 @@
 
 import UIKit
 
+extension Array {
+    func getInsertionIndexForNewElement(elem: Element, isOrderedBefore: (Element, Element) -> Bool) -> Int {
+        var lo = 0
+        var hi = self.count - 1
+        while lo <= hi {
+            let mid = (lo + hi)/2
+            if isOrderedBefore(self[mid], elem) {
+                lo = mid + 1
+            } else if isOrderedBefore(elem, self[mid]) {
+                hi = mid - 1
+            } else {
+                return mid // found at position mid
+            }
+        }
+        return lo // not found, would be inserted at position lo
+    }
+}
+
+
 class SharedReminderListTableViewController: UITableViewController, MakeMeTableViewCellDelegate {
 
     var sharedReminderList = [ReminderList]()
@@ -137,7 +156,9 @@ class SharedReminderListTableViewController: UITableViewController, MakeMeTableV
         if let sourceViewController = segue.sourceViewController as? ShareReminderTableViewController {
             
             let list = ReminderList()
+            
             list.title = sourceViewController.listTitle!
+            
             list.add(sourceViewController.reminderLists[0].reminders + sourceViewController.reminderLists[1].reminders)
             
             if let selectedIndexPath = tableView.indexPathForSelectedRow {
@@ -151,9 +172,7 @@ class SharedReminderListTableViewController: UITableViewController, MakeMeTableV
                 // add a new list
                 
                 let newIndexPath = NSIndexPath(forRow: sharedReminderList.count, inSection: 0)
-                
                 sharedReminderList.append(list)
-                
                 tableView.insertRowsAtIndexPaths([newIndexPath], withRowAnimation: .Bottom)
             }
             
@@ -182,10 +201,25 @@ class SharedReminderListTableViewController: UITableViewController, MakeMeTableV
     
     // MARK: - Helper functions
     
+    
+    
+    
     func addReminderListToCollection(reminderList: ReminderList) {
         
-        // TODO: add in order insert
-        sharedReminderList += [reminderList]
+        // get the in order index of where the new list should be added to the shared reminders lists
+        let index = sharedReminderList.getInsertionIndexForNewElement(reminderList) { (list1, list2) -> Bool in
+            if(list1.title < list2.title) {
+                return(true)
+            }
+            return(false)
+        }
+
+        
+        let newIndexPath = NSIndexPath(forRow: index, inSection: 0)
+        
+        self.sharedReminderList.insert(reminderList, atIndex: index)
+        
+        tableView.insertRowsAtIndexPaths([newIndexPath], withRowAnimation: .Bottom)
         
     }
     
