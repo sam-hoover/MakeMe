@@ -8,7 +8,7 @@
 
 import UIKit
 
-class PersonalReminderListTableViewCell: MakeMeTableViewCell, UITextFieldDelegate {
+class PersonalCollectionTableViewCell: MakeMeTableViewCell, UITextFieldDelegate {
 
     @IBOutlet weak var titleTextBox: UITextField!
     @IBOutlet weak var CountLabel: UILabel!

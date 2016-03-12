@@ -8,7 +8,7 @@
 
 import UIKit
 
-class PersonalReminderListTableViewController: UITableViewController, MakeMeTableViewCellDelegate {
+class PersonalCollectionTableViewController: UITableViewController, MakeMeTableViewCellDelegate {
 
     var personalReminderList = [ReminderList]()
     
@@ -57,7 +57,7 @@ class PersonalReminderListTableViewController: UITableViewController, MakeMeTabl
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         // not sure why i have to downcast here ("as!") and cannot just use "as"
-        let cell = tableView.dequeueReusableCellWithIdentifier(Storyboard.CellReuseIdentifier, forIndexPath: indexPath) as! PersonalReminderListTableViewCell
+        let cell = tableView.dequeueReusableCellWithIdentifier(Storyboard.CellReuseIdentifier, forIndexPath: indexPath) as! PersonalCollectionTableViewCell
 
         // Configure the cell...
         let reminderList = personalReminderList[indexPath.row]
@@ -105,7 +105,7 @@ class PersonalReminderListTableViewController: UITableViewController, MakeMeTabl
             if let ReminderListTableViewController = segue.destinationViewController as? ReminderTableViewController {
                 
                 // Get the cell that generated this segue.
-                if let selectedCell = sender as? PersonalReminderListTableViewCell {
+                if let selectedCell = sender as? PersonalCollectionTableViewCell {
                     // the location of the selected list from the table view
                     let indexPath = tableView.indexPathForCell(selectedCell)!
                     
@@ -161,7 +161,7 @@ class PersonalReminderListTableViewController: UITableViewController, MakeMeTabl
         self.tableView.reloadData()
         
         let path = NSIndexPath(forRow: personalReminderList.count - 1, inSection: 0)
-        if let cell = self.tableView.cellForRowAtIndexPath(path) as? PersonalReminderListTableViewCell {
+        if let cell = self.tableView.cellForRowAtIndexPath(path) as? PersonalCollectionTableViewCell {
             cell.textFieldDidBeginEditing(cell.titleTextBox)
         }
     }
