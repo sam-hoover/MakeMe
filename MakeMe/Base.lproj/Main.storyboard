@@ -511,7 +511,7 @@
                                         <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="contactAdd" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OLk-x6-m5w">
                                             <rect key="frame" x="570" y="21" width="22" height="28.5"/>
                                             <connections>
-                                                <segue destination="Fw4-Y6-PeN" kind="show" id="vJZ-Cu-Lq2"/>
+                                                <segue destination="Fw4-Y6-PeN" kind="show" identifier="showAddQuickAlarm" id="vJZ-Cu-Lq2"/>
                                             </connections>
                                         </button>
                                     </subviews>

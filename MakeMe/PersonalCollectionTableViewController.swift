@@ -8,9 +8,9 @@
 
 import UIKit
 
-class PersonalCollectionTableViewController: UITableViewController, MakeMeTableViewCellDelegate {
+class PersonalCollectionTableViewController: CollectionTableViewController {
 
-    var personalReminderList = [ReminderList]()
+    //var personalReminderList = [ReminderList]()
     
     //let settings = SettingsProfile()
     let colors = SettingsProfile.ColorProfile()
@@ -19,24 +19,20 @@ class PersonalCollectionTableViewController: UITableViewController, MakeMeTableV
         static let CellReuseIdentifier = "ReminderListTableCell"
     }
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // adding lists to be displayed
         setupTestLists()
-        personalReminderList += [testHomeList, testSchoolList]
+        reminderListCollection += [testHomeList, testSchoolList]
 
-        self.tableView.rowHeight = UIScreen.mainScreen().bounds.height / 11
+        //self.tableView.rowHeight = UIScreen.mainScreen().bounds.height / 11
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
 
     // MARK: - Table view data source
-
-    
+    /*
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return 1
     }
@@ -45,14 +41,14 @@ class PersonalCollectionTableViewController: UITableViewController, MakeMeTableV
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return personalReminderList.count
     }
-
+    */
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         // not sure why i have to downcast here ("as!") and cannot just use "as"
         let cell = tableView.dequeueReusableCellWithIdentifier(Storyboard.CellReuseIdentifier, forIndexPath: indexPath) as! PersonalCollectionTableViewCell
 
         // Configure the cell...
-        let reminderList = personalReminderList[indexPath.row]
+        let reminderList = reminderListCollection[indexPath.row]
         
         cell.reminderList = reminderList
         cell.selectionStyle = .None
@@ -77,7 +73,7 @@ class PersonalCollectionTableViewController: UITableViewController, MakeMeTableV
                     let indexPath = tableView.indexPathForCell(selectedCell)!
                     
                     // gets the selected reminder list from the array
-                    let selectedReminderList = personalReminderList[indexPath.row]
+                    let selectedReminderList = reminderListCollection[indexPath.row]
                     
                     // sets the destinationVC's reminder list to the list that was selected
                     ReminderListTableViewController.reminderList = selectedReminderList
@@ -96,16 +92,16 @@ class PersonalCollectionTableViewController: UITableViewController, MakeMeTableV
             if let selectedIndexPath = tableView.indexPathForSelectedRow {
                 // update an existing list
                 
-                personalReminderList[selectedIndexPath.row] = list
+                reminderListCollection[selectedIndexPath.row] = list
                 
                 tableView.reloadRowsAtIndexPaths([selectedIndexPath], withRowAnimation: .None)
                 
             } else {
                 // add a new list
                 
-                let newIndexPath = NSIndexPath(forRow: personalReminderList.count, inSection: 0)
+                let newIndexPath = NSIndexPath(forRow: reminderListCollection.count, inSection: 0)
                 
-                personalReminderList.append(list)
+                reminderListCollection.append(list)
                 
                 tableView.insertRowsAtIndexPaths([newIndexPath], withRowAnimation: .Bottom)
             }
@@ -121,17 +117,17 @@ class PersonalCollectionTableViewController: UITableViewController, MakeMeTableV
     @IBAction func addNewReminderList(sender: UIBarButtonItem) {
         let reminders = ReminderList(title: "")
         
-        personalReminderList += [reminders]
+        reminderListCollection += [reminders]
         
         self.tableView.reloadData()
         
-        let path = NSIndexPath(forRow: personalReminderList.count - 1, inSection: 0)
+        let path = NSIndexPath(forRow: reminderListCollection.count - 1, inSection: 0)
         if let cell = self.tableView.cellForRowAtIndexPath(path) as? PersonalCollectionTableViewCell {
             cell.textFieldDidBeginEditing(cell.titleTextBox)
         }
     }
     
-    
+    /*
     // MARK: - MakeMeTableViewCellDelegate
     
     func cellHasBeenDeleted(cell: UITableViewCell) {
@@ -147,7 +143,7 @@ class PersonalCollectionTableViewController: UITableViewController, MakeMeTableV
             tableView.endUpdates()
         }
     }
-    
+    */
     
     
     // MARK: - Testing

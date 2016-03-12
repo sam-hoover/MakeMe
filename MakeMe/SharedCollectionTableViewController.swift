@@ -27,16 +27,14 @@ extension Array {
 }
 
 
-class SharedCollectionTableViewController: UITableViewController, MakeMeTableViewCellDelegate {
-
-    var sharedReminderList = [ReminderList]()
+class SharedCollectionTableViewController: CollectionTableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         setupTestLists()
         
-        self.tableView.rowHeight = UIScreen.mainScreen().bounds.height / 11
+        //self.tableView.rowHeight = UIScreen.mainScreen().bounds.height / 11
     }
 
     override func didReceiveMemoryWarning() {
@@ -46,6 +44,7 @@ class SharedCollectionTableViewController: UITableViewController, MakeMeTableVie
 
     // MARK: - Table view data source
 
+    /*
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return 1
     }
@@ -53,6 +52,7 @@ class SharedCollectionTableViewController: UITableViewController, MakeMeTableVie
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return sharedReminderList.count
     }
+    */
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         // not sure why i have to downcast here ("as!") and cannot just use "as"
@@ -60,7 +60,7 @@ class SharedCollectionTableViewController: UITableViewController, MakeMeTableVie
         let cell = tableView.dequeueReusableCellWithIdentifier(cellReuseIdentifier, forIndexPath: indexPath) as! SharedCollectionTableViewCell
         
         // Configure the cell...
-        let reminderList = sharedReminderList[indexPath.row]
+        let reminderList = reminderListCollection[indexPath.row]
         
         cell.reminderList = reminderList
         cell.delegate = self
@@ -108,7 +108,7 @@ class SharedCollectionTableViewController: UITableViewController, MakeMeTableVie
                     let indexPath = tableView.indexPathForCell(selectedCell)!
                     
                     // gets the selected reminder list from the array
-                    let selectedReminderList = sharedReminderList[indexPath.row]
+                    let selectedReminderList = reminderListCollection[indexPath.row]
                     
                     // sets the destinationVC's reminder list to the list that was selected
                     ReminderListTableViewController.setupReminders(selectedReminderList)
@@ -131,15 +131,15 @@ class SharedCollectionTableViewController: UITableViewController, MakeMeTableVie
             if let selectedIndexPath = tableView.indexPathForSelectedRow {
                 // update an existing list
                 
-                sharedReminderList[selectedIndexPath.row] = list
+                reminderListCollection[selectedIndexPath.row] = list
                 
                 tableView.reloadRowsAtIndexPaths([selectedIndexPath], withRowAnimation: .None)
                 
             } else {
                 // add a new list
                 
-                let newIndexPath = NSIndexPath(forRow: sharedReminderList.count, inSection: 0)
-                sharedReminderList.append(list)
+                let newIndexPath = NSIndexPath(forRow: reminderListCollection.count, inSection: 0)
+                reminderListCollection.append(list)
                 tableView.insertRowsAtIndexPaths([newIndexPath], withRowAnimation: .Bottom)
             }
             
@@ -149,6 +149,7 @@ class SharedCollectionTableViewController: UITableViewController, MakeMeTableVie
     }
     
     
+    /*
     // MARK: - MakeMeTableViewCellDelegate
     
     func cellHasBeenDeleted(cell: UITableViewCell) {
@@ -164,6 +165,7 @@ class SharedCollectionTableViewController: UITableViewController, MakeMeTableVie
             tableView.endUpdates()
         }
     }
+*/
     
     
     // MARK: - Helper functions
@@ -172,7 +174,7 @@ class SharedCollectionTableViewController: UITableViewController, MakeMeTableVie
     func addReminderListToCollection(reminderList: ReminderList) {
         
         // get the in order index of where the new list should be added to the shared reminders lists
-        let index = sharedReminderList.getInsertionIndexForNewElement(reminderList) { (list1, list2) -> Bool in
+        let index = reminderListCollection.getInsertionIndexForNewElement(reminderList) { (list1, list2) -> Bool in
             if(list1.title < list2.title) {
                 return(true)
             }
@@ -182,7 +184,7 @@ class SharedCollectionTableViewController: UITableViewController, MakeMeTableVie
         
         let newIndexPath = NSIndexPath(forRow: index, inSection: 0)
         
-        self.sharedReminderList.insert(reminderList, atIndex: index)
+        self.reminderListCollection.insert(reminderList, atIndex: index)
         
         tableView.insertRowsAtIndexPaths([newIndexPath], withRowAnimation: .Bottom)
         
@@ -204,7 +206,7 @@ class SharedCollectionTableViewController: UITableViewController, MakeMeTableVie
         friend1.reminders[0].from = "Lois Lane"
         friend2.reminders[0].from = "Mary-Jane Watson"
         friend3.reminders[0].from = "Selina Kyle"
-        sharedReminderList += [friend1, friend2, friend3]
+        reminderListCollection += [friend1, friend2, friend3]
         
     }
     
