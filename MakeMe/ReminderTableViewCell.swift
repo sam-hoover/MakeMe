@@ -43,6 +43,8 @@ class ReminderTableViewCell: MakeMeTableViewCell, UITextFieldDelegate {
         super.setSelected(selected, animated: animated)
         // Configure the view for the selected state
         addAlertButton.hidden = true
+        
+        
     }
     
     
@@ -77,6 +79,7 @@ class ReminderTableViewCell: MakeMeTableViewCell, UITextFieldDelegate {
     
     // MARK: - Actions
     @IBAction func addAlert(sender: UIButton) {
+        reminderText.resignFirstResponder()
         delegate!.cellHasBeenSelected(self)
     }
     

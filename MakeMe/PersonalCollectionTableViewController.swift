@@ -22,6 +22,8 @@ class PersonalCollectionTableViewController: CollectionTableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+      
 
         // adding lists to be displayed
         setupTestLists()

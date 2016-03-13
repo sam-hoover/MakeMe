@@ -10,7 +10,9 @@ import UIKit
 
 class AddCustomeAlertViewController: UIViewController {
 
-    @IBOutlet weak var datePicker: NSLayoutConstraint!
+    var alert: String?
+
+    @IBOutlet weak var datePicker: UIDatePicker!
     
     @IBOutlet weak var setAlertButton: UIButton!
     
@@ -26,14 +28,17 @@ class AddCustomeAlertViewController: UIViewController {
     }
     
 
-    /*
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
+        
+        let dateFormatter = NSDateFormatter()
+        dateFormatter.dateStyle = .LongStyle
+        dateFormatter.timeStyle = .ShortStyle
+        alert = dateFormatter.stringFromDate(datePicker.date)
     }
-    */
 
 }

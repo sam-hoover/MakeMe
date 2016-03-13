@@ -361,6 +361,9 @@
                                 <rect key="frame" x="285" y="416" width="30" height="32"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                 <state key="normal" title="Set"/>
+                                <connections>
+                                    <segue destination="Mfd-fx-geU" kind="unwind" unwindAction="unwindFromAddCustomAlert:" id="SmH-fR-WfA"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -372,11 +375,12 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="datePicker" destination="aH2-Bn-u0O" id="53j-Ix-Hd2"/>
+                        <outlet property="datePicker" destination="Lh1-6T-Rw3" id="5f0-eQ-VLK"/>
                         <outlet property="setAlertButton" destination="mZc-A4-Yxb" id="wD4-56-oIN"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="w0L-V0-QbB" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="Mfd-fx-geU" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="3407" y="259"/>
         </scene>

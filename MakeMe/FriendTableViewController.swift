@@ -15,10 +15,11 @@ class FriendTableViewController: UITableViewController, MakeMeTableViewCellDeleg
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        tableView.estimatedRowHeight = tableView.rowHeight
+        tableView.rowHeight = UITableViewAutomaticDimension
         
         loadFriends()
         
-         self.tableView.rowHeight = UIScreen.mainScreen().bounds.height / 11
     }
 
     override func didReceiveMemoryWarning() {
@@ -134,7 +135,8 @@ class FriendTableViewController: UITableViewController, MakeMeTableViewCellDeleg
     }
     
     func cellHasBeenSelected(cell: UITableViewCell) {
-        
+        print("friends")
+
     }
     
     // MARK: - Testing

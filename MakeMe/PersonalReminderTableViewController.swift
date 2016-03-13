@@ -18,6 +18,9 @@ class PersonalReminderTableViewController: MakeMeTableViewController, MakeMeTabl
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        tableView.estimatedRowHeight = tableView.rowHeight
+        tableView.rowHeight = UITableViewAutomaticDimension
+        
         setTitle()
     }
 
@@ -49,6 +52,7 @@ class PersonalReminderTableViewController: MakeMeTableViewController, MakeMeTabl
         cell.reminder = reminder
         cell.selectionStyle = .None
         cell.delegate = self
+        
                 
         return cell
     }
@@ -95,11 +99,22 @@ class PersonalReminderTableViewController: MakeMeTableViewController, MakeMeTabl
             if let selectedIndexPath = indexOfSelectedCell {
                 
                 reminderList.reminders[selectedIndexPath.row].alert = sourceViewController.alert
+                tableView.reloadRowsAtIndexPaths([selectedIndexPath], withRowAnimation: .None)
+            }
+        }
+    }
+    
+    
+    @IBAction func unwindFromAddCustomAlert(segue: UIStoryboardSegue) {
+        
+        if let sourceViewController = segue.sourceViewController as? AddCustomeAlertViewController {
+            
+            if let selectedIndexPath = indexOfSelectedCell {
+                
+                reminderList.reminders[selectedIndexPath.row].alert = sourceViewController.alert
                 
                 tableView.reloadRowsAtIndexPaths([selectedIndexPath], withRowAnimation: .None)
             }
-            
-            // Save the list to disc here
         }
     }
     

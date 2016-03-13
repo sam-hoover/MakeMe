@@ -21,6 +21,9 @@ class SharedReminderTableViewController: MakeMeTableViewController, MakeMeTableV
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        tableView.estimatedRowHeight = tableView.rowHeight
+        tableView.rowHeight = UITableViewAutomaticDimension
+        
         setTitle()
     }
 
@@ -177,7 +180,8 @@ class SharedReminderTableViewController: MakeMeTableViewController, MakeMeTableV
     }
     
     func cellHasBeenSelected(cell: UITableViewCell) {
-        
+        print("shared")
+
     }
     
     

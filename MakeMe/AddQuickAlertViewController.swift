@@ -43,13 +43,18 @@ class AddQuickAlertViewController: UIViewController {
 
     @IBAction func addAlert(sender: UIButton) {
         
+        let times = SettingsProfile.Times()
+        
+        var date = NSDate()
+        
         switch(sender.tag) {
-            
         // Later
         case 1:
-            self.alert = "Later"
+            date = NSDate(timeIntervalSinceNow: times.twoHoursInSeconds)
+            
         // Tonight
         case 2:
+            
             self.alert = "Tonight"
             
         // Tomorrow Morning
@@ -66,21 +71,23 @@ class AddQuickAlertViewController: UIViewController {
         
         // In a couple days
         case 6:
-            self.alert = "In a couple days"
+            date = NSDate(timeIntervalSinceNow: times.coupleOfDays)
         
         // Next week
         case 7:
-            self.alert = "Next week"
+            date = NSDate(timeIntervalSinceNow: times.oneWeekInSeconds)
         
         // Next month
         case 8:
-            self.alert = "Next month"
-
+            date = NSDate(timeIntervalSinceNow: times.oneMonthInSeconds)
         default:
              break
         }
         
-        
+        let dateFormatter = NSDateFormatter()
+        dateFormatter.dateStyle = .LongStyle
+        dateFormatter.timeStyle = .ShortStyle
+        alert = dateFormatter.stringFromDate(date)
         
     }
 }
