@@ -133,6 +133,9 @@ class FriendTableViewController: UITableViewController, MakeMeTableViewCellDeleg
         }
     }
     
+    func cellHasBeenSelected(cell: UITableViewCell) {
+        
+    }
     
     // MARK: - Testing
     

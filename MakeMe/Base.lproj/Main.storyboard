@@ -111,6 +111,7 @@
                                         <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="contactAdd" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qmd-HG-Udh">
                                             <rect key="frame" x="570" y="21" width="22" height="28.5"/>
                                             <connections>
+                                                <action selector="addAlert:" destination="IXo-oS-9DQ" eventType="touchUpInside" id="ocF-W3-V4a"/>
                                                 <segue destination="Fw4-Y6-PeN" kind="show" identifier="showAddQuickAlarm" id="Zk5-SA-2Rf"/>
                                             </connections>
                                         </button>
@@ -283,6 +284,9 @@
                                 <rect key="frame" x="396" y="388" width="176" height="160"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                 <state key="normal" title="Custom Time"/>
+                                <connections>
+                                    <segue destination="9LQ-Fh-afV" kind="show" id="z8M-IG-Fid"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -334,6 +338,47 @@
                 <exit id="ZG5-Wz-faB" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="2695" y="259"/>
+        </scene>
+        <!--Add Custome Alert View Controller-->
+        <scene sceneID="5Zi-dt-NOw">
+            <objects>
+                <viewController id="9LQ-Fh-afV" customClass="AddCustomeAlertViewController" customModule="MakeMe" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="EKD-XK-yWQ"/>
+                        <viewControllerLayoutGuide type="bottom" id="Kf3-vh-ezF"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="jgf-2d-a98">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="Lh1-6T-Rw3">
+                                <rect key="frame" x="140" y="192" width="320" height="216"/>
+                                <date key="date" timeIntervalSinceReferenceDate="479520612.90676999">
+                                    <!--2016-03-13 00:10:12 +0000-->
+                                </date>
+                            </datePicker>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mZc-A4-Yxb">
+                                <rect key="frame" x="285" y="416" width="30" height="32"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                <state key="normal" title="Set"/>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Lh1-6T-Rw3" firstAttribute="centerX" secondItem="jgf-2d-a98" secondAttribute="centerX" id="0bL-Oi-Bjb"/>
+                            <constraint firstItem="mZc-A4-Yxb" firstAttribute="centerX" secondItem="jgf-2d-a98" secondAttribute="centerX" id="Mdx-gM-zul"/>
+                            <constraint firstItem="Lh1-6T-Rw3" firstAttribute="centerY" secondItem="jgf-2d-a98" secondAttribute="centerY" id="aH2-Bn-u0O"/>
+                            <constraint firstItem="mZc-A4-Yxb" firstAttribute="top" secondItem="Lh1-6T-Rw3" secondAttribute="bottom" constant="8" id="iBE-tc-DIv"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="datePicker" destination="aH2-Bn-u0O" id="53j-Ix-Hd2"/>
+                        <outlet property="setAlertButton" destination="mZc-A4-Yxb" id="wD4-56-oIN"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="w0L-V0-QbB" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3407" y="259"/>
         </scene>
         <!--Shared Collection-->
         <scene sceneID="eL3-lq-Z7b">
@@ -1846,6 +1891,6 @@
         <image name="messageicon.png" width="300" height="300"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="vJZ-Cu-Lq2"/>
+        <segue reference="Zk5-SA-2Rf"/>
     </inferredMetricsTieBreakers>
 </document>

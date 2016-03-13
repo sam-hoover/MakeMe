@@ -10,6 +10,7 @@ import UIKit
 
 protocol MakeMeTableViewCellDelegate {
     func cellHasBeenDeleted(cell: UITableViewCell)
+    func cellHasBeenSelected(cell:UITableViewCell)
 }
 
 class MakeMeTableViewCell: UITableViewCell {

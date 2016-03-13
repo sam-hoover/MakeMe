@@ -8,7 +8,7 @@
 
 import UIKit
 
-class PersonalReminderTableViewController: UITableViewController, MakeMeTableViewCellDelegate {
+class PersonalReminderTableViewController: MakeMeTableViewController, MakeMeTableViewCellDelegate {
 
     var reminderList = ReminderList()
     var indexOfSelectedCell: NSIndexPath?
@@ -19,8 +19,6 @@ class PersonalReminderTableViewController: UITableViewController, MakeMeTableVie
         super.viewDidLoad()
 
         setTitle()
-        
-        self.tableView.rowHeight = UIScreen.mainScreen().bounds.height / 11
     }
 
     override func didReceiveMemoryWarning() {
@@ -48,12 +46,10 @@ class PersonalReminderTableViewController: UITableViewController, MakeMeTableVie
         // Configure the cell...
         let reminder = reminderList.reminders[indexPath.row]
         
-        reminder.alert = "Alert"
-        
         cell.reminder = reminder
         cell.selectionStyle = .None
         cell.delegate = self
-        
+                
         return cell
     }
 
@@ -84,46 +80,26 @@ class PersonalReminderTableViewController: UITableViewController, MakeMeTableVie
     
     // MARK: - Navigation
     
-    
+    /*
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
-        
-        
-        /*
-        if(segue.identifier == "showAddQuickAlarm") {
-            if let destinationViewController = segue.destinationViewController as? AddQuickAlertViewController {
-                
-        // TODO: Need to find a way to get the index of the current cell to be able to add alert to the correct reminder
-        
-        
-            }
-        }
-        */
     }
-    
+    */
     
     @IBAction func unwindFromAddQuickAlert(segue: UIStoryboardSegue) {
         
         if let sourceViewController = segue.sourceViewController as? AddQuickAlertViewController {
             
-            //let list = sourceViewController.reminderList
-            
-            if let selectedIndexPath = sourceViewController.reminderIndex {
-                // update an existing list
+            if let selectedIndexPath = indexOfSelectedCell {
                 
-                // set the reminder's alert at the selected cell
                 reminderList.reminders[selectedIndexPath.row].alert = sourceViewController.alert
                 
                 tableView.reloadRowsAtIndexPaths([selectedIndexPath], withRowAnimation: .None)
-                
-            } else {
-                // add a new list
-                
             }
-            // Save the list to disc here
             
+            // Save the list to disc here
         }
     }
     
@@ -153,9 +129,7 @@ class PersonalReminderTableViewController: UITableViewController, MakeMeTableVie
     // MARK: - MakeMeTableViewCellDelegate
 
     func cellHasBeenDeleted(cell: UITableViewCell) {
-
             if let index = self.tableView.indexPathForCell(cell) {
-        
             // could removeAtIndex in the loop but keep it here for when indexOfObject works
             reminderList.reminders.removeAtIndex(index.row)
         
@@ -164,6 +138,12 @@ class PersonalReminderTableViewController: UITableViewController, MakeMeTableVie
             let indexPathForRow = NSIndexPath(forRow: index.row, inSection: 0)
             tableView.deleteRowsAtIndexPaths([indexPathForRow], withRowAnimation: .Fade)
             tableView.endUpdates()
+        }
+    }
+    
+    func cellHasBeenSelected(cell: UITableViewCell) {
+        if let index = self.tableView.indexPathForCell(cell) {
+            indexOfSelectedCell = index
         }
     }
     

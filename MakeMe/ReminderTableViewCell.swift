@@ -74,6 +74,11 @@ class ReminderTableViewCell: MakeMeTableViewCell, UITextFieldDelegate {
         addAlertButton.hidden = true
     }
     
-
+    
+    // MARK: - Actions
+    @IBAction func addAlert(sender: UIButton) {
+        delegate!.cellHasBeenSelected(self)
+    }
+    
     
 } // class

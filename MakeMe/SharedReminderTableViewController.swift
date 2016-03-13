@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SharedReminderTableViewController: UITableViewController, MakeMeTableViewCellDelegate {
+class SharedReminderTableViewController: MakeMeTableViewController, MakeMeTableViewCellDelegate {
 
     struct Index {
         static let from = 0
@@ -22,8 +22,6 @@ class SharedReminderTableViewController: UITableViewController, MakeMeTableViewC
         super.viewDidLoad()
         
         setTitle()
-        
-        self.tableView.rowHeight = UIScreen.mainScreen().bounds.height / 11
     }
 
     override func didReceiveMemoryWarning() {
@@ -176,6 +174,10 @@ class SharedReminderTableViewController: UITableViewController, MakeMeTableViewC
             tableView.deleteRowsAtIndexPaths([indexPathForRow], withRowAnimation: .Fade)
             tableView.endUpdates()
         }
+    }
+    
+    func cellHasBeenSelected(cell: UITableViewCell) {
+        
     }
     
     

@@ -31,10 +31,9 @@ class SharedCollectionTableViewController: CollectionTableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+  
+        // for testing
         setupTestLists()
-        
-        //self.tableView.rowHeight = UIScreen.mainScreen().bounds.height / 11
     }
 
     override func didReceiveMemoryWarning() {
@@ -42,17 +41,8 @@ class SharedCollectionTableViewController: CollectionTableViewController {
         // Dispose of any resources that can be recreated.
     }
 
+    
     // MARK: - Table view data source
-
-    /*
-    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        return 1
-    }
-
-    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return sharedReminderList.count
-    }
-    */
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         // not sure why i have to downcast here ("as!") and cannot just use "as"
@@ -67,29 +57,6 @@ class SharedCollectionTableViewController: CollectionTableViewController {
         
         return cell
     }
-
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
-    }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(tableView: UITableView, moveRowAtIndexPath fromIndexPath: NSIndexPath, toIndexPath: NSIndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(tableView: UITableView, canMoveRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
 
     
     // MARK: - Navigation
@@ -149,28 +116,7 @@ class SharedCollectionTableViewController: CollectionTableViewController {
     }
     
     
-    /*
-    // MARK: - MakeMeTableViewCellDelegate
-    
-    func cellHasBeenDeleted(cell: UITableViewCell) {
-        
-        if let index = self.tableView.indexPathForCell(cell) {
-            
-            sharedReminderList.removeAtIndex(index.row)
-            
-            // use the UITableView to animate the removal of this row
-            tableView.beginUpdates()
-            let indexPathForRow = NSIndexPath(forRow: index.row, inSection: 0)
-            tableView.deleteRowsAtIndexPaths([indexPathForRow], withRowAnimation: .Fade)
-            tableView.endUpdates()
-        }
-    }
-*/
-    
-    
     // MARK: - Helper functions
-    
-    
     func addReminderListToCollection(reminderList: ReminderList) {
         
         // get the in order index of where the new list should be added to the shared reminders lists
@@ -187,7 +133,6 @@ class SharedCollectionTableViewController: CollectionTableViewController {
         self.reminderListCollection.insert(reminderList, atIndex: index)
         
         tableView.insertRowsAtIndexPaths([newIndexPath], withRowAnimation: .Bottom)
-        
     }
     
     

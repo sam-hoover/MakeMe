@@ -25,24 +25,11 @@ class PersonalCollectionTableViewController: CollectionTableViewController {
 
         // adding lists to be displayed
         setupTestLists()
-        reminderListCollection += [testHomeList, testSchoolList]
-
-        //self.tableView.rowHeight = UIScreen.mainScreen().bounds.height / 11
     }
 
 
     // MARK: - Table view data source
-    /*
-    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        return 1
-    }
 
-    
-    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return personalReminderList.count
-    }
-    */
-    
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         // not sure why i have to downcast here ("as!") and cannot just use "as"
         let cell = tableView.dequeueReusableCellWithIdentifier(Storyboard.CellReuseIdentifier, forIndexPath: indexPath) as! PersonalCollectionTableViewCell
@@ -127,24 +114,6 @@ class PersonalCollectionTableViewController: CollectionTableViewController {
         }
     }
     
-    /*
-    // MARK: - MakeMeTableViewCellDelegate
-    
-    func cellHasBeenDeleted(cell: UITableViewCell) {
-        
-        if let index = self.tableView.indexPathForCell(cell) {
-            
-            personalReminderList.removeAtIndex(index.row)
-            
-            // use the UITableView to animate the removal of this row
-            tableView.beginUpdates()
-            let indexPathForRow = NSIndexPath(forRow: index.row, inSection: 0)
-            tableView.deleteRowsAtIndexPaths([indexPathForRow], withRowAnimation: .Fade)
-            tableView.endUpdates()
-        }
-    }
-    */
-    
     
     // MARK: - Testing
     
@@ -159,6 +128,7 @@ class PersonalCollectionTableViewController: CollectionTableViewController {
         
         testHomeList.reminders += [home1, home2]
         testSchoolList.reminders += [school1, school2]
+        reminderListCollection += [testHomeList, testSchoolList]
     }
     
     

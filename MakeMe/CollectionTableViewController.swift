@@ -103,5 +103,9 @@ class CollectionTableViewController: MakeMeTableViewController, MakeMeTableViewC
         }
     }
     
+    func cellHasBeenSelected(cell: UITableViewCell) {
+        
+    }
+    
 
 }
