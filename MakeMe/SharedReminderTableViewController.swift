@@ -15,8 +15,10 @@ class SharedReminderTableViewController: MakeMeTableViewController, MakeMeTableV
         static let to = 1
     }
     
+    
     var reminderLists = [ReminderList(title: "From"), ReminderList(title: "To")]
     var listTitle: String?
+    var indexOfSelectedCell: NSIndexPath?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -99,43 +101,36 @@ class SharedReminderTableViewController: MakeMeTableViewController, MakeMeTableV
 
     
     // MARK: - Navigation
-
+    /*
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-
-        if(segue.identifier == "showAddQuickAlarm") {
-            if let destinationViewController = segue.destinationViewController as? AddQuickAlertViewController {
-                
-                // TODO: Need to find a way to get the index of the current cell to be able to add alert to the correct reminder
-                
-                
-            }
-        }
         
     }
-
+    */
     
     
     @IBAction func unwindFromAddQuickAlert(segue: UIStoryboardSegue) {
         
         if let sourceViewController = segue.sourceViewController as? AddQuickAlertViewController {
             
-            //let list = sourceViewController.reminderList
-            
-            //if let selectedIndexPath = sourceViewController.reminderIndex {
-                // update an existing list
+            if let selectedIndexPath = indexOfSelectedCell {
                 
-                // set the reminder's alert at the selected cell
-                //reminderList.reminders[selectedIndexPath.row].alert = sourceViewController.alert
+                reminderLists[selectedIndexPath.section].reminders[selectedIndexPath.row].alert = sourceViewController.alert
+                tableView.reloadRowsAtIndexPaths([selectedIndexPath], withRowAnimation: .None)
+            }
+        }
+    }
+    
+    
+    @IBAction func unwindFromAddCustomAlert(segue: UIStoryboardSegue) {
+        
+        if let sourceViewController = segue.sourceViewController as? AddCustomeAlertViewController {
+        
+            if let selectedIndexPath = indexOfSelectedCell {
                 
-                //tableView.reloadRowsAtIndexPaths([selectedIndexPath], withRowAnimation: .None)
-                
-            //} else {
-                // add a new list
-                
-            //}
-            // Save the list to disc here
-            
+                reminderLists[selectedIndexPath.section].reminders[selectedIndexPath.row].alert = sourceViewController.alert
+                tableView.reloadRowsAtIndexPaths([selectedIndexPath], withRowAnimation: .None)
+            }
         }
     }
     
@@ -180,8 +175,9 @@ class SharedReminderTableViewController: MakeMeTableViewController, MakeMeTableV
     }
     
     func cellHasBeenSelected(cell: UITableViewCell) {
-        print("shared")
-
+        if let index = self.tableView.indexPathForCell(cell) {
+            indexOfSelectedCell = index
+        }
     }
     
     

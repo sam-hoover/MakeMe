@@ -43,8 +43,6 @@ class ReminderTableViewCell: MakeMeTableViewCell, UITextFieldDelegate {
         super.setSelected(selected, animated: animated)
         // Configure the view for the selected state
         addAlertButton.hidden = true
-        
-        
     }
     
     

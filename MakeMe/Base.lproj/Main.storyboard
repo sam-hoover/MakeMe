@@ -560,6 +560,7 @@
                                         <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="contactAdd" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OLk-x6-m5w">
                                             <rect key="frame" x="570" y="21" width="22" height="28.5"/>
                                             <connections>
+                                                <action selector="addAlert:" destination="Z32-g4-7rT" eventType="touchUpInside" id="4du-zQ-nKl"/>
                                                 <segue destination="Fw4-Y6-PeN" kind="show" identifier="showAddQuickAlarm" id="vJZ-Cu-Lq2"/>
                                             </connections>
                                         </button>
@@ -587,14 +588,14 @@
                                     </constraints>
                                     <variation key="default">
                                         <mask key="constraints">
-                                            <exclude reference="mjV-S7-eOe"/>
-                                            <exclude reference="j3Y-wH-yJA"/>
-                                            <exclude reference="qor-Ik-npz"/>
                                             <exclude reference="ZU6-fS-2nr"/>
+                                            <exclude reference="j3Y-wH-yJA"/>
+                                            <exclude reference="mjV-S7-eOe"/>
+                                            <exclude reference="qor-Ik-npz"/>
                                             <exclude reference="xYK-Ww-GEb"/>
-                                            <exclude reference="qBq-zF-yWS"/>
-                                            <exclude reference="PAO-H1-kN1"/>
                                             <exclude reference="7uV-sH-69o"/>
+                                            <exclude reference="PAO-H1-kN1"/>
+                                            <exclude reference="qBq-zF-yWS"/>
                                             <exclude reference="sc5-9H-6dg"/>
                                             <exclude reference="2TB-Ah-q4O"/>
                                         </mask>
@@ -1895,6 +1896,6 @@
         <image name="messageicon.png" width="300" height="300"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Zk5-SA-2Rf"/>
+        <segue reference="vJZ-Cu-Lq2"/>
     </inferredMetricsTieBreakers>
 </document>
