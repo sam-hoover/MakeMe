@@ -12,10 +12,18 @@ class AddQuickAlertViewController: UIViewController {
 
     var alert: String?
     
+    @IBOutlet weak var tonightButton: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        
+        if(eveningHasPassed()) {
+            tonightButton.enabled = false
+            tonightButton.titleLabel?.textColor = UIColor.grayColor()
+        }
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -55,20 +63,28 @@ class AddQuickAlertViewController: UIViewController {
         // Tonight
         case 2:
             
+            
             self.alert = "Tonight"
             
         // Tomorrow Morning
         case 3:
-            self.alert = "Tomorrow Morning"
-        
+            
+            let tempDate = NSDate(timeIntervalSinceNow: times.oneDayInSeconds)
+            
+            date = NSCalendar.currentCalendar().dateBySettingHour(9, minute: 0, second: 0, ofDate: tempDate, options: NSCalendarOptions())!
+            
         // Tomorrow Afternoon
         case 4:
-            self.alert = "Tomorrow Afternoon"
+            let tempDate = NSDate(timeIntervalSinceNow: times.oneDayInSeconds)
+            
+            date = NSCalendar.currentCalendar().dateBySettingHour(12, minute: 0, second: 0, ofDate: tempDate, options: NSCalendarOptions())!
             
         // Tomorrow Evening
         case 5:
-            self.alert = "Tomorrow Evening"
-        
+            let tempDate = NSDate(timeIntervalSinceNow: times.oneDayInSeconds)
+            
+            date = NSCalendar.currentCalendar().dateBySettingHour(17, minute: 0, second: 0, ofDate: tempDate, options: NSCalendarOptions())!
+            
         // In a couple days
         case 6:
             date = NSDate(timeIntervalSinceNow: times.coupleOfDays)
@@ -90,4 +106,17 @@ class AddQuickAlertViewController: UIViewController {
         alert = dateFormatter.stringFromDate(date)
         
     }
+    
+    
+    
+    func eveningHasPassed() -> Bool {
+        let currentDate = NSDate()
+        let eveningOfCurrentDate = NSCalendar.currentCalendar().dateBySettingHour(20, minute: 0, second: 0, ofDate: currentDate, options: NSCalendarOptions())!
+        
+        let eveningHasPassed = currentDate.compare(eveningOfCurrentDate) == NSComparisonResult.OrderedDescending
+        
+        return(eveningHasPassed)
+    }
+    
+    
 }

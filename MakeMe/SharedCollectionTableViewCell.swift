@@ -53,11 +53,12 @@ class SharedCollectionTableViewCell: MakeMeTableViewCell {
         var toCount = 0
         var fromCount = 0
         
-        for(var i = 0; i < self.reminderList!.count(); i++) {
+        for i in 0..<self.reminderList!.count() {
+        //for(var i = 0; i < self.reminderList!.count(); i += 1) {
             if(reminderList!.reminders[i].from != nil) {
-                fromCount++
+                fromCount += 1
             } else {
-                toCount++
+                toCount += 1
             }
         }
         return(fromCount, toCount)

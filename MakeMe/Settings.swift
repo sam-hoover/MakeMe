@@ -24,6 +24,7 @@ class SettingsProfile {
     struct Times {
         let oneHourInSeconds: Double = 3600
         let twoHoursInSeconds: Double = 7200
+        let oneDayInSeconds: Double = 86400
         let coupleOfDays: Double = 172800
         let oneWeekInSeconds: Double = 604800
         let oneMonthInSeconds: Double = 2419200

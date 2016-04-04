@@ -185,7 +185,8 @@ class SharedReminderTableViewController: MakeMeTableViewController, MakeMeTableV
     
     func setupReminders(reminderList: ReminderList) {
         self.listTitle = reminderList.title
-        for(var i = 0; i < reminderList.count(); i++) {
+        
+        for i in 0..<reminderList.count() {
             if(reminderList.reminders[i].from != nil) {
                 self.reminderLists[Index.from].reminders += [reminderList.reminders[i]]
             } else {

@@ -18,6 +18,10 @@ class MakeMeTableViewCell: UITableViewCell {
     var originalCenter = CGPoint()
     var deleteOnDragRelease = false
     
+    var completedImage: UIImage!
+    var deletedImage: UIImage!
+    let kUICuesMargin: CGFloat = 10.0, kUICuesWidth: CGFloat = 50.0
+    
     // The object that acts as delegate for this cell.
     var delegate: MakeMeTableViewCellDelegate?
     
@@ -26,7 +30,7 @@ class MakeMeTableViewCell: UITableViewCell {
         // Initialization code
         
         // add a pan recognizer
-        let recognizer = UIPanGestureRecognizer(target: self, action: "handlePan:")
+        let recognizer = UIPanGestureRecognizer(target: self, action: #selector(MakeMeTableViewCell.handlePan(_:)))
         recognizer.delegate = self
         addGestureRecognizer(recognizer)
     }
@@ -35,18 +39,25 @@ class MakeMeTableViewCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
+        let completedImageView = UIImageView(frame: CGRect(x: -kUICuesWidth - kUICuesMargin, y: 0, width: kUICuesWidth, height: bounds.size.height))
+        
+        let deletedImageView = UIImageView(frame: CGRect(x: bounds.size.width + kUICuesMargin, y: 0, width: kUICuesWidth, height: bounds.size.height))
+        
+        completedImage = UIImage(named: "Complete")
+        completedImageView.image = completedImage
+        
+        deletedImage = UIImage(named: "Deleted")
+        deletedImageView.image = deletedImage
+        
+        addSubview(completedImageView)
+        addSubview(deletedImageView)
         
     }
     
-    // utility method for creating the contextual cues
-    func createCueLabel() -> UILabel {
-        let label = UILabel(frame: CGRect.null)
-        label.textColor = UIColor.whiteColor()
-        label.font = UIFont.boldSystemFontOfSize(32.0)
-        label.backgroundColor = UIColor.clearColor()
-        return label
-    }
 
+    
+    
+    
     // MARK: UIGestureRecognizer
     
     override func gestureRecognizerShouldBegin(gestureRecognizer: UIGestureRecognizer) -> Bool {
@@ -74,6 +85,7 @@ class MakeMeTableViewCell: UITableViewCell {
             center = CGPointMake(originalCenter.x + translation.x, originalCenter.y)
             // has the user dragged the item far enough to initiate a delete/complete?
             deleteOnDragRelease = frame.origin.x < -frame.size.width / 2.0
+            
         }
         
         if recognizer.state == .Ended {
