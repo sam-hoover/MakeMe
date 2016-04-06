@@ -19,6 +19,8 @@ class AddQuickAlertViewController: UIViewController {
 
         // Do any additional setup after loading the view.
         
+        self.navigationItem.title = "Quick Alarm"
+        
         if(eveningHasPassed()) {
             tonightButton.enabled = false
             tonightButton.titleLabel?.textColor = UIColor.grayColor()

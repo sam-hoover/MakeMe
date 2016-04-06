@@ -19,7 +19,7 @@ class AddCustomeAlertViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        self.navigationItem.title = "Custom Alarm"
     }
 
     override func didReceiveMemoryWarning() {

@@ -119,8 +119,8 @@ class PersonalCollectionTableViewController: CollectionTableViewController {
     
     // MARK: - Testing
     
-    var testHomeList = ReminderList(title: "Home")
-    var testSchoolList = ReminderList(title: "School")
+    var testHomeList = ReminderList(title: "Home Reminders")
+    var testSchoolList = ReminderList(title: "School Reminders")
     
     func setupTestLists() {
         let home1 = Reminder(txt: "go to store")
