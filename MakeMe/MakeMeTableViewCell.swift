@@ -17,10 +17,18 @@ class MakeMeTableViewCell: UITableViewCell {
 
     var originalCenter = CGPoint()
     var deleteOnDragRelease = false
+    var completeOnDragRelease = false
     
+    var contextualCue: UIImageView!
+    
+    var completedImageView: UIImageView!
     var completedImage: UIImage!
+    var deletedImageView: UIImageView!
     var deletedImage: UIImage!
+    
+    
     let kUICuesMargin: CGFloat = 10.0, kUICuesWidth: CGFloat = 50.0
+    
     
     // The object that acts as delegate for this cell.
     var delegate: MakeMeTableViewCellDelegate?
@@ -35,27 +43,35 @@ class MakeMeTableViewCell: UITableViewCell {
         addGestureRecognizer(recognizer)
     }
 
-    override func setSelected(selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
 
-        // Configure the view for the selected state
-        let completedImageView = UIImageView(frame: CGRect(x: -kUICuesWidth - kUICuesMargin, y: 0, width: kUICuesWidth, height: bounds.size.height))
+    override func layoutSubviews() {
+        super.layoutSubviews()
         
-        let deletedImageView = UIImageView(frame: CGRect(x: bounds.size.width + kUICuesMargin, y: 0, width: kUICuesWidth, height: bounds.size.height))
+        // this allows the contextual cues to be shown outside of the cell bounds
+        self.contentView.superview?.clipsToBounds = false
         
-        completedImage = UIImage(named: "Complete")
-        completedImageView.image = completedImage
+        completedImageView = UIImageView(frame: CGRect(x: -frame.size.height, y: 0, width: bounds.size.height, height: bounds.size.height))
+        completedImageView.image = UIImage(named: "Complete")
+        completedImageView.hidden = true
         
-        deletedImage = UIImage(named: "Deleted")
-        deletedImageView.image = deletedImage
-        
+        deletedImageView = UIImageView(frame: CGRect(x: bounds.size.width, y: 0, width: bounds.size.height, height: bounds.size.height))
+        deletedImageView.image = UIImage(named: "Delete")
+        deletedImageView.hidden = true
+
         addSubview(completedImageView)
         addSubview(deletedImageView)
-        
+
     }
     
-
     
+    func addContenxtualCue(cue: UIImageView, cueImage: UIImage, x: CGFloat, y: CGFloat) {
+        
+        cue.frame = CGRect(x: x, y: y, width: bounds.size.height, height: bounds.size.height)
+        cue.image = cueImage
+        //contextualCue.contentMode = UIViewContentMode.ScaleToFill
+        
+        addSubview(cue)
+    }
     
     
     // MARK: UIGestureRecognizer
@@ -83,12 +99,25 @@ class MakeMeTableViewCell: UITableViewCell {
         if recognizer.state == .Changed {
             let translation = recognizer.translationInView(self)
             center = CGPointMake(originalCenter.x + translation.x, originalCenter.y)
+            
             // has the user dragged the item far enough to initiate a delete/complete?
             deleteOnDragRelease = frame.origin.x < -frame.size.width / 2.0
+            completeOnDragRelease = frame.origin.x > frame.size.width / 2.0
+            
+            if(center.x < frame.size.width / 4) {
+                deletedImageView.hidden = false
+            } else if(center.x > frame.size.width - (frame.size.width / 4)) {
+                completedImageView.hidden = false
+            } else {
+                completedImageView.hidden = true
+                deletedImageView.hidden = true
+            }
             
         }
         
         if recognizer.state == .Ended {
+            
+            backgroundColor = UIColor.whiteColor()
             // the frame this cell had before user dragged it
             let originalFrame = CGRect(x: 0, y: frame.origin.y,
                 width: bounds.size.width, height: bounds.size.height)
@@ -104,6 +133,7 @@ class MakeMeTableViewCell: UITableViewCell {
                 delegate!.cellHasBeenDeleted(self)
             }
         }
+        
     }
 
     

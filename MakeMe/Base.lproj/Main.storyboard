@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="DL4-me-Vzj">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="eGb-oZ-V6q">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -108,7 +108,7 @@
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="contactAdd" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qmd-HG-Udh">
+                                        <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" horizontalCompressionResistancePriority="749" verticalCompressionResistancePriority="749" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="contactAdd" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qmd-HG-Udh">
                                             <rect key="frame" x="570" y="21" width="22" height="28.5"/>
                                             <connections>
                                                 <action selector="addAlert:" destination="IXo-oS-9DQ" eventType="touchUpInside" id="ocF-W3-V4a"/>
@@ -128,9 +128,12 @@
                                         <constraint firstAttribute="trailingMargin" secondItem="qmd-HG-Udh" secondAttribute="trailing" id="Raz-bk-2Dd"/>
                                         <constraint firstItem="6UD-5e-S7V" firstAttribute="centerY" secondItem="WRb-PD-Hjf" secondAttribute="centerY" id="RfP-ne-JM1"/>
                                         <constraint firstAttribute="leadingMargin" secondItem="6UD-5e-S7V" secondAttribute="leading" id="UPd-ej-kf7"/>
+                                        <constraint firstItem="Ccm-3A-Xz4" firstAttribute="width" secondItem="6UD-5e-S7V" secondAttribute="width" id="YQm-jh-A0V"/>
                                         <constraint firstAttribute="bottomMargin" secondItem="Ccm-3A-Xz4" secondAttribute="bottom" id="YsM-Bt-cM7"/>
                                         <constraint firstItem="6UD-5e-S7V" firstAttribute="centerY" secondItem="qmd-HG-Udh" secondAttribute="centerY" id="hMD-yK-rpS"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="Ccm-3A-Xz4" secondAttribute="trailing" id="lxM-dw-tE0"/>
                                         <constraint firstItem="6UD-5e-S7V" firstAttribute="centerY" secondItem="WRb-PD-Hjf" secondAttribute="centerY" id="mId-ri-im8"/>
+                                        <constraint firstItem="Ccm-3A-Xz4" firstAttribute="centerX" secondItem="WRb-PD-Hjf" secondAttribute="centerX" id="mPx-NF-2Nr"/>
                                         <constraint firstItem="qmd-HG-Udh" firstAttribute="leading" secondItem="6UD-5e-S7V" secondAttribute="trailing" constant="8" symbolic="YES" id="mUx-L2-2Na"/>
                                         <constraint firstItem="qmd-HG-Udh" firstAttribute="leading" secondItem="6UD-5e-S7V" secondAttribute="trailing" constant="8" symbolic="YES" id="tBi-fD-7wx"/>
                                         <constraint firstItem="6UD-5e-S7V" firstAttribute="centerX" secondItem="WRb-PD-Hjf" secondAttribute="centerX" id="uyS-EY-TfZ"/>
@@ -145,8 +148,11 @@
                                             <exclude reference="uyS-EY-TfZ"/>
                                             <exclude reference="zl2-dT-Ziu"/>
                                             <exclude reference="024-uR-YZk"/>
+                                            <exclude reference="0P0-lM-wk6"/>
                                             <exclude reference="5x3-8L-jV2"/>
                                             <exclude reference="75O-CQ-9Fg"/>
+                                            <exclude reference="YQm-jh-A0V"/>
+                                            <exclude reference="lxM-dw-tE0"/>
                                             <exclude reference="yuA-dy-7t9"/>
                                             <exclude reference="tBi-fD-7wx"/>
                                         </mask>
@@ -166,7 +172,7 @@
                     </tableView>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="tuv-1T-KxC">
-                        <barButtonItem key="leftBarButtonItem" title="Back" id="xay-CO-6df">
+                        <barButtonItem key="leftBarButtonItem" image="BackBarButtonIcon" id="xay-CO-6df">
                             <connections>
                                 <action selector="returnToParentViewController:" destination="T7D-xU-Akh" id="Q4h-Jx-7Jy"/>
                             </connections>
@@ -619,7 +625,7 @@
                     </tableView>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="IMX-ef-V2J">
-                        <barButtonItem key="leftBarButtonItem" title="Back" id="yiV-B0-JzG">
+                        <barButtonItem key="leftBarButtonItem" image="BackBarButtonIcon" id="yiV-B0-JzG">
                             <connections>
                                 <action selector="returnToParentViewController:" destination="jvV-SK-hUM" id="3dm-ju-UWW"/>
                             </connections>
@@ -1894,6 +1900,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="BackBarButtonIcon" width="15" height="25"/>
         <image name="PersonalBarButtonIcon" width="22" height="25"/>
         <image name="SharedBarButtonIcon" width="51" height="25"/>
         <image name="art.png" width="715" height="217"/>

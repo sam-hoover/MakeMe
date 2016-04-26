@@ -89,6 +89,11 @@ class SignInViewController: UIViewController, UITextFieldDelegate {
             return
         }
 
+        
+        // authenticate here maybe?
+        SocketIOManager.instance.authenticate(phoneField.text!, pass: passwordField.text!)
+
+        
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let vc = storyboard.instantiateViewControllerWithIdentifier("main")
         presentViewController(vc, animated: true, completion: nil)

@@ -18,8 +18,8 @@ class PersonalReminderTableViewController: MakeMeTableViewController, MakeMeTabl
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        tableView.estimatedRowHeight = tableView.rowHeight
-        tableView.rowHeight = UITableViewAutomaticDimension
+        //tableView.estimatedRowHeight = tableView.rowHeight
+        //tableView.rowHeight = UITableViewAutomaticDimension
         
         setTitle()
     }

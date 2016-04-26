@@ -10,9 +10,6 @@ import UIKit
 
 class PersonalCollectionTableViewController: CollectionTableViewController {
 
-    //var personalReminderList = [ReminderList]()
-    
-    //let settings = SettingsProfile()
     let colors = SettingsProfile.ColorProfile()
     
     private struct Storyboard {
@@ -23,8 +20,6 @@ class PersonalCollectionTableViewController: CollectionTableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-      
-
         // adding lists to be displayed
         setupTestLists()
     }
