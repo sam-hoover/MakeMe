@@ -19,7 +19,6 @@ class PersonalCollectionTableViewCell: MakeMeTableViewCell, UITextFieldDelegate 
         }
     }
     
-    
     func update() {
         titleTextBox?.text = nil
         CountLabel?.text = nil

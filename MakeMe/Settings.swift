@@ -12,9 +12,11 @@ import UIKit
 
 class SettingsProfile {
     
+    static let colors = ColorProfile()
+    
     struct ColorProfile {
-        // Spinach Green
-        let cellBackground = UIColor.greenColor()
+        let cellBackground = UIColor.clearColor()
+        let tableBackground = UIColor(red: 75/255, green: 169/255, blue: 185/255, alpha: 1)
     }
     
     struct SizeProfile {

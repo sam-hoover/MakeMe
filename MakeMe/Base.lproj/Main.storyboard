@@ -172,7 +172,7 @@
                     </tableView>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="tuv-1T-KxC">
-                        <barButtonItem key="leftBarButtonItem" image="BackBarButtonIcon" id="xay-CO-6df">
+                        <barButtonItem key="leftBarButtonItem" title="Back" id="xay-CO-6df">
                             <connections>
                                 <action selector="returnToParentViewController:" destination="T7D-xU-Akh" id="Q4h-Jx-7Jy"/>
                             </connections>
@@ -1900,7 +1900,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="BackBarButtonIcon" width="15" height="25"/>
+        <image name="BackBarButtonIcon" width="11" height="18"/>
         <image name="PersonalBarButtonIcon" width="22" height="25"/>
         <image name="SharedBarButtonIcon" width="51" height="25"/>
         <image name="art.png" width="715" height="217"/>

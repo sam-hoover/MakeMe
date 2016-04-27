@@ -47,6 +47,8 @@ class MakeMeTableViewCell: UITableViewCell {
     override func layoutSubviews() {
         super.layoutSubviews()
         
+        self.backgroundColor = SettingsProfile.colors.cellBackground
+        
         // this allows the contextual cues to be shown outside of the cell bounds
         self.contentView.superview?.clipsToBounds = false
         
@@ -116,8 +118,6 @@ class MakeMeTableViewCell: UITableViewCell {
         }
         
         if recognizer.state == .Ended {
-            
-            backgroundColor = UIColor.whiteColor()
             // the frame this cell had before user dragged it
             let originalFrame = CGRect(x: 0, y: frame.origin.y,
                 width: bounds.size.width, height: bounds.size.height)

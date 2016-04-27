@@ -20,6 +20,8 @@ class AddCustomeAlertViewController: UIViewController {
         super.viewDidLoad()
 
         self.navigationItem.title = "Custom Alarm"
+        self.view.backgroundColor = SettingsProfile.colors.tableBackground
+
     }
 
     override func didReceiveMemoryWarning() {

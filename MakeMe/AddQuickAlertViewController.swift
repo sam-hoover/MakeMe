@@ -17,9 +17,8 @@ class AddQuickAlertViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
-        
         self.navigationItem.title = "Quick Alarm"
+        self.view.backgroundColor = SettingsProfile.colors.tableBackground
         
         if(eveningHasPassed()) {
             tonightButton.enabled = false

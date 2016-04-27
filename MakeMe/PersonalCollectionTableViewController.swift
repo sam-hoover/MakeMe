@@ -9,8 +9,6 @@
 import UIKit
 
 class PersonalCollectionTableViewController: CollectionTableViewController {
-
-    let colors = SettingsProfile.ColorProfile()
     
     private struct Storyboard {
         static let CellReuseIdentifier = "ReminderListTableCell"
@@ -37,7 +35,7 @@ class PersonalCollectionTableViewController: CollectionTableViewController {
         cell.reminderList = reminderList
         cell.selectionStyle = .None
         cell.delegate = self
-        
+                
         return cell
     }
 
