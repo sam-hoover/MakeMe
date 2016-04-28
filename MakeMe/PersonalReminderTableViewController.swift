@@ -84,13 +84,20 @@ class PersonalReminderTableViewController: MakeMeTableViewController, MakeMeTabl
     
     // MARK: - Navigation
     
-    /*
+
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
+        if segue.identifier == "showAddQuickAlarm" {
+            if ((segue.destinationViewController as? AddQuickAlertViewController) != nil) {
+                let backItem = UIBarButtonItem()
+                backItem.title = ""
+                navigationItem.backBarButtonItem = backItem
+            }
+        }
     }
-    */
+
     
     @IBAction func unwindFromAddQuickAlert(segue: UIStoryboardSegue) {
         

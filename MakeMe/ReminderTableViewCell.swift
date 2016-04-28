@@ -37,6 +37,9 @@ class ReminderTableViewCell: MakeMeTableViewCell, UITextFieldDelegate {
         // Initialization code
         reminderText.delegate = self
         
+        reminderText.textColor = SettingsProfile.colors.tableBackground
+        alertLabel.textColor = SettingsProfile.colors.tableBackground
+        
     }
 
     override func setSelected(selected: Bool, animated: Bool) {

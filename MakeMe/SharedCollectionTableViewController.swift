@@ -70,6 +70,10 @@ class SharedCollectionTableViewController: CollectionTableViewController {
         if(segue.identifier == "ShowSharedList") {
             if let ReminderListTableViewController = segue.destinationViewController as? SharedReminderTableViewController {
                 
+                let backItem = UIBarButtonItem()
+                backItem.title = ""
+                navigationItem.backBarButtonItem = backItem
+                
                 // Get the cell that generated this segue.
                 if let selectedCell = sender as? SharedCollectionTableViewCell {
                     // the location of the selected list from the table view

@@ -18,7 +18,6 @@ class AddQuickAlertViewController: UIViewController {
         super.viewDidLoad()
 
         self.navigationItem.title = "Quick Alarm"
-        self.view.backgroundColor = SettingsProfile.colors.tableBackground
         
         if(eveningHasPassed()) {
             tonightButton.enabled = false
@@ -35,20 +34,20 @@ class AddQuickAlertViewController: UIViewController {
 
     // MARK: - Navigation
 
-    /*
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
         
-        if let destinationVeiwController = segue.destinationViewController as? PersonalReminderTableViewController {
-            
-            destinationVeiwController
-            
+        if segue.identifier == "showCustomAlarm" {
+            if ((segue.destinationViewController as? AddCustomeAlertViewController) != nil) {
+                let backItem = UIBarButtonItem()
+                backItem.title = ""
+                navigationItem.backBarButtonItem = backItem
+            }
         }
         
     }
-    */
 
     @IBAction func addAlert(sender: UIButton) {
         
@@ -63,7 +62,6 @@ class AddQuickAlertViewController: UIViewController {
             
         // Tonight
         case 2:
-            
             
             self.alert = "Tonight"
             

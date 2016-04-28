@@ -23,8 +23,8 @@ class SharedReminderTableViewController: MakeMeTableViewController, MakeMeTableV
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        tableView.estimatedRowHeight = tableView.rowHeight
-        tableView.rowHeight = UITableViewAutomaticDimension
+        //tableView.estimatedRowHeight = tableView.rowHeight
+        //tableView.rowHeight = UITableViewAutomaticDimension
         
         setTitle()
     }
@@ -101,12 +101,18 @@ class SharedReminderTableViewController: MakeMeTableViewController, MakeMeTableV
 
     
     // MARK: - Navigation
-    /*
+    
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        
+        if segue.identifier == "showAddQuickAlarm" {
+            if ((segue.destinationViewController as? AddQuickAlertViewController) != nil) {
+                let backItem = UIBarButtonItem()
+                backItem.title = ""
+                navigationItem.backBarButtonItem = backItem
+            }
+        } 
     }
-    */
+ 
     
     
     @IBAction func unwindFromAddQuickAlert(segue: UIStoryboardSegue) {

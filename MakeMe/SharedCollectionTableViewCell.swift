@@ -40,6 +40,9 @@ class SharedCollectionTableViewCell: MakeMeTableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        
+        setLabelTextColor([titleLabel, toLabel, toCountLabel, fromLabel, fromCountLabel], color: SettingsProfile.colors.tableBackground)
+        
     }
 
     override func setSelected(selected: Bool, animated: Bool) {

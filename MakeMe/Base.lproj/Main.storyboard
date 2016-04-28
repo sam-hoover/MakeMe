@@ -26,14 +26,14 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Count" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e6Z-Ue-eVs">
-                                            <rect key="frame" x="547.5" y="12.5" width="44" height="19.5"/>
-                                            <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                            <rect key="frame" x="540" y="11" width="51.5" height="23"/>
+                                            <fontDescription key="fontDescription" style="UICTFontTextStyleTitle3"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ocP-EF-FA4">
-                                            <rect key="frame" x="8" y="12" width="531.5" height="20"/>
-                                            <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                            <rect key="frame" x="8" y="10.5" width="524" height="23"/>
+                                            <fontDescription key="fontDescription" style="UICTFontTextStyleTitle3"/>
                                             <textInputTraits key="textInputTraits"/>
                                         </textField>
                                     </subviews>
@@ -291,7 +291,7 @@
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                 <state key="normal" title="Custom Time"/>
                                 <connections>
-                                    <segue destination="9LQ-Fh-afV" kind="show" id="z8M-IG-Fid"/>
+                                    <segue destination="9LQ-Fh-afV" kind="show" identifier="showCustomAlarm" id="z8M-IG-Fid"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -411,32 +411,32 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="to count" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lAR-Nf-SUb">
-                                            <rect key="frame" x="512.5" y="8" width="79.5" height="19.5"/>
+                                            <rect key="frame" x="512" y="8" width="79.5" height="19.5"/>
                                             <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="from count" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JWI-Jm-ame">
-                                            <rect key="frame" x="512.5" y="35.5" width="79.5" height="19.5"/>
+                                            <rect key="frame" x="512" y="35" width="79.5" height="19.5"/>
                                             <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="To" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z9w-RR-UOY">
-                                            <rect key="frame" x="466.5" y="8" width="37.5" height="19.5"/>
+                                            <rect key="frame" x="466" y="8" width="37.5" height="19.5"/>
                                             <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="From" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5fu-XD-QCN">
-                                            <rect key="frame" x="467" y="35.5" width="37.5" height="19.5"/>
+                                            <rect key="frame" x="467" y="35" width="37.5" height="19.5"/>
                                             <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3uN-vY-bYy">
-                                            <rect key="frame" x="8" y="20.5" width="451" height="19.5"/>
-                                            <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                            <rect key="frame" x="8" y="19" width="450.5" height="23"/>
+                                            <fontDescription key="fontDescription" style="UICTFontTextStyleTitle3"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
@@ -625,11 +625,6 @@
                     </tableView>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="IMX-ef-V2J">
-                        <barButtonItem key="leftBarButtonItem" image="BackBarButtonIcon" id="yiV-B0-JzG">
-                            <connections>
-                                <action selector="returnToParentViewController:" destination="jvV-SK-hUM" id="3dm-ju-UWW"/>
-                            </connections>
-                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="CTy-3K-Q3b">
                             <connections>
                                 <action selector="addNewReminder:" destination="jvV-SK-hUM" id="XQF-ue-NUr"/>
@@ -1900,13 +1895,12 @@
         </scene>
     </scenes>
     <resources>
-        <image name="BackBarButtonIcon" width="11" height="18"/>
         <image name="PersonalBarButtonIcon" width="22" height="25"/>
         <image name="SharedBarButtonIcon" width="51" height="25"/>
         <image name="art.png" width="715" height="217"/>
         <image name="messageicon.png" width="300" height="300"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Zk5-SA-2Rf"/>
+        <segue reference="vJZ-Cu-Lq2"/>
     </inferredMetricsTieBreakers>
 </document>

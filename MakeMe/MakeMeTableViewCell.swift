@@ -10,7 +10,7 @@ import UIKit
 
 protocol MakeMeTableViewCellDelegate {
     func cellHasBeenDeleted(cell: UITableViewCell)
-    func cellHasBeenSelected(cell:UITableViewCell)
+    func cellHasBeenSelected(cell: UITableViewCell)
 }
 
 class MakeMeTableViewCell: UITableViewCell {
@@ -18,8 +18,6 @@ class MakeMeTableViewCell: UITableViewCell {
     var originalCenter = CGPoint()
     var deleteOnDragRelease = false
     var completeOnDragRelease = false
-    
-    var contextualCue: UIImageView!
     
     var completedImageView: UIImageView!
     var completedImage: UIImage!
@@ -47,7 +45,7 @@ class MakeMeTableViewCell: UITableViewCell {
     override func layoutSubviews() {
         super.layoutSubviews()
         
-        self.backgroundColor = SettingsProfile.colors.cellBackground
+        // self.backgroundColor = SettingsProfile.colors.cellBackground
         
         // this allows the contextual cues to be shown outside of the cell bounds
         self.contentView.superview?.clipsToBounds = false
@@ -134,6 +132,16 @@ class MakeMeTableViewCell: UITableViewCell {
             }
         }
         
+    }
+    
+    
+    
+    // MARK: - Utility
+    
+    func setLabelTextColor(labels: [UILabel], color: UIColor) {
+        for label in labels {
+            label.textColor = color
+        }
     }
 
     

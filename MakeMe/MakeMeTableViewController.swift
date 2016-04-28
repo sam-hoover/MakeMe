@@ -17,7 +17,7 @@ class MakeMeTableViewController: UITableViewController {
         self.tableView.rowHeight = UIScreen.mainScreen().bounds.height / 11
         
         // setting table's background color
-        self.tableView.backgroundColor = SettingsProfile.colors.tableBackground
+        //self.tableView.backgroundColor = SettingsProfile.colors.tableBackground
         
         // setting navigation bar's colors
         self.navigationController!.navigationBar.barTintColor = SettingsProfile.colors.tableBackground

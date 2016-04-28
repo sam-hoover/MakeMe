@@ -36,6 +36,9 @@ class PersonalCollectionTableViewCell: MakeMeTableViewCell, UITextFieldDelegate 
         // Initialization code
         titleTextBox.delegate = self
         titleTextBox.userInteractionEnabled = false
+        
+        titleTextBox.textColor = SettingsProfile.colors.tableBackground
+        CountLabel.textColor = SettingsProfile.colors.tableBackground
     }
 
     
