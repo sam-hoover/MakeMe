@@ -49,6 +49,10 @@ class PersonalCollectionTableViewController: CollectionTableViewController {
         if(segue.identifier == "ShowPersonalList") {
             if let ReminderListTableViewController = segue.destinationViewController as? PersonalReminderTableViewController {
                 
+                let backItem = UIBarButtonItem()
+                backItem.title = ""
+                navigationItem.backBarButtonItem = backItem
+                
                 // Get the cell that generated this segue.
                 if let selectedCell = sender as? PersonalCollectionTableViewCell {
                     // the location of the selected list from the table view

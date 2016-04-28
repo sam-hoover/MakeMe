@@ -143,11 +143,6 @@ class PersonalReminderTableViewController: MakeMeTableViewController, MakeMeTabl
     }
     
     
-    @IBAction func returnToParentViewController(sender: UIBarButtonItem) {
-        self.performSegueWithIdentifier("toPersonalReminderList", sender: self)
-    }
-    
-    
     // MARK: - MakeMeTableViewCellDelegate
 
     func cellHasBeenDeleted(cell: UITableViewCell) {

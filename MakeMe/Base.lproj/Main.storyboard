@@ -172,11 +172,6 @@
                     </tableView>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="tuv-1T-KxC">
-                        <barButtonItem key="leftBarButtonItem" title="Back" id="xay-CO-6df">
-                            <connections>
-                                <action selector="returnToParentViewController:" destination="T7D-xU-Akh" id="Q4h-Jx-7Jy"/>
-                            </connections>
-                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="l41-Dy-FHL">
                             <connections>
                                 <action selector="addNewReminder:" destination="T7D-xU-Akh" id="JRa-WF-Vgz"/>
@@ -1901,6 +1896,6 @@
         <image name="messageicon.png" width="300" height="300"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="vJZ-Cu-Lq2"/>
+        <segue reference="Zk5-SA-2Rf"/>
     </inferredMetricsTieBreakers>
 </document>
