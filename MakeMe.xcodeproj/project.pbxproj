@@ -12,7 +12,7 @@
 		6AF069A81C8E6D68006659AD /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AF069A71C8E6D68006659AD /* SignInViewController.swift */; };
 		6AF069AA1C8E7E03006659AD /* TextCodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AF069A91C8E7E03006659AD /* TextCodeViewController.swift */; };
 		6AF069AC1C8EA266006659AD /* messageicon.png in Resources */ = {isa = PBXBuildFile; fileRef = 6AF069AB1C8EA266006659AD /* messageicon.png */; };
-		8803DB681C91399E008E869B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8803DB671C91399E008E869B /* Assets.xcassets */; };
+		885928AD1CD2BF80007B95B2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 885928AC1CD2BF80007B95B2 /* Assets.xcassets */; };
 		885F2C271C8B709600A1F811 /* MakeMeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885F2C261C8B709600A1F811 /* MakeMeTableViewCell.swift */; };
 		8873CFDD1C949ADD001153F0 /* AddQuickAlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8873CFDC1C949ADD001153F0 /* AddQuickAlertViewController.swift */; };
 		8873CFDF1C949FD4001153F0 /* MakeMeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8873CFDE1C949FD4001153F0 /* MakeMeTableViewController.swift */; };
@@ -76,7 +76,7 @@
 		6AF069A71C8E6D68006659AD /* SignInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
 		6AF069A91C8E7E03006659AD /* TextCodeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextCodeViewController.swift; sourceTree = "<group>"; };
 		6AF069AB1C8EA266006659AD /* messageicon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = messageicon.png; sourceTree = "<group>"; };
-		8803DB671C91399E008E869B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		885928AC1CD2BF80007B95B2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		885F2C261C8B709600A1F811 /* MakeMeTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MakeMeTableViewCell.swift; sourceTree = "<group>"; };
 		8873CFDC1C949ADD001153F0 /* AddQuickAlertViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddQuickAlertViewController.swift; sourceTree = "<group>"; };
 		8873CFDE1C949FD4001153F0 /* MakeMeTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MakeMeTableViewController.swift; sourceTree = "<group>"; };
@@ -178,9 +178,9 @@
 			isa = PBXGroup;
 			children = (
 				6AF069A61C8E6AC5006659AD /* Images */,
+				885928AC1CD2BF80007B95B2 /* Assets.xcassets */,
 				889E62131C7FD6A00058E456 /* AppDelegate.swift */,
 				889E62171C7FD6A00058E456 /* Main.storyboard */,
-				8803DB671C91399E008E869B /* Assets.xcassets */,
 				889E621C1C7FD6A00058E456 /* LaunchScreen.storyboard */,
 				889E621F1C7FD6A00058E456 /* Info.plist */,
 				6AF069A21C8E64E2006659AD /* SignUpViewController.swift */,
@@ -333,9 +333,9 @@
 			files = (
 				6AF069AC1C8EA266006659AD /* messageicon.png in Resources */,
 				889E621E1C7FD6A00058E456 /* LaunchScreen.storyboard in Resources */,
-				8803DB681C91399E008E869B /* Assets.xcassets in Resources */,
 				6AF069A51C8E6AC1006659AD /* art.png in Resources */,
 				889E62191C7FD6A00058E456 /* Main.storyboard in Resources */,
+				885928AD1CD2BF80007B95B2 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

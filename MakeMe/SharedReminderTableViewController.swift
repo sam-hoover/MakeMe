@@ -160,6 +160,16 @@ class SharedReminderTableViewController: MakeMeTableViewController, MakeMeTableV
     
     // MARK: - MakeMeTableViewCellDelegate
     
+    func cellHasBeenCompleted(cell: UITableViewCell) {
+        if let rtc = cell as? ReminderTableViewCell {
+            if !rtc.isCompleted {
+                rtc.textLabel?.textColor = UIColor.grayColor()
+            } else {
+                rtc.textLabel?.textColor = SettingsProfile.colors.tableBackground
+            }
+        }
+    }
+    
     func cellHasBeenDeleted(cell: UITableViewCell) {
         
         if let index = self.tableView.indexPathForCell(cell) {

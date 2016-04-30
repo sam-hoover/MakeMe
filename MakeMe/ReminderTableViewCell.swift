@@ -14,12 +14,13 @@ class ReminderTableViewCell: MakeMeTableViewCell, UITextFieldDelegate {
     @IBOutlet weak var addAlertButton: UIButton!
     @IBOutlet weak var alertLabel: UILabel!
     
+    var isCompleted: Bool = false
+    
     var reminder: Reminder? {
         didSet {
             update()
         }
     }
-    
     
     func update() {
         reminderText?.text = nil

@@ -120,6 +120,11 @@ class FriendTableViewController: UITableViewController, MakeMeTableViewCellDeleg
     
     // MARK: - MakeMeTableViewCellDelegate
     
+    
+    func cellHasBeenCompleted(cell: UITableViewCell) {
+        
+    }
+    
     func cellHasBeenDeleted(cell: UITableViewCell) {
         
         if let index = self.tableView.indexPathForCell(cell) {

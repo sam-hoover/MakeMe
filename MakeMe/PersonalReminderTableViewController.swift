@@ -145,6 +145,18 @@ class PersonalReminderTableViewController: MakeMeTableViewController, MakeMeTabl
     
     // MARK: - MakeMeTableViewCellDelegate
 
+    func cellHasBeenCompleted(cell: UITableViewCell) {
+        if let rtc = cell as? ReminderTableViewCell {
+            if !rtc.isCompleted {
+                rtc.reminderText.textColor = UIColor.grayColor()
+            } else {
+                rtc.reminderText.textColor = SettingsProfile.colors.tableBackground
+            }
+            
+            rtc.isCompleted = !rtc.isCompleted
+        }
+    }
+    
     func cellHasBeenDeleted(cell: UITableViewCell) {
             if let index = self.tableView.indexPathForCell(cell) {
             // could removeAtIndex in the loop but keep it here for when indexOfObject works

@@ -9,6 +9,7 @@
 import UIKit
 
 protocol MakeMeTableViewCellDelegate {
+    func cellHasBeenCompleted(cell: UITableViewCell)
     func cellHasBeenDeleted(cell: UITableViewCell)
     func cellHasBeenSelected(cell: UITableViewCell)
 }
@@ -91,6 +92,7 @@ class MakeMeTableViewCell: UITableViewCell {
     //MARK: - horizontal pan gesture methods
     
     func handlePan(recognizer: UIPanGestureRecognizer) {
+        
         if recognizer.state == .Began {
             // when the gesture begins, record the current center location
             originalCenter = center
@@ -123,6 +125,10 @@ class MakeMeTableViewCell: UITableViewCell {
                 // if the item is not being deleted, snap back to the original location
                 UIView.animateWithDuration(0.2, animations: {self.frame = originalFrame})
             }
+            
+            if completeOnDragRelease {
+                delegate!.cellHasBeenCompleted(self)
+            }
         }
         
         if deleteOnDragRelease {
@@ -130,7 +136,11 @@ class MakeMeTableViewCell: UITableViewCell {
                 // notify the delegate that this item should be deleted
                 delegate!.cellHasBeenDeleted(self)
             }
-        }
+        } /*else if completeOnDragRelease {
+            if delegate != nil {
+            //    delegate!.cellHasBeenCompleted(self)
+            }
+        }*/
         
     }
     
