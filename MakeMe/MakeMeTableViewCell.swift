@@ -25,6 +25,8 @@ class MakeMeTableViewCell: UITableViewCell {
     var deletedImageView: UIImageView!
     var deletedImage: UIImage!
     
+    var hasBeenDeleted = false
+    
     
     let kUICuesMargin: CGFloat = 10.0, kUICuesWidth: CGFloat = 50.0
     
@@ -129,6 +131,7 @@ class MakeMeTableViewCell: UITableViewCell {
             if completeOnDragRelease {
                 delegate!.cellHasBeenCompleted(self)
             }
+            
         }
         
         if deleteOnDragRelease {
@@ -136,12 +139,7 @@ class MakeMeTableViewCell: UITableViewCell {
                 // notify the delegate that this item should be deleted
                 delegate!.cellHasBeenDeleted(self)
             }
-        } /*else if completeOnDragRelease {
-            if delegate != nil {
-            //    delegate!.cellHasBeenCompleted(self)
-            }
-        }*/
-        
+        }
     }
     
     

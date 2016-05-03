@@ -87,6 +87,67 @@ class CollectionTableViewController: MakeMeTableViewController, MakeMeTableViewC
     */
     
     
+    func confirmDeletion(cell: UITableViewCell) {
+        
+        let alertController: UIAlertController! = UIAlertController(title: "Delete", message: "Are you sure you would like to delete?", preferredStyle: UIAlertControllerStyle.Alert)
+        
+        let deleteAction = UIAlertAction(title: "Delete", style: UIAlertActionStyle.Destructive, handler: {(alert :UIAlertAction!) in
+            //self.deleteCell(cell)
+            if let index = self.tableView.indexPathForCell(cell) {
+                
+                self.reminderListCollection.removeAtIndex(index.row)
+                
+                // use the UITableView to animate the removal of this row
+                self.tableView.beginUpdates()
+                let indexPathForRow = NSIndexPath(forRow: index.row, inSection: 0)
+                self.tableView.deleteRowsAtIndexPaths([indexPathForRow], withRowAnimation: .Fade)
+                self.tableView.endUpdates()
+            }
+        })
+        alertController.addAction(deleteAction)
+        
+        let okAction = UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Default, handler: {(alert :UIAlertAction!) in
+            
+            if let index = self.tableView.indexPathForCell(cell) {
+                self.tableView.reloadRowsAtIndexPaths([index], withRowAnimation: .Fade)
+            }
+            
+            //self.returnCellToOriginPosition(cell)
+            alertController.removeFromParentViewController()
+        })
+        alertController.addAction(okAction)
+        
+        if self.presentedViewController == nil {
+            self.presentViewController(alertController, animated: true, completion: nil)
+        }
+    }
+    
+    func deleteCell(cell: UITableViewCell) {
+        if let index = self.tableView.indexPathForCell(cell) {
+            
+            self.reminderListCollection.removeAtIndex(index.row)
+            
+            // use the UITableView to animate the removal of this row
+            self.tableView.beginUpdates()
+            let indexPathForRow = NSIndexPath(forRow: index.row, inSection: 0)
+            self.tableView.deleteRowsAtIndexPaths([indexPathForRow], withRowAnimation: .Fade)
+            self.tableView.endUpdates()
+        }
+    }
+    
+    func returnCellToOriginPosition(cell: UITableViewCell) {
+        if let tvc = cell as? MakeMeTableViewCell {
+            tvc.hasBeenDeleted = false
+        }
+        
+        let origin = CGRect(x: 0, y: cell.frame.origin.y, width: cell.bounds.size.width, height: cell.bounds.size.height)
+        
+        UIView.animateWithDuration(0.2, animations: {cell.frame = origin})
+        
+        
+    }
+    
+    
     // MARK: - MakeMeTableViewCellDelegate
     
     func cellHasBeenCompleted(cell: UITableViewCell) {
@@ -103,22 +164,11 @@ class CollectionTableViewController: MakeMeTableViewController, MakeMeTableViewC
     
     
     func cellHasBeenDeleted(cell: UITableViewCell) {
-        
-        if let index = self.tableView.indexPathForCell(cell) {
-            
-            reminderListCollection.removeAtIndex(index.row)
-            
-            // use the UITableView to animate the removal of this row
-            tableView.beginUpdates()
-            let indexPathForRow = NSIndexPath(forRow: index.row, inSection: 0)
-            tableView.deleteRowsAtIndexPaths([indexPathForRow], withRowAnimation: .Fade)
-            tableView.endUpdates()
-        }
+        //confirmDeletion(cell)
+        deleteCell(cell)
     }
     
-    func cellHasBeenSelected(cell: UITableViewCell) {
-        print("collection")
-    }
+    func cellHasBeenSelected(cell: UITableViewCell) { /* nothing is needed here */ }
     
 
 }
