@@ -28,6 +28,20 @@ class SharedReminderTableViewController: MakeMeTableViewController, MakeMeTableV
         
         setTitle()
     }
+    
+    
+    override func viewWillDisappear(animated : Bool) {
+        super.viewWillDisappear(animated)
+        
+        let stackCount = self.navigationController?.viewControllers.count
+        
+        if stackCount >= 1 {
+            if let dvc = self.navigationController?.viewControllers[stackCount! - 1] as? SharedCollectionTableViewController {
+                dvc.updateCollection(self)
+            }
+        }
+    }
+    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -52,6 +66,12 @@ class SharedReminderTableViewController: MakeMeTableViewController, MakeMeTableV
         // Configure the cell...
         let reminder = reminderLists[indexPath.section].reminders[indexPath.row]
         
+        // disables adding alarms or editing reminders from others; user can only complete or delete
+        if indexPath.section == Index.from {
+            cell.addAlertButton.hidden = true;
+            cell.reminderText.userInteractionEnabled = false;
+        }
+        
         cell.reminder = reminder
         cell.selectionStyle = .None
         cell.delegate = self
@@ -60,7 +80,7 @@ class SharedReminderTableViewController: MakeMeTableViewController, MakeMeTableV
     }
     
     override func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return "\(reminderLists[section].title)"
+        return "\(reminderLists[section].title) \(listTitle!)"
     }
     
 
@@ -163,10 +183,12 @@ class SharedReminderTableViewController: MakeMeTableViewController, MakeMeTableV
     func cellHasBeenCompleted(cell: UITableViewCell) {
         if let rtc = cell as? ReminderTableViewCell {
             if !rtc.isCompleted {
-                rtc.textLabel?.textColor = UIColor.grayColor()
+                rtc.reminderText.textColor = UIColor.grayColor()
             } else {
-                rtc.textLabel?.textColor = SettingsProfile.colors.tableBackground
+                rtc.reminderText.textColor = SettingsProfile.colors.tableBackground
             }
+            
+            rtc.isCompleted = !rtc.isCompleted
         }
     }
     

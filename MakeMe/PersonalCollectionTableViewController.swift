@@ -114,6 +114,31 @@ class PersonalCollectionTableViewController: CollectionTableViewController {
     }
     
     
+    func returnFromReminderList(table: UITableViewController) {
+        if let dvc = table as? PersonalReminderTableViewController {
+            
+            let list = dvc.reminderList
+            
+            if let selectedIndexPath = tableView.indexPathForSelectedRow {
+                // update an existing list
+                
+                reminderListCollection[selectedIndexPath.row] = list
+                
+                tableView.reloadRowsAtIndexPaths([selectedIndexPath], withRowAnimation: .None)
+                
+            } else {
+                // add a new list
+                
+                let newIndexPath = NSIndexPath(forRow: reminderListCollection.count, inSection: 0)
+                
+                reminderListCollection.append(list)
+                
+                tableView.insertRowsAtIndexPaths([newIndexPath], withRowAnimation: .Bottom)
+            }
+        }
+    }
+    
+    
     // MARK: - Testing
     
     var testHomeList = ReminderList(title: "Home Reminders")

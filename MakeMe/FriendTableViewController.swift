@@ -8,15 +8,15 @@
 
 import UIKit
 
-class FriendTableViewController: UITableViewController, MakeMeTableViewCellDelegate {
+class FriendTableViewController: UITableViewController /*, MakeMeTableViewCellDelegate*/ {
 
     var friends = [Friend]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        tableView.estimatedRowHeight = tableView.rowHeight
-        tableView.rowHeight = UITableViewAutomaticDimension
+        //tableView.estimatedRowHeight = tableView.rowHeight
+        //tableView.rowHeight = UITableViewAutomaticDimension
         
         loadFriends()
         
@@ -48,7 +48,7 @@ class FriendTableViewController: UITableViewController, MakeMeTableViewCellDeleg
         
         cell.friend = friend
         cell.selectionStyle = .None
-        cell.delegate = self
+        //cell.delegate = self
         
         return cell
     }
@@ -120,7 +120,7 @@ class FriendTableViewController: UITableViewController, MakeMeTableViewCellDeleg
     
     // MARK: - MakeMeTableViewCellDelegate
     
-    
+    /*
     func cellHasBeenCompleted(cell: UITableViewCell) {
         
     }
@@ -143,6 +143,7 @@ class FriendTableViewController: UITableViewController, MakeMeTableViewCellDeleg
         print("friends")
 
     }
+    */
     
     // MARK: - Testing
     

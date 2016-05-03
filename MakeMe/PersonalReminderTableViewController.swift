@@ -20,10 +20,25 @@ class PersonalReminderTableViewController: MakeMeTableViewController, MakeMeTabl
 
         //tableView.estimatedRowHeight = tableView.rowHeight
         //tableView.rowHeight = UITableViewAutomaticDimension
-        
+                
         setTitle()
     }
+    
+    
+    override func viewWillDisappear(animated : Bool) {
+        super.viewWillDisappear(animated)
+        
+        let stackCount = self.navigationController?.viewControllers.count
+        
+        if stackCount >= 1 {
+            // for whatever reason, the last item on the stack is the TaskBuilderViewController (not self), so we only use -1 to access it
+            if let dvc = self.navigationController?.viewControllers[stackCount! - 1] as? PersonalCollectionTableViewController {
+                dvc.returnFromReminderList(self)
+            }
+        }
+    }
 
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -152,7 +167,7 @@ class PersonalReminderTableViewController: MakeMeTableViewController, MakeMeTabl
             } else {
                 rtc.reminderText.textColor = SettingsProfile.colors.tableBackground
             }
-            
+
             rtc.isCompleted = !rtc.isCompleted
         }
     }

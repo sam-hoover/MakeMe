@@ -8,7 +8,7 @@
 
 import UIKit
 
-class FriendTableViewCell: MakeMeTableViewCell {
+class FriendTableViewCell: UITableViewCell/*MakeMeTableViewCell*/ {
 
     @IBOutlet weak var friendLabel: UILabel!
     

@@ -141,21 +141,49 @@ class SharedCollectionTableViewController: CollectionTableViewController {
     }
     
     
+    func updateCollection(table: UITableViewController) {
+        if let svc = table as? SharedReminderTableViewController {
+            
+            let list = ReminderList()
+            
+            list.title = svc.listTitle!
+            
+            list.add(svc.reminderLists[0].reminders + svc.reminderLists[1].reminders)
+            
+            if let selectedIndexPath = tableView.indexPathForSelectedRow {
+                // update an existing list
+                
+                reminderListCollection[selectedIndexPath.row] = list
+                
+                tableView.reloadRowsAtIndexPaths([selectedIndexPath], withRowAnimation: .None)
+                
+            } else {
+                // add a new list
+                
+                let newIndexPath = NSIndexPath(forRow: reminderListCollection.count, inSection: 0)
+                reminderListCollection.append(list)
+                tableView.insertRowsAtIndexPaths([newIndexPath], withRowAnimation: .Bottom)
+            }
+            
+        }
+        
+    }
+    
     
     // MARK: - Testing
-    var friend1 = ReminderList(title: "Lois Lane")
-    var friend2 = ReminderList(title: "Mary-Jane Watson")
-    var friend3 = ReminderList(title: "Selina Kyle")
+    var friend1 = ReminderList(title: "Casey Earl")
+    var friend2 = ReminderList(title: "Becky Bach")
+    var friend3 = ReminderList(title: "Jordan Soltman")
     
     func setupTestLists() {
         
         // adding lists to be displayed
-        friend1.reminders += [Reminder(txt: "do something"), Reminder(txt: "read something")];
-        friend2.reminders += [Reminder(txt: "do something"), Reminder(txt: "read something")];
-        friend3.reminders += [Reminder(txt: "do something"), Reminder(txt: "read something")];
-        friend1.reminders[0].from = "Lois Lane"
-        friend2.reminders[0].from = "Mary-Jane Watson"
-        friend3.reminders[0].from = "Selina Kyle"
+        friend1.reminders += [Reminder(txt: "go to the store"), Reminder(txt: "watch Silicon Valley")];
+        friend2.reminders += [Reminder(txt: "work on history paper"), Reminder(txt: "send notes to Casey")];
+        friend3.reminders += [Reminder(txt: "Taco Truck Showdown"), Reminder(txt: "eat a lotta tacos")];
+        friend1.reminders[0].from = "Casey Earl"
+        friend2.reminders[0].from = "Becky Bach"
+        friend3.reminders[0].from = "Jordan Soltman"
         reminderListCollection += [friend1, friend2, friend3]
         
     }
