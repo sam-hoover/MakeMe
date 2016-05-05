@@ -103,6 +103,7 @@ class CollectionTableViewController: MakeMeTableViewController, MakeMeTableViewC
                 self.tableView.deleteRowsAtIndexPaths([indexPathForRow], withRowAnimation: .Fade)
                 self.tableView.endUpdates()
             }
+            self.presentViewController(alertController, animated: true, completion: nil)
         })
         alertController.addAction(deleteAction)
         
@@ -113,13 +114,22 @@ class CollectionTableViewController: MakeMeTableViewController, MakeMeTableViewC
             }
             
             //self.returnCellToOriginPosition(cell)
-            alertController.removeFromParentViewController()
+            //alertController.removeFromParentViewController()
+            alertController.dismissViewControllerAnimated(true, completion: nil)
+            
+            
+        
         })
         alertController.addAction(okAction)
         
+        
         if self.presentedViewController == nil {
-            self.presentViewController(alertController, animated: true, completion: nil)
+            //self.presentViewController(alertController, animated: true, completion: nil)
+            dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                self.presentViewController(alertController, animated: true, completion: nil)
+            })
         }
+        
     }
     
     func deleteCell(cell: UITableViewCell) {

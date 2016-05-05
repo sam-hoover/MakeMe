@@ -30,9 +30,23 @@ class SocketIOManager: NSObject {
             print("connection confirmed")
             print(data.0)
         }
+        
+        socket.on("authenticate-confirmation") { data in
+            print(data.0)
+            print(data.1)
+        }
+        
+        socket.on("register-confirmation") { data in
+            print(data.0)
+        }
     }
     
     func authenticate(number: String, pass: String) {
         socket.emit("authenticate", number, pass)
     }
+    
+    func register(name: String, number: String, pass: String) {
+        socket.emit("register", name, number, pass)
+    }
+    
 }

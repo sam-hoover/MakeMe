@@ -99,6 +99,8 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
             return
         }
         
+        SocketIOManager.instance.register(nameField.text!, number: phoneField.text!, pass: passwordField.text!)
+        
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let vc = storyboard.instantiateViewControllerWithIdentifier("textCode") as! TextCodeViewController
         vc.phoneNumber = phoneField.text!
