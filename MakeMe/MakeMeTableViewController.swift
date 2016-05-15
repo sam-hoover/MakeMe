@@ -31,6 +31,28 @@ class MakeMeTableViewController: UITableViewController {
         self.tabBarController!.tabBar.tintColor = UIColor.whiteColor()
     
     }
+    
+    
+    func confirmDeletion(cell: UITableViewCell, deleteAction: UIAlertAction) {
+        
+        let alertController: UIAlertController! = UIAlertController(title: "Delete", message: "Are you sure you would like to delete?", preferredStyle: UIAlertControllerStyle.Alert)
+        
+        let okAction = UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Default, handler: {(alert :UIAlertAction!) in
+            if let index = self.tableView.indexPathForCell(cell) {
+                self.tableView.reloadRowsAtIndexPaths([index], withRowAnimation: .Fade)
+            }
+        })
+        
+        alertController.addAction(deleteAction)
+        alertController.addAction(okAction)
+        
+        if self.presentedViewController == nil {
+            self.presentViewController(alertController, animated: true, completion: nil)
+        }
+        
+    }
+    
+    
 }
 
 

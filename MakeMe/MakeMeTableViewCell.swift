@@ -9,8 +9,11 @@
 import UIKit
 
 protocol MakeMeTableViewCellDelegate {
+    
+    func deleteWithConfirmation(cell: UITableViewCell)
+    func deleteWithoutConfirmation(cell: UITableViewCell)
+    
     func cellHasBeenCompleted(cell: UITableViewCell)
-    func cellHasBeenDeleted(cell: UITableViewCell)
     func cellHasBeenSelected(cell: UITableViewCell)
 }
 
@@ -138,7 +141,7 @@ class MakeMeTableViewCell: UITableViewCell {
             if delegate != nil {
                 // notify the delegate that this item should be deleted
                 hasBeenDeleted = true
-                delegate!.cellHasBeenDeleted(self)
+                delegate!.deleteWithConfirmation(self)
             }
         }
     }

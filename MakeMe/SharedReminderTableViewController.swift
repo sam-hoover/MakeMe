@@ -66,6 +66,8 @@ class SharedReminderTableViewController: MakeMeTableViewController, MakeMeTableV
         // Configure the cell...
         let reminder = reminderLists[indexPath.section].reminders[indexPath.row]
         
+        cell.reset()
+        
         // disables adding alarms or editing reminders from others; user can only complete or delete
         if indexPath.section == Index.from {
             cell.addAlertButton.hidden = true;
@@ -83,42 +85,6 @@ class SharedReminderTableViewController: MakeMeTableViewController, MakeMeTableV
         return "\(reminderLists[section].title) \(listTitle!)"
     }
     
-
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
-    }
-    */
-
-    /*
-    // Override to support editing the table view.
-    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
-        if editingStyle == .Delete {
-            // Delete the row from the data source
-            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
-        } else if editingStyle == .Insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
-    }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(tableView: UITableView, moveRowAtIndexPath fromIndexPath: NSIndexPath, toIndexPath: NSIndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(tableView: UITableView, canMoveRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
     
     // MARK: - Navigation
     
@@ -192,19 +158,38 @@ class SharedReminderTableViewController: MakeMeTableViewController, MakeMeTableV
         }
     }
     
-    func cellHasBeenDeleted(cell: UITableViewCell) {
+    func deleteWithConfirmation(cell: UITableViewCell) {
         
+        let deleteAction = UIAlertAction(title: "Delete", style: UIAlertActionStyle.Destructive, handler: {(alert :UIAlertAction!) in
+            if let index = self.tableView.indexPathForCell(cell) {
+                
+                self.reminderLists[index.section].reminders.removeAtIndex(index.row)
+                
+                // use the UITableView to animate the removal of this row
+                self.tableView.beginUpdates()
+                let indexPathForRow = NSIndexPath(forRow: index.row, inSection: index.section)
+                self.tableView.deleteRowsAtIndexPaths([indexPathForRow], withRowAnimation: .Fade)
+                self.tableView.endUpdates()
+            }
+        })
+        
+        confirmDeletion(cell, deleteAction: deleteAction)
+    }
+    
+    
+    func deleteWithoutConfirmation(cell: UITableViewCell) {
         if let index = self.tableView.indexPathForCell(cell) {
             
-            reminderLists[index.section].reminders.removeAtIndex(index.row)
+            self.reminderLists[index.section].reminders.removeAtIndex(index.row)
             
             // use the UITableView to animate the removal of this row
-            tableView.beginUpdates()
+            self.tableView.beginUpdates()
             let indexPathForRow = NSIndexPath(forRow: index.row, inSection: index.section)
-            tableView.deleteRowsAtIndexPaths([indexPathForRow], withRowAnimation: .Fade)
-            tableView.endUpdates()
+            self.tableView.deleteRowsAtIndexPaths([indexPathForRow], withRowAnimation: .Fade)
+            self.tableView.endUpdates()
         }
     }
+    
     
     func cellHasBeenSelected(cell: UITableViewCell) {
         if let index = self.tableView.indexPathForCell(cell) {
@@ -230,7 +215,6 @@ class SharedReminderTableViewController: MakeMeTableViewController, MakeMeTableV
     
     func setTitle() {
         if(listTitle != nil) {
-            //self.title = listTitle
             self.navigationItem.title = listTitle
         }
     }

@@ -64,37 +64,14 @@ class PersonalReminderTableViewController: MakeMeTableViewController, MakeMeTabl
         // Configure the cell...
         let reminder = reminderList.reminders[indexPath.row]
         
+        cell.reset()
+        
         cell.reminder = reminder
         cell.selectionStyle = .None
         cell.delegate = self
         
-                
         return cell
     }
-
-    
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
-    }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(tableView: UITableView, moveRowAtIndexPath fromIndexPath: NSIndexPath, toIndexPath: NSIndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(tableView: UITableView, canMoveRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
 
     
     // MARK: - Navigation
@@ -172,18 +149,39 @@ class PersonalReminderTableViewController: MakeMeTableViewController, MakeMeTabl
         }
     }
     
-    func cellHasBeenDeleted(cell: UITableViewCell) {
-            if let index = self.tableView.indexPathForCell(cell) {
-            // could removeAtIndex in the loop but keep it here for when indexOfObject works
-            reminderList.reminders.removeAtIndex(index.row)
+    func deleteWithConfirmation(cell: UITableViewCell) {
         
+        let deleteAction = UIAlertAction(title: "Delete", style: UIAlertActionStyle.Destructive, handler: {(alert :UIAlertAction!) in
+            if let index = self.tableView.indexPathForCell(cell) {
+                // could removeAtIndex in the loop but keep it here for when indexOfObject works
+                self.reminderList.reminders.removeAtIndex(index.row)
+                
+                // use the UITableView to animate the removal of this row
+                self.tableView.beginUpdates()
+                let indexPathForRow = NSIndexPath(forRow: index.row, inSection: 0)
+                self.tableView.deleteRowsAtIndexPaths([indexPathForRow], withRowAnimation: .Fade)
+                self.tableView.endUpdates()
+            }
+        })
+        
+        confirmDeletion(cell, deleteAction: deleteAction)
+        
+    }
+    
+    
+    func deleteWithoutConfirmation(cell: UITableViewCell) {
+        if let index = self.tableView.indexPathForCell(cell) {
+            // could removeAtIndex in the loop but keep it here for when indexOfObject works
+            self.reminderList.reminders.removeAtIndex(index.row)
+            
             // use the UITableView to animate the removal of this row
-            tableView.beginUpdates()
+            self.tableView.beginUpdates()
             let indexPathForRow = NSIndexPath(forRow: index.row, inSection: 0)
-            tableView.deleteRowsAtIndexPaths([indexPathForRow], withRowAnimation: .Fade)
-            tableView.endUpdates()
+            self.tableView.deleteRowsAtIndexPaths([indexPathForRow], withRowAnimation: .Fade)
+            self.tableView.endUpdates()
         }
     }
+    
     
     func cellHasBeenSelected(cell: UITableViewCell) {
         if let index = self.tableView.indexPathForCell(cell) {
