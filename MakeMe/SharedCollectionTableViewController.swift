@@ -52,6 +52,8 @@ class SharedCollectionTableViewController: CollectionTableViewController {
         // Configure the cell...
         let reminderList = reminderListCollection[indexPath.row]
         
+        cell.reset()
+        
         cell.reminderList = reminderList
         cell.selectionStyle = .None
         cell.delegate = self

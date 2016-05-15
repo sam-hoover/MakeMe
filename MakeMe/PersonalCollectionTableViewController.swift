@@ -27,16 +27,18 @@ class PersonalCollectionTableViewController: CollectionTableViewController {
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         // not sure why i have to downcast here ("as!") and cannot just use "as"
-        let cell = tableView.dequeueReusableCellWithIdentifier(Storyboard.CellReuseIdentifier, forIndexPath: indexPath) as! PersonalCollectionTableViewCell
-
-        // Configure the cell...
-        let reminderList = reminderListCollection[indexPath.row]
         
-        cell.reminderList = reminderList
-        cell.selectionStyle = .None
-        cell.delegate = self
-                
-        return cell
+        let cell = tableView.dequeueReusableCellWithIdentifier(Storyboard.CellReuseIdentifier, forIndexPath: indexPath) as! PersonalCollectionTableViewCell
+            // Configure the cell...
+            let reminderList = reminderListCollection[indexPath.row]
+        
+            cell.reset()
+        
+            cell.reminderList = reminderList
+            cell.selectionStyle = .None
+            cell.delegate = self
+            
+            return cell
     }
 
     
@@ -111,6 +113,7 @@ class PersonalCollectionTableViewController: CollectionTableViewController {
         if let cell = self.tableView.cellForRowAtIndexPath(path) as? PersonalCollectionTableViewCell {
             cell.textFieldDidBeginEditing(cell.titleTextBox)
         }
+        
     }
     
     

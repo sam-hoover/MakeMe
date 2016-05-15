@@ -159,7 +159,7 @@ class PersonalReminderTableViewController: MakeMeTableViewController, MakeMeTabl
     
     
     // MARK: - MakeMeTableViewCellDelegate
-
+    
     func cellHasBeenCompleted(cell: UITableViewCell) {
         if let rtc = cell as? ReminderTableViewCell {
             if !rtc.isCompleted {

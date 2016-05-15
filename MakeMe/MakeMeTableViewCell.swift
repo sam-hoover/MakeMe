@@ -37,7 +37,7 @@ class MakeMeTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
-        
+
         // add a pan recognizer
         let recognizer = UIPanGestureRecognizer(target: self, action: #selector(MakeMeTableViewCell.handlePan(_:)))
         recognizer.delegate = self
@@ -134,9 +134,10 @@ class MakeMeTableViewCell: UITableViewCell {
             
         }
         
-        if deleteOnDragRelease {
+        if !hasBeenDeleted && deleteOnDragRelease {
             if delegate != nil {
                 // notify the delegate that this item should be deleted
+                hasBeenDeleted = true
                 delegate!.cellHasBeenDeleted(self)
             }
         }
@@ -145,6 +146,12 @@ class MakeMeTableViewCell: UITableViewCell {
     
     
     // MARK: - Utility
+    
+    func reset() {
+        hasBeenDeleted = false
+        deleteOnDragRelease = false
+        completeOnDragRelease = false
+    }
     
     func setLabelTextColor(labels: [UILabel], color: UIColor) {
         for label in labels {
