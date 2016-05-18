@@ -146,6 +146,10 @@ class SharedReminderTableViewController: MakeMeTableViewController, MakeMeTableV
     
     // MARK: - MakeMeTableViewCellDelegate
     
+    func cellBeingEdited() { }
+    
+    func cellHasBeenAdded() { }
+    
     func cellHasBeenCompleted(cell: UITableViewCell) {
         if let rtc = cell as? ReminderTableViewCell {
             if !rtc.isCompleted {

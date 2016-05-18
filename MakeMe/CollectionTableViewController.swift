@@ -33,7 +33,15 @@ class CollectionTableViewController: MakeMeTableViewController, MakeMeTableViewC
 
 
     // MARK: - MakeMeTableViewCellDelegate
-        
+    
+    func cellBeingEdited() {
+        self.navigationItem.rightBarButtonItem?.enabled = false
+    }
+    
+    func cellHasBeenAdded() {
+        self.navigationItem.rightBarButtonItem?.enabled = true
+    }
+    
     func cellHasBeenCompleted(cell: UITableViewCell) {
         /*
          if let rtc = cell as? ReminderTableViewCell {
@@ -77,6 +85,9 @@ class CollectionTableViewController: MakeMeTableViewController, MakeMeTableViewC
             self.tableView.endUpdates()
             
         }
+        
+        // must re-enable the add button
+        self.navigationItem.rightBarButtonItem?.enabled = true
     }
     
     

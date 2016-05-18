@@ -9,12 +9,7 @@
 import UIKit
 
 class PersonalCollectionTableViewController: CollectionTableViewController {
-    
-    private struct Storyboard {
-        static let CellReuseIdentifier = "ReminderListTableCell"
-    }
-    
-    
+        
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -28,7 +23,7 @@ class PersonalCollectionTableViewController: CollectionTableViewController {
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         // not sure why i have to downcast here ("as!") and cannot just use "as"
         
-        let cell = tableView.dequeueReusableCellWithIdentifier(Storyboard.CellReuseIdentifier, forIndexPath: indexPath) as! PersonalCollectionTableViewCell
+        let cell = tableView.dequeueReusableCellWithIdentifier("ReminderListTableCell", forIndexPath: indexPath) as! PersonalCollectionTableViewCell
             // Configure the cell...
             let reminderList = reminderListCollection[indexPath.row]
         

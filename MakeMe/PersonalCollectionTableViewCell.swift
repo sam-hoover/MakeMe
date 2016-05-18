@@ -13,6 +13,9 @@ class PersonalCollectionTableViewCell: MakeMeTableViewCell, UITextFieldDelegate 
     @IBOutlet weak var titleTextBox: UITextField!
     @IBOutlet weak var CountLabel: UILabel!
     
+    var addButton: UIBarButtonItem!
+    var originalAction: UnsafeMutablePointer<UIBarButtonItem>!
+    
     var reminderList: ReminderList? {
         didSet {
             update()
@@ -62,6 +65,8 @@ class PersonalCollectionTableViewCell: MakeMeTableViewCell, UITextFieldDelegate 
     func textFieldDidBeginEditing(textField: UITextField) {
         titleTextBox.userInteractionEnabled = true
         textField.becomeFirstResponder()
+        
+        delegate!.cellBeingEdited()
     }
     
     
@@ -77,9 +82,12 @@ class PersonalCollectionTableViewCell: MakeMeTableViewCell, UITextFieldDelegate 
                 
                 // emit to server
                 SocketIOManager.instance.createReminderList((reminderList?.title)!, number: "1234567899", to: "")
+                
+                delegate!.cellHasBeenAdded()
             }
         }
     }
     
+
 
 }
