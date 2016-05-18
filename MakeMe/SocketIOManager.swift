@@ -39,6 +39,10 @@ class SocketIOManager: NSObject {
         socket.on("register-confirmation") { data in
             print(data.0)
         }
+        
+        socket.on("update-list") { data in
+            // i will get back the lists unique ID number for reference
+        }
     }
     
     func authenticate(number: String, pass: String) {
@@ -49,4 +53,11 @@ class SocketIOManager: NSObject {
         socket.emit("register", name, number, pass)
     }
     
+    func createReminderList(name: String, number: String, to: String) {
+        socket.emit("create-list", name, number, to)
+    }
+    
+    func createReminder(name: String, number: String, listID: String, alarm: Int) {
+        socket.emit("create-reminder", name, number, listID, alarm)
+    }
 }

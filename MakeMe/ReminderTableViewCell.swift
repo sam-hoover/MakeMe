@@ -72,6 +72,8 @@ class ReminderTableViewCell: MakeMeTableViewCell, UITextFieldDelegate {
             } else {
                 // set the reminders text as the text in the cell
                 reminder?.text = textField.text!
+                
+                SocketIOManager.instance.createReminder((reminder?.text)!, number: "1234567890", listID: "abcd", alarm: 10)
             }
         }
         

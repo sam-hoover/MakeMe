@@ -74,6 +74,9 @@ class PersonalCollectionTableViewCell: MakeMeTableViewCell, UITextFieldDelegate 
                 // set the reminder lists text as the text in the cell
                 reminderList?.title = textField.text!
                 titleTextBox.userInteractionEnabled = false
+                
+                // emit to server
+                SocketIOManager.instance.createReminderList((reminderList?.title)!, number: "1234567899", to: "")
             }
         }
     }
