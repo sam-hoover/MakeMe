@@ -47,6 +47,7 @@ class ReminderTableViewCell: MakeMeTableViewCell, UITextFieldDelegate {
         super.setSelected(selected, animated: animated)
         // Configure the view for the selected state
         addAlertButton.hidden = true
+    
     }
     
     
@@ -91,6 +92,22 @@ class ReminderTableViewCell: MakeMeTableViewCell, UITextFieldDelegate {
         reminderText.resignFirstResponder()
         delegate!.cellHasBeenSelected(self)
     }
+    
+    
+    @IBAction func toggleCompleted(sender: UIButton) {
+        isCompleted = !isCompleted
+        
+        if(isCompleted) {
+            sender.setImage(UIImage(named: "Completed"), forState: .Normal)
+            self.reminderText.textColor = SettingsProfile.colors.completedReminderTextColor
+            self.alertLabel.textColor = SettingsProfile.colors.completedReminderTextColor
+        } else {
+            sender.setImage(UIImage(named: "NotCompleted"), forState: .Normal)
+            self.reminderText.textColor = SettingsProfile.colors.reminderTextColor
+            self.alertLabel.textColor = SettingsProfile.colors.reminderTextColor
+        }
+    }
+    
     
     
 } // class
