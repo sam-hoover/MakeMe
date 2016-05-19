@@ -34,11 +34,11 @@ class CollectionTableViewController: MakeMeTableViewController, MakeMeTableViewC
 
     // MARK: - MakeMeTableViewCellDelegate
     
-    func cellBeingEdited() {
+    func cellDidBeginEditing() {
         self.navigationItem.rightBarButtonItem?.enabled = false
     }
     
-    func cellHasBeenAdded() {
+    func cellDidEndEditing() {
         self.navigationItem.rightBarButtonItem?.enabled = true
     }
     

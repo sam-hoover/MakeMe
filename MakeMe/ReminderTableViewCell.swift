@@ -62,6 +62,8 @@ class ReminderTableViewCell: MakeMeTableViewCell, UITextFieldDelegate {
     func textFieldDidBeginEditing(textField: UITextField) {
         addAlertButton.hidden = false
         textField.becomeFirstResponder()
+        
+        delegate!.cellDidBeginEditing()
     }
     
     func textFieldDidEndEditing(textField: UITextField) {
@@ -73,11 +75,14 @@ class ReminderTableViewCell: MakeMeTableViewCell, UITextFieldDelegate {
                 // set the reminders text as the text in the cell
                 reminder?.text = textField.text!
                 
-                SocketIOManager.instance.createReminder((reminder?.text)!, number: "1234567890", listID: "abcd", alarm: 10)
+                // send the reminder we just created to the server to be stored
+                //SocketIOManager.instance.createReminder((reminder?.text)!, number: "1234567890", listID: "abcd", alarm: 10)
             }
         }
         
+        delegate!.cellDidEndEditing()
         addAlertButton.hidden = true
+        
     }
     
     

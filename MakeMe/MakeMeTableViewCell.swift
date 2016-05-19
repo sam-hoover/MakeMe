@@ -12,8 +12,10 @@ protocol MakeMeTableViewCellDelegate {
     
     func deleteWithConfirmation(cell: UITableViewCell)
     func deleteWithoutConfirmation(cell: UITableViewCell)
-    func cellBeingEdited()
-    func cellHasBeenAdded()
+    
+    func cellDidBeginEditing()
+    func cellDidEndEditing()
+    
     func cellHasBeenCompleted(cell: UITableViewCell)
     func cellHasBeenSelected(cell: UITableViewCell)
 }

@@ -66,7 +66,7 @@ class PersonalCollectionTableViewCell: MakeMeTableViewCell, UITextFieldDelegate 
         titleTextBox.userInteractionEnabled = true
         textField.becomeFirstResponder()
         
-        delegate!.cellBeingEdited()
+        delegate!.cellDidBeginEditing()
     }
     
     
@@ -81,9 +81,9 @@ class PersonalCollectionTableViewCell: MakeMeTableViewCell, UITextFieldDelegate 
                 titleTextBox.userInteractionEnabled = false
                 
                 // emit to server
-                SocketIOManager.instance.createReminderList((reminderList?.title)!, number: "1234567899", to: "")
+                //SocketIOManager.instance.createReminderList((reminderList?.title)!, number: "1234567899", to: "")
                 
-                delegate!.cellHasBeenAdded()
+                delegate!.cellDidEndEditing()
             }
         }
     }

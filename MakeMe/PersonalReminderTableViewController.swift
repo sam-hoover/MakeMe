@@ -137,9 +137,13 @@ class PersonalReminderTableViewController: MakeMeTableViewController, MakeMeTabl
     
     // MARK: - MakeMeTableViewCellDelegate
     
-    func cellBeingEdited() { }
+    func cellDidBeginEditing() {
+       self.navigationItem.rightBarButtonItem?.enabled = false
+    }
     
-    func cellHasBeenAdded() { }
+    func cellDidEndEditing() {
+       self.navigationItem.rightBarButtonItem?.enabled = true
+    }
     
     func cellHasBeenCompleted(cell: UITableViewCell) {
         if let rtc = cell as? ReminderTableViewCell {
