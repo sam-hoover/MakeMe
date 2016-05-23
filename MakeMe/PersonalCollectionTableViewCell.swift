@@ -81,7 +81,7 @@ class PersonalCollectionTableViewCell: MakeMeTableViewCell, UITextFieldDelegate 
                 titleTextBox.userInteractionEnabled = false
                 
                 // emit to server
-                SocketIOManager.instance.createReminderList((reminderList?.title)!, number: "1234567899", to: "")
+                SocketIOManager.instance.createReminderList((reminderList?.title)!, number: "1234567890", to: "")
                 
                 delegate!.cellDidEndEditing()
             }
