@@ -8,7 +8,7 @@
 
 import UIKit
 
-class PersonalReminderTableViewController: MakeMeTableViewController, MakeMeTableViewCellDelegate {
+class PersonalReminderTableViewController: MakeMeTableViewController, MakeMeTableViewCellDelegate, UIPopoverPresentationControllerDelegate {
 
     var reminderList = ReminderList()
     var indexOfSelectedCell: NSIndexPath?
@@ -18,8 +18,8 @@ class PersonalReminderTableViewController: MakeMeTableViewController, MakeMeTabl
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        tableView.estimatedRowHeight = tableView.rowHeight
-        tableView.rowHeight = UITableViewAutomaticDimension
+        //tableView.estimatedRowHeight = tableView.rowHeight
+        //tableView.rowHeight = UITableViewAutomaticDimension
                 
         setTitle()
     }
@@ -111,7 +111,6 @@ class PersonalReminderTableViewController: MakeMeTableViewController, MakeMeTabl
             if let selectedIndexPath = indexOfSelectedCell {
                 
                 reminderList.reminders[selectedIndexPath.row].alert = sourceViewController.alert
-                
                 tableView.reloadRowsAtIndexPaths([selectedIndexPath], withRowAnimation: .None)
             }
         }
@@ -195,7 +194,35 @@ class PersonalReminderTableViewController: MakeMeTableViewController, MakeMeTabl
         if let index = self.tableView.indexPathForCell(cell) {
             indexOfSelectedCell = index
         }
+        
+        
+        let storyboard : UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let vc = storyboard.instantiateViewControllerWithIdentifier("AddQuickAlarm")
+        vc.modalPresentationStyle = UIModalPresentationStyle.Popover
+        let popover: UIPopoverPresentationController = vc.popoverPresentationController!
+        popover.delegate = self
+        //popover.barButtonItem = sender
+        self.presentViewController(vc, animated: true, completion:nil)
+        
     }
+    
+    // MARK: - UIPopoverPresentationControllerDelegate
+    
+    func adaptivePresentationStyleForPresentationController(controller: UIPresentationController) -> UIModalPresentationStyle {
+        return UIModalPresentationStyle.FullScreen
+    }
+    
+    func presentationController(controller: UIPresentationController, viewControllerForAdaptivePresentationStyle style: UIModalPresentationStyle) -> UIViewController? {
+        let navigationController = UINavigationController(rootViewController: controller.presentedViewController)
+        let btnDone = UIBarButtonItem(title: "Done", style: .Done, target: self, action: #selector(PersonalReminderTableViewController.dismiss))
+        navigationController.topViewController!.navigationItem.rightBarButtonItem = btnDone
+        return navigationController
+    }
+    
+    func dismiss() {
+        self.dismissViewControllerAnimated(true, completion: nil)
+    }
+    
     
     
     // MARK: - Setup

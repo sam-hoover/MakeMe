@@ -24,10 +24,11 @@ class MakeMeTableViewCell: UITableViewCell {
 
     var originalCenter = CGPoint()
     var deleteOnDragRelease = false
-    var completeOnDragRelease = false
     
-    var completedImageView: UIImageView!
-    var completedImage: UIImage!
+    //var completeOnDragRelease = false
+    
+    //var completedImageView: UIImageView!
+    //var completedImage: UIImage!
     var deletedImageView: UIImageView!
     var deletedImage: UIImage!
     
@@ -59,15 +60,17 @@ class MakeMeTableViewCell: UITableViewCell {
         // this allows the contextual cues to be shown outside of the cell bounds
         self.contentView.superview?.clipsToBounds = false
         
+        /*
         completedImageView = UIImageView(frame: CGRect(x: -frame.size.height, y: 0, width: bounds.size.height, height: bounds.size.height))
         completedImageView.image = UIImage(named: "Complete")
         completedImageView.hidden = true
+        */
         
         deletedImageView = UIImageView(frame: CGRect(x: bounds.size.width, y: 0, width: bounds.size.height, height: bounds.size.height))
         deletedImageView.image = UIImage(named: "Delete")
         deletedImageView.hidden = true
 
-        addSubview(completedImageView)
+        //addSubview(completedImageView)
         addSubview(deletedImageView)
 
     }
@@ -112,14 +115,15 @@ class MakeMeTableViewCell: UITableViewCell {
             
             // has the user dragged the item far enough to initiate a delete/complete?
             deleteOnDragRelease = frame.origin.x < -frame.size.width / 2.0
-            completeOnDragRelease = frame.origin.x > frame.size.width / 2.0
+            
+            //completeOnDragRelease = frame.origin.x > frame.size.width / 2.0
             
             if(center.x < frame.size.width / 4) {
                 deletedImageView.hidden = false
-            } else if(center.x > frame.size.width - (frame.size.width / 4)) {
+            } /*else if(center.x > frame.size.width - (frame.size.width / 4)) {
                 completedImageView.hidden = false
-            } else {
-                completedImageView.hidden = true
+            }*/ else {
+                //completedImageView.hidden = true
                 deletedImageView.hidden = true
             }
             
@@ -134,9 +138,11 @@ class MakeMeTableViewCell: UITableViewCell {
                 UIView.animateWithDuration(0.2, animations: {self.frame = originalFrame})
             }
             
+            /*
             if completeOnDragRelease {
                 delegate!.cellHasBeenCompleted(self)
             }
+            */
             
         }
         
@@ -156,7 +162,7 @@ class MakeMeTableViewCell: UITableViewCell {
     func reset() {
         hasBeenDeleted = false
         deleteOnDragRelease = false
-        completeOnDragRelease = false
+        //completeOnDragRelease = false
     }
     
     func setLabelTextColor(labels: [UILabel], color: UIColor) {

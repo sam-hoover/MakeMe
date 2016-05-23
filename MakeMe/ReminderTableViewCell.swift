@@ -77,7 +77,7 @@ class ReminderTableViewCell: MakeMeTableViewCell, UITextFieldDelegate {
                 reminder?.text = textField.text!
                 
                 // send the reminder we just created to the server to be stored
-                //SocketIOManager.instance.createReminder((reminder?.text)!, number: "1234567890", listID: "abcd", alarm: 10)
+                SocketIOManager.instance.createReminder((reminder?.text)!, number: "1234567890", listID: "abcd", alarm: 10)
             }
         }
         
@@ -91,6 +91,9 @@ class ReminderTableViewCell: MakeMeTableViewCell, UITextFieldDelegate {
     @IBAction func addAlert(sender: UIButton) {
         reminderText.resignFirstResponder()
         delegate!.cellHasBeenSelected(self)
+        
+        
+        
     }
     
     

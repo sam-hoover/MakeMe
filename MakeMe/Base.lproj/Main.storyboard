@@ -103,13 +103,6 @@
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <button opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="749" verticalCompressionResistancePriority="749" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="contactAdd" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qmd-HG-Udh">
-                                            <rect key="frame" x="570" y="24" width="22" height="22"/>
-                                            <connections>
-                                                <action selector="addAlert:" destination="IXo-oS-9DQ" eventType="touchUpInside" id="ocF-W3-V4a"/>
-                                                <segue destination="Fw4-Y6-PeN" kind="show" identifier="showAddQuickAlarm" id="Zk5-SA-2Rf"/>
-                                            </connections>
-                                        </button>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GtL-ZK-Qqr">
                                             <rect key="frame" x="8" y="22" width="25" height="25"/>
                                             <constraints>
@@ -130,6 +123,12 @@
                                             <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                             <textInputTraits key="textInputTraits"/>
                                         </textField>
+                                        <button opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="749" verticalCompressionResistancePriority="749" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="contactAdd" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qmd-HG-Udh">
+                                            <rect key="frame" x="570" y="24" width="22" height="22"/>
+                                            <connections>
+                                                <action selector="addAlert:" destination="IXo-oS-9DQ" eventType="touchUpInside" id="ocF-W3-V4a"/>
+                                            </connections>
+                                        </button>
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="Ccm-3A-Xz4" firstAttribute="centerY" secondItem="6UD-5e-S7V" secondAttribute="centerY" id="024-uR-YZk"/>
@@ -269,7 +268,7 @@
         <!--Add Quick Alert View Controller-->
         <scene sceneID="GtK-cF-vLD">
             <objects>
-                <viewController id="Fw4-Y6-PeN" customClass="AddQuickAlertViewController" customModule="MakeMe" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="AddQuickAlarm" id="Fw4-Y6-PeN" customClass="AddQuickAlertViewController" customModule="MakeMe" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="gwF-5R-XKu"/>
                         <viewControllerLayoutGuide type="bottom" id="3om-ts-Tfo"/>
@@ -279,7 +278,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="sgW-CJ-vbq">
-                                <rect key="frame" x="28" y="52" width="176" height="160"/>
+                                <rect key="frame" x="28" y="28" width="176" height="182.5"/>
                                 <accessibility key="accessibilityConfiguration" identifier="Later"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                 <state key="normal" title="Later" backgroundImage="Later"/>
@@ -289,7 +288,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="IL6-bJ-0T7">
-                                <rect key="frame" x="396" y="52" width="176" height="160"/>
+                                <rect key="frame" x="396" y="28" width="176" height="182.5"/>
                                 <accessibility key="accessibilityConfiguration" identifier="TomorrowMorning"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                 <state key="normal" title="Tomorrow Morning"/>
@@ -299,7 +298,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="xoc-zA-HTa">
-                                <rect key="frame" x="28" y="220" width="176" height="160"/>
+                                <rect key="frame" x="28" y="218.5" width="176" height="183"/>
                                 <accessibility key="accessibilityConfiguration" identifier="TomorrowAfternoon"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                 <state key="normal" title="Tomorrow Afternoon"/>
@@ -309,7 +308,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="ajf-Nw-nUD">
-                                <rect key="frame" x="212" y="220" width="176" height="160"/>
+                                <rect key="frame" x="212" y="218.5" width="176" height="183"/>
                                 <accessibility key="accessibilityConfiguration" identifier="TomorrowEvening"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                 <state key="normal" title="Tomorrow Evening"/>
@@ -319,7 +318,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="Xoe-U7-GDV">
-                                <rect key="frame" x="396" y="220" width="176" height="160"/>
+                                <rect key="frame" x="396" y="218.5" width="176" height="183"/>
                                 <accessibility key="accessibilityConfiguration" identifier="CoupleDays"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                 <state key="normal" title="In a couple days"/>
@@ -329,7 +328,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" tag="7" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="ksL-xT-QPv">
-                                <rect key="frame" x="28" y="388" width="176" height="160"/>
+                                <rect key="frame" x="28" y="409.5" width="176" height="182.5"/>
                                 <accessibility key="accessibilityConfiguration" identifier="NextWeek"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                 <state key="normal" title="Next Week"/>
@@ -339,7 +338,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" tag="8" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="6Rg-PA-dse">
-                                <rect key="frame" x="212" y="388" width="176" height="160"/>
+                                <rect key="frame" x="212" y="409.5" width="176" height="182.5"/>
                                 <accessibility key="accessibilityConfiguration" identifier="NextMonth"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                 <state key="normal" title="Next Month"/>
@@ -349,7 +348,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" tag="9" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="yM9-Gq-TvT">
-                                <rect key="frame" x="396" y="388" width="176" height="160"/>
+                                <rect key="frame" x="396" y="409.5" width="176" height="182.5"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                 <state key="normal" title="Custom Time"/>
                                 <connections>
@@ -357,7 +356,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="7kS-5G-mzJ">
-                                <rect key="frame" x="212" y="52" width="176" height="160"/>
+                                <rect key="frame" x="212" y="28" width="176" height="182.5"/>
                                 <accessibility key="accessibilityConfiguration" identifier="Tonight"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                 <state key="normal" title="Tonight"/>
@@ -711,40 +710,40 @@
                                     </constraints>
                                     <variation key="default">
                                         <mask key="constraints">
-                                            <exclude reference="wjT-hY-APX"/>
+                                            <exclude reference="B3e-Fx-K0k"/>
                                             <exclude reference="Dg8-t5-c8A"/>
-                                            <exclude reference="k7Q-ex-j0z"/>
-                                            <exclude reference="s3Q-9x-xym"/>
-                                            <exclude reference="SZf-Ce-FQL"/>
-                                            <exclude reference="XeN-Al-2xO"/>
                                             <exclude reference="HAj-Qv-Stt"/>
                                             <exclude reference="MxG-sy-Qsk"/>
-                                            <exclude reference="B3e-Fx-K0k"/>
+                                            <exclude reference="SZf-Ce-FQL"/>
+                                            <exclude reference="XeN-Al-2xO"/>
                                             <exclude reference="eTU-LZ-TYV"/>
-                                            <exclude reference="v8o-yn-mYz"/>
-                                            <exclude reference="tQK-mZ-T0w"/>
-                                            <exclude reference="ayD-2P-nrL"/>
-                                            <exclude reference="kUV-YY-FRd"/>
-                                            <exclude reference="XLt-u6-3zX"/>
-                                            <exclude reference="XKy-na-lsW"/>
-                                            <exclude reference="F5a-qT-iPz"/>
-                                            <exclude reference="fy0-Cs-E5z"/>
+                                            <exclude reference="k7Q-ex-j0z"/>
+                                            <exclude reference="s3Q-9x-xym"/>
+                                            <exclude reference="wjT-hY-APX"/>
                                             <exclude reference="1qx-PA-4Zn"/>
-                                            <exclude reference="ol5-Il-CME"/>
-                                            <exclude reference="ojh-aK-yEd"/>
-                                            <exclude reference="weH-XZ-L7t"/>
-                                            <exclude reference="gGE-El-oEb"/>
+                                            <exclude reference="DOa-ph-jzY"/>
+                                            <exclude reference="F5a-qT-iPz"/>
+                                            <exclude reference="MPu-2d-uvm"/>
                                             <exclude reference="TXl-zm-YaK"/>
                                             <exclude reference="WNw-cH-lOc"/>
-                                            <exclude reference="MPu-2d-uvm"/>
+                                            <exclude reference="XKy-na-lsW"/>
+                                            <exclude reference="XLt-u6-3zX"/>
+                                            <exclude reference="ayD-2P-nrL"/>
+                                            <exclude reference="fy0-Cs-E5z"/>
+                                            <exclude reference="gGE-El-oEb"/>
+                                            <exclude reference="kUV-YY-FRd"/>
+                                            <exclude reference="ojh-aK-yEd"/>
+                                            <exclude reference="ol5-Il-CME"/>
+                                            <exclude reference="tQK-mZ-T0w"/>
+                                            <exclude reference="v8o-yn-mYz"/>
+                                            <exclude reference="weH-XZ-L7t"/>
                                             <exclude reference="x7O-iQ-4pb"/>
-                                            <exclude reference="DOa-ph-jzY"/>
                                             <exclude reference="Ayf-Cx-Y9E"/>
                                             <exclude reference="Cph-KD-c0L"/>
+                                            <exclude reference="TxR-6r-tSl"/>
+                                            <exclude reference="U7B-qm-Z2r"/>
                                             <exclude reference="eD8-mv-yFY"/>
                                             <exclude reference="epD-un-Y9H"/>
-                                            <exclude reference="U7B-qm-Z2r"/>
-                                            <exclude reference="TxR-6r-tSl"/>
                                         </mask>
                                     </variation>
                                 </tableViewCellContentView>
@@ -2040,7 +2039,4 @@
         <image name="art.png" width="715" height="217"/>
         <image name="messageicon.png" width="300" height="300"/>
     </resources>
-    <inferredMetricsTieBreakers>
-        <segue reference="Zk5-SA-2Rf"/>
-    </inferredMetricsTieBreakers>
 </document>
