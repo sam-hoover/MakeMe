@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="eGb-oZ-V6q">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="eGb-oZ-V6q">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -277,7 +277,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="sgW-CJ-vbq">
+                            <button opaque="NO" tag="1" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="sgW-CJ-vbq">
                                 <rect key="frame" x="28" y="28" width="176" height="182.5"/>
                                 <accessibility key="accessibilityConfiguration" identifier="Later"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
@@ -287,7 +287,7 @@
                                     <segue destination="ZG5-Wz-faB" kind="unwind" unwindAction="unwindFromAddQuickAlert:" id="Q7F-hA-rq2"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="IL6-bJ-0T7">
+                            <button opaque="NO" tag="3" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="IL6-bJ-0T7">
                                 <rect key="frame" x="396" y="28" width="176" height="182.5"/>
                                 <accessibility key="accessibilityConfiguration" identifier="TomorrowMorning"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
@@ -297,7 +297,7 @@
                                     <segue destination="ZG5-Wz-faB" kind="unwind" unwindAction="unwindFromAddQuickAlert:" id="e32-9g-dWg"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="xoc-zA-HTa">
+                            <button opaque="NO" tag="4" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="xoc-zA-HTa">
                                 <rect key="frame" x="28" y="218.5" width="176" height="183"/>
                                 <accessibility key="accessibilityConfiguration" identifier="TomorrowAfternoon"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
@@ -307,7 +307,7 @@
                                     <segue destination="ZG5-Wz-faB" kind="unwind" unwindAction="unwindFromAddQuickAlert:" id="5ae-KN-qgZ"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="ajf-Nw-nUD">
+                            <button opaque="NO" tag="5" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="ajf-Nw-nUD">
                                 <rect key="frame" x="212" y="218.5" width="176" height="183"/>
                                 <accessibility key="accessibilityConfiguration" identifier="TomorrowEvening"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
@@ -317,7 +317,7 @@
                                     <segue destination="ZG5-Wz-faB" kind="unwind" unwindAction="unwindFromAddQuickAlert:" id="IZw-qd-gE6"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="Xoe-U7-GDV">
+                            <button opaque="NO" tag="6" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="Xoe-U7-GDV">
                                 <rect key="frame" x="396" y="218.5" width="176" height="183"/>
                                 <accessibility key="accessibilityConfiguration" identifier="CoupleDays"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
@@ -327,7 +327,7 @@
                                     <segue destination="ZG5-Wz-faB" kind="unwind" unwindAction="unwindFromAddQuickAlert:" id="WcD-7b-cC1"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" tag="7" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="ksL-xT-QPv">
+                            <button opaque="NO" tag="7" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="ksL-xT-QPv">
                                 <rect key="frame" x="28" y="409.5" width="176" height="182.5"/>
                                 <accessibility key="accessibilityConfiguration" identifier="NextWeek"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
@@ -337,7 +337,7 @@
                                     <segue destination="ZG5-Wz-faB" kind="unwind" unwindAction="unwindFromAddQuickAlert:" id="etC-me-Ypr"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" tag="8" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="6Rg-PA-dse">
+                            <button opaque="NO" tag="8" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="6Rg-PA-dse">
                                 <rect key="frame" x="212" y="409.5" width="176" height="182.5"/>
                                 <accessibility key="accessibilityConfiguration" identifier="NextMonth"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
@@ -347,7 +347,7 @@
                                     <segue destination="ZG5-Wz-faB" kind="unwind" unwindAction="unwindFromAddQuickAlert:" id="SPa-uq-nDx"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" tag="9" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="yM9-Gq-TvT">
+                            <button opaque="NO" tag="9" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="yM9-Gq-TvT">
                                 <rect key="frame" x="396" y="409.5" width="176" height="182.5"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                 <state key="normal" title="Custom Time"/>
@@ -355,7 +355,7 @@
                                     <segue destination="9LQ-Fh-afV" kind="show" identifier="showCustomAlarm" id="z8M-IG-Fid"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="7kS-5G-mzJ">
+                            <button opaque="NO" tag="2" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="7kS-5G-mzJ">
                                 <rect key="frame" x="212" y="28" width="176" height="182.5"/>
                                 <accessibility key="accessibilityConfiguration" identifier="Tonight"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
@@ -750,7 +750,6 @@
                                 <connections>
                                     <outlet property="addAlertButton" destination="2a5-l9-f2x" id="uIX-79-N4L"/>
                                     <outlet property="alertLabel" destination="uOU-ig-OfN" id="DMs-25-E38"/>
-                                    <outlet property="completedButton" destination="R45-IB-s5V" id="zxE-LE-A3E"/>
                                     <outlet property="reminderText" destination="s98-FW-6b8" id="bVc-zX-mdp"/>
                                 </connections>
                             </tableViewCell>
