@@ -216,7 +216,7 @@ class PersonalReminderTableViewController: MakeMeTableViewController, MakeMeTabl
             indexOfSelectedCell = index
         }
         
-        /*
+        
         let storyboard : UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
         let vc = storyboard.instantiateViewControllerWithIdentifier("AddQuickAlarm")
         vc.modalPresentationStyle = UIModalPresentationStyle.Popover
@@ -224,7 +224,7 @@ class PersonalReminderTableViewController: MakeMeTableViewController, MakeMeTabl
         popover.delegate = self
         //popover.barButtonItem = sender
         self.presentViewController(vc, animated: true, completion:nil)
-        */
+
     }
     
     // MARK: - UIPopoverPresentationControllerDelegate
