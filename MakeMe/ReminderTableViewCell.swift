@@ -14,6 +14,8 @@ class ReminderTableViewCell: MakeMeTableViewCell, UITextFieldDelegate {
     @IBOutlet weak var addAlertButton: UIButton!
     @IBOutlet weak var alertLabel: UILabel!
     
+    @IBOutlet weak var toggleCompletedButton: UIButton!
+    
     var isCompleted: Bool = false
     
     var reminder: Reminder? {
@@ -99,6 +101,7 @@ class ReminderTableViewCell: MakeMeTableViewCell, UITextFieldDelegate {
     
     @IBAction func toggleCompleted(sender: UIButton) {
         isCompleted = !isCompleted
+        self.reminder?.completed = !((self.reminder?.completed)!)
         
         if(isCompleted) {
             sender.setImage(UIImage(named: "Completed"), forState: .Normal)

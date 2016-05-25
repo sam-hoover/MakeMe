@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="eGb-oZ-V6q">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="eGb-oZ-V6q">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -277,8 +277,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" tag="1" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="sgW-CJ-vbq">
-                                <rect key="frame" x="28" y="28" width="176" height="182.5"/>
+                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="sgW-CJ-vbq">
+                                <rect key="frame" x="28" y="52" width="176" height="160"/>
                                 <accessibility key="accessibilityConfiguration" identifier="Later"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                 <state key="normal" title="Later" backgroundImage="Later"/>
@@ -287,8 +287,8 @@
                                     <segue destination="ZG5-Wz-faB" kind="unwind" unwindAction="unwindFromAddQuickAlert:" id="Q7F-hA-rq2"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" tag="3" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="IL6-bJ-0T7">
-                                <rect key="frame" x="396" y="28" width="176" height="182.5"/>
+                            <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="IL6-bJ-0T7">
+                                <rect key="frame" x="396" y="52" width="176" height="160"/>
                                 <accessibility key="accessibilityConfiguration" identifier="TomorrowMorning"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                 <state key="normal" title="Tomorrow Morning"/>
@@ -297,8 +297,8 @@
                                     <segue destination="ZG5-Wz-faB" kind="unwind" unwindAction="unwindFromAddQuickAlert:" id="e32-9g-dWg"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" tag="4" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="xoc-zA-HTa">
-                                <rect key="frame" x="28" y="218.5" width="176" height="183"/>
+                            <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="xoc-zA-HTa">
+                                <rect key="frame" x="28" y="220" width="176" height="160"/>
                                 <accessibility key="accessibilityConfiguration" identifier="TomorrowAfternoon"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                 <state key="normal" title="Tomorrow Afternoon"/>
@@ -307,8 +307,8 @@
                                     <segue destination="ZG5-Wz-faB" kind="unwind" unwindAction="unwindFromAddQuickAlert:" id="5ae-KN-qgZ"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" tag="5" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="ajf-Nw-nUD">
-                                <rect key="frame" x="212" y="218.5" width="176" height="183"/>
+                            <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="ajf-Nw-nUD">
+                                <rect key="frame" x="212" y="220" width="176" height="160"/>
                                 <accessibility key="accessibilityConfiguration" identifier="TomorrowEvening"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                 <state key="normal" title="Tomorrow Evening"/>
@@ -317,8 +317,8 @@
                                     <segue destination="ZG5-Wz-faB" kind="unwind" unwindAction="unwindFromAddQuickAlert:" id="IZw-qd-gE6"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" tag="6" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="Xoe-U7-GDV">
-                                <rect key="frame" x="396" y="218.5" width="176" height="183"/>
+                            <button opaque="NO" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="Xoe-U7-GDV">
+                                <rect key="frame" x="396" y="220" width="176" height="160"/>
                                 <accessibility key="accessibilityConfiguration" identifier="CoupleDays"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                 <state key="normal" title="In a couple days"/>
@@ -327,8 +327,8 @@
                                     <segue destination="ZG5-Wz-faB" kind="unwind" unwindAction="unwindFromAddQuickAlert:" id="WcD-7b-cC1"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" tag="7" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="ksL-xT-QPv">
-                                <rect key="frame" x="28" y="409.5" width="176" height="182.5"/>
+                            <button opaque="NO" tag="7" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="ksL-xT-QPv">
+                                <rect key="frame" x="28" y="388" width="176" height="160"/>
                                 <accessibility key="accessibilityConfiguration" identifier="NextWeek"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                 <state key="normal" title="Next Week"/>
@@ -337,8 +337,8 @@
                                     <segue destination="ZG5-Wz-faB" kind="unwind" unwindAction="unwindFromAddQuickAlert:" id="etC-me-Ypr"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" tag="8" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="6Rg-PA-dse">
-                                <rect key="frame" x="212" y="409.5" width="176" height="182.5"/>
+                            <button opaque="NO" tag="8" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="6Rg-PA-dse">
+                                <rect key="frame" x="212" y="388" width="176" height="160"/>
                                 <accessibility key="accessibilityConfiguration" identifier="NextMonth"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                 <state key="normal" title="Next Month"/>
@@ -347,16 +347,16 @@
                                     <segue destination="ZG5-Wz-faB" kind="unwind" unwindAction="unwindFromAddQuickAlert:" id="SPa-uq-nDx"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" tag="9" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="yM9-Gq-TvT">
-                                <rect key="frame" x="396" y="409.5" width="176" height="182.5"/>
+                            <button opaque="NO" tag="9" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="yM9-Gq-TvT">
+                                <rect key="frame" x="396" y="388" width="176" height="160"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                 <state key="normal" title="Custom Time"/>
                                 <connections>
                                     <segue destination="9LQ-Fh-afV" kind="show" identifier="showCustomAlarm" id="z8M-IG-Fid"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" tag="2" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="7kS-5G-mzJ">
-                                <rect key="frame" x="212" y="28" width="176" height="182.5"/>
+                            <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="7kS-5G-mzJ">
+                                <rect key="frame" x="212" y="52" width="176" height="160"/>
                                 <accessibility key="accessibilityConfiguration" identifier="Tonight"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                 <state key="normal" title="Tonight"/>
@@ -1593,11 +1593,185 @@
                     <connections>
                         <segue destination="ieg-vF-6Nq" kind="relationship" relationship="viewControllers" id="S8e-Z6-2wO"/>
                         <segue destination="9GH-k5-EPx" kind="relationship" relationship="viewControllers" id="Mle-dz-sfS"/>
+                        <segue destination="oY2-wd-BUk" kind="relationship" relationship="viewControllers" id="S63-cL-lNA"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="azh-zR-tFJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-509" y="259"/>
+        </scene>
+        <!--Completed-->
+        <scene sceneID="p6j-PT-RlY">
+            <objects>
+                <tableViewController id="sjR-kN-GDM" customClass="CompletedReminderTableViewController" customModule="MakeMe" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="pJK-ai-L5Y">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ReminderTableCell" rowHeight="71" id="CMx-5D-LMf" customClass="ReminderTableViewCell" customModule="MakeMe" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="72" width="600" height="71"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="CMx-5D-LMf" id="62A-cI-Nzg">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="70.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="249" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o5L-14-O1N">
+                                            <rect key="frame" x="41" y="53" width="521" height="9"/>
+                                            <fontDescription key="fontDescription" style="UICTFontTextStyleCaption1"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M0s-5t-61R">
+                                            <rect key="frame" x="8" y="22" width="25" height="25"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" secondItem="M0s-5t-61R" secondAttribute="height" multiplier="1:1" id="T0R-fa-0rg"/>
+                                            </constraints>
+                                            <state key="normal" image="NotCompleted"/>
+                                            <variation key="default">
+                                                <mask key="constraints">
+                                                    <exclude reference="T0R-fa-0rg"/>
+                                                </mask>
+                                            </variation>
+                                            <connections>
+                                                <action selector="toggleCompleted:" destination="CMx-5D-LMf" eventType="touchUpInside" id="k6G-p7-Mxm"/>
+                                            </connections>
+                                        </button>
+                                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" horizontalHuggingPriority="249" horizontalCompressionResistancePriority="751" verticalCompressionResistancePriority="751" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mpf-Re-9RK">
+                                            <rect key="frame" x="41" y="25" width="521" height="20"/>
+                                            <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                            <textInputTraits key="textInputTraits"/>
+                                        </textField>
+                                        <button opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="749" verticalCompressionResistancePriority="749" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="contactAdd" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="E74-wC-n8l">
+                                            <rect key="frame" x="570" y="24" width="22" height="22"/>
+                                            <connections>
+                                                <action selector="addAlert:" destination="CMx-5D-LMf" eventType="touchUpInside" id="4rQ-MH-Xgi"/>
+                                            </connections>
+                                        </button>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="o5L-14-O1N" firstAttribute="width" secondItem="mpf-Re-9RK" secondAttribute="width" id="2sI-w7-VJJ"/>
+                                        <constraint firstItem="M0s-5t-61R" firstAttribute="centerY" secondItem="62A-cI-Nzg" secondAttribute="centerY" id="2zI-WL-uZw"/>
+                                        <constraint firstItem="E74-wC-n8l" firstAttribute="centerY" secondItem="62A-cI-Nzg" secondAttribute="centerY" id="4RN-ZS-DZc"/>
+                                        <constraint firstItem="E74-wC-n8l" firstAttribute="centerY" secondItem="62A-cI-Nzg" secondAttribute="centerY" id="5tj-LM-Xjf"/>
+                                        <constraint firstAttribute="leadingMargin" secondItem="M0s-5t-61R" secondAttribute="leading" id="6X8-Mr-DfL"/>
+                                        <constraint firstAttribute="topMargin" secondItem="mpf-Re-9RK" secondAttribute="top" id="7SW-nf-wMw"/>
+                                        <constraint firstItem="o5L-14-O1N" firstAttribute="top" secondItem="mpf-Re-9RK" secondAttribute="bottom" constant="8" symbolic="YES" id="9LV-hs-hy2"/>
+                                        <constraint firstItem="mpf-Re-9RK" firstAttribute="centerY" secondItem="E74-wC-n8l" secondAttribute="centerY" id="Auz-sp-nsl"/>
+                                        <constraint firstItem="mpf-Re-9RK" firstAttribute="leading" secondItem="M0s-5t-61R" secondAttribute="trailing" constant="8" symbolic="YES" id="D9H-15-STs"/>
+                                        <constraint firstItem="o5L-14-O1N" firstAttribute="top" secondItem="mpf-Re-9RK" secondAttribute="bottom" constant="8" symbolic="YES" id="DIw-Rb-l9v"/>
+                                        <constraint firstItem="o5L-14-O1N" firstAttribute="width" secondItem="mpf-Re-9RK" secondAttribute="width" id="EUc-qc-xZC"/>
+                                        <constraint firstItem="o5L-14-O1N" firstAttribute="top" secondItem="E74-wC-n8l" secondAttribute="bottom" id="Gtx-u2-Vwd"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="o5L-14-O1N" secondAttribute="trailing" id="J6q-e3-OKf"/>
+                                        <constraint firstItem="o5L-14-O1N" firstAttribute="top" secondItem="M0s-5t-61R" secondAttribute="top" id="JuL-y6-Fnn"/>
+                                        <constraint firstItem="mpf-Re-9RK" firstAttribute="centerY" secondItem="62A-cI-Nzg" secondAttribute="centerY" id="KR4-Qc-Fln"/>
+                                        <constraint firstItem="mpf-Re-9RK" firstAttribute="centerX" secondItem="62A-cI-Nzg" secondAttribute="centerX" id="LpB-ri-AH0"/>
+                                        <constraint firstItem="o5L-14-O1N" firstAttribute="centerX" secondItem="62A-cI-Nzg" secondAttribute="centerX" id="Lwd-Y1-q2K"/>
+                                        <constraint firstItem="E74-wC-n8l" firstAttribute="leading" secondItem="o5L-14-O1N" secondAttribute="trailing" constant="8" symbolic="YES" id="Mbd-su-YKU"/>
+                                        <constraint firstItem="E74-wC-n8l" firstAttribute="leading" secondItem="mpf-Re-9RK" secondAttribute="trailing" constant="8" symbolic="YES" id="N2J-5L-kEH"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="E74-wC-n8l" secondAttribute="trailing" constant="5" id="Oqc-VU-dOg"/>
+                                        <constraint firstAttribute="leadingMargin" secondItem="mpf-Re-9RK" secondAttribute="leading" id="PJm-EV-ZT8"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="E74-wC-n8l" secondAttribute="trailing" id="PO3-Vq-Vyc"/>
+                                        <constraint firstItem="o5L-14-O1N" firstAttribute="centerX" secondItem="mpf-Re-9RK" secondAttribute="centerX" id="Q8W-FL-ALO"/>
+                                        <constraint firstItem="o5L-14-O1N" firstAttribute="leading" secondItem="M0s-5t-61R" secondAttribute="trailing" constant="8" symbolic="YES" id="R4T-tE-Xyx"/>
+                                        <constraint firstItem="E74-wC-n8l" firstAttribute="leading" secondItem="mpf-Re-9RK" secondAttribute="trailing" constant="8" symbolic="YES" id="Rpi-zU-jVQ"/>
+                                        <constraint firstItem="E74-wC-n8l" firstAttribute="leading" secondItem="mpf-Re-9RK" secondAttribute="trailing" constant="8" symbolic="YES" id="StJ-4U-411"/>
+                                        <constraint firstItem="mpf-Re-9RK" firstAttribute="centerY" secondItem="62A-cI-Nzg" secondAttribute="centerY" id="VJ2-TH-qIb"/>
+                                        <constraint firstAttribute="leadingMargin" secondItem="o5L-14-O1N" secondAttribute="leading" id="VRa-dg-bcr"/>
+                                        <constraint firstItem="o5L-14-O1N" firstAttribute="width" secondItem="mpf-Re-9RK" secondAttribute="width" id="VXu-XG-wiK"/>
+                                        <constraint firstItem="o5L-14-O1N" firstAttribute="centerX" secondItem="62A-cI-Nzg" secondAttribute="centerX" id="Wgl-y6-k5r"/>
+                                        <constraint firstItem="mpf-Re-9RK" firstAttribute="leading" secondItem="M0s-5t-61R" secondAttribute="trailing" constant="8" symbolic="YES" id="Woh-P5-aNb"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="o5L-14-O1N" secondAttribute="bottom" id="Z04-GV-sS1"/>
+                                        <constraint firstItem="mpf-Re-9RK" firstAttribute="centerX" secondItem="62A-cI-Nzg" secondAttribute="centerX" id="a0E-IQ-llN"/>
+                                        <constraint firstItem="o5L-14-O1N" firstAttribute="bottom" secondItem="M0s-5t-61R" secondAttribute="bottom" id="ds9-Mr-vpa"/>
+                                        <constraint firstItem="mpf-Re-9RK" firstAttribute="centerY" secondItem="62A-cI-Nzg" secondAttribute="centerY" id="fli-7f-uBB"/>
+                                        <constraint firstItem="mpf-Re-9RK" firstAttribute="centerX" secondItem="62A-cI-Nzg" secondAttribute="centerX" id="gQ9-87-ZXI"/>
+                                        <constraint firstItem="o5L-14-O1N" firstAttribute="top" secondItem="mpf-Re-9RK" secondAttribute="bottom" constant="8" symbolic="YES" id="h4J-9a-Gid"/>
+                                        <constraint firstItem="o5L-14-O1N" firstAttribute="width" secondItem="mpf-Re-9RK" secondAttribute="width" id="hK8-Cd-cMd"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="o5L-14-O1N" secondAttribute="bottom" id="jIs-AQ-ELV"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="E74-wC-n8l" secondAttribute="trailing" id="ki8-rm-2X7"/>
+                                        <constraint firstItem="o5L-14-O1N" firstAttribute="centerY" secondItem="mpf-Re-9RK" secondAttribute="centerY" id="kx6-S5-3VU"/>
+                                        <constraint firstItem="mpf-Re-9RK" firstAttribute="centerY" secondItem="62A-cI-Nzg" secondAttribute="centerY" id="mCi-Gv-79F"/>
+                                        <constraint firstItem="o5L-14-O1N" firstAttribute="centerX" secondItem="mpf-Re-9RK" secondAttribute="centerX" id="n27-77-eLC"/>
+                                        <constraint firstItem="mpf-Re-9RK" firstAttribute="baseline" secondItem="M0s-5t-61R" secondAttribute="baseline" id="nk7-p9-ku0"/>
+                                        <constraint firstItem="o5L-14-O1N" firstAttribute="width" secondItem="mpf-Re-9RK" secondAttribute="width" id="odh-1r-34z"/>
+                                        <constraint firstItem="mpf-Re-9RK" firstAttribute="leading" secondItem="M0s-5t-61R" secondAttribute="trailing" constant="46" id="om3-rr-AqB"/>
+                                        <constraint firstItem="mpf-Re-9RK" firstAttribute="centerY" secondItem="62A-cI-Nzg" secondAttribute="centerY" id="pW5-vh-iVW"/>
+                                        <constraint firstItem="mpf-Re-9RK" firstAttribute="height" secondItem="o5L-14-O1N" secondAttribute="height" id="piA-tF-lss"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="o5L-14-O1N" secondAttribute="bottom" id="sYC-TO-9Ep"/>
+                                        <constraint firstItem="E74-wC-n8l" firstAttribute="leading" secondItem="o5L-14-O1N" secondAttribute="trailing" constant="256" id="vMs-sc-fyQ"/>
+                                        <constraint firstItem="o5L-14-O1N" firstAttribute="leading" secondItem="M0s-5t-61R" secondAttribute="trailing" constant="46" id="vVD-rQ-rcd"/>
+                                        <constraint firstItem="o5L-14-O1N" firstAttribute="top" secondItem="mpf-Re-9RK" secondAttribute="bottom" constant="8" symbolic="YES" id="whq-Tv-qHA"/>
+                                        <constraint firstItem="o5L-14-O1N" firstAttribute="top" secondItem="mpf-Re-9RK" secondAttribute="bottom" constant="8" symbolic="YES" id="yDa-na-vgh"/>
+                                        <constraint firstItem="mpf-Re-9RK" firstAttribute="top" secondItem="62A-cI-Nzg" secondAttribute="topMargin" constant="21" id="zVf-uJ-gyL"/>
+                                    </constraints>
+                                    <variation key="default">
+                                        <mask key="constraints">
+                                            <exclude reference="fli-7f-uBB"/>
+                                            <exclude reference="mCi-Gv-79F"/>
+                                            <exclude reference="zVf-uJ-gyL"/>
+                                            <exclude reference="VJ2-TH-qIb"/>
+                                            <exclude reference="PJm-EV-ZT8"/>
+                                            <exclude reference="Auz-sp-nsl"/>
+                                            <exclude reference="piA-tF-lss"/>
+                                            <exclude reference="Woh-P5-aNb"/>
+                                            <exclude reference="pW5-vh-iVW"/>
+                                            <exclude reference="om3-rr-AqB"/>
+                                            <exclude reference="nk7-p9-ku0"/>
+                                            <exclude reference="7SW-nf-wMw"/>
+                                            <exclude reference="LpB-ri-AH0"/>
+                                            <exclude reference="a0E-IQ-llN"/>
+                                            <exclude reference="gQ9-87-ZXI"/>
+                                            <exclude reference="kx6-S5-3VU"/>
+                                            <exclude reference="Lwd-Y1-q2K"/>
+                                            <exclude reference="JuL-y6-Fnn"/>
+                                            <exclude reference="yDa-na-vgh"/>
+                                            <exclude reference="VXu-XG-wiK"/>
+                                            <exclude reference="odh-1r-34z"/>
+                                            <exclude reference="Gtx-u2-Vwd"/>
+                                            <exclude reference="9LV-hs-hy2"/>
+                                            <exclude reference="sYC-TO-9Ep"/>
+                                            <exclude reference="ds9-Mr-vpa"/>
+                                            <exclude reference="VRa-dg-bcr"/>
+                                            <exclude reference="hK8-Cd-cMd"/>
+                                            <exclude reference="2sI-w7-VJJ"/>
+                                            <exclude reference="vVD-rQ-rcd"/>
+                                            <exclude reference="EUc-qc-xZC"/>
+                                            <exclude reference="Z04-GV-sS1"/>
+                                            <exclude reference="whq-Tv-qHA"/>
+                                            <exclude reference="J6q-e3-OKf"/>
+                                            <exclude reference="Wgl-y6-k5r"/>
+                                            <exclude reference="Q8W-FL-ALO"/>
+                                            <exclude reference="DIw-Rb-l9v"/>
+                                            <exclude reference="n27-77-eLC"/>
+                                            <exclude reference="4RN-ZS-DZc"/>
+                                            <exclude reference="ki8-rm-2X7"/>
+                                            <exclude reference="vMs-sc-fyQ"/>
+                                            <exclude reference="StJ-4U-411"/>
+                                            <exclude reference="Oqc-VU-dOg"/>
+                                            <exclude reference="N2J-5L-kEH"/>
+                                        </mask>
+                                    </variation>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="addAlertButton" destination="E74-wC-n8l" id="svZ-Sj-QEG"/>
+                                    <outlet property="alertLabel" destination="o5L-14-O1N" id="02Y-Fm-cgk"/>
+                                    <outlet property="reminderText" destination="mpf-Re-9RK" id="4Dh-hz-W2Y"/>
+                                    <outlet property="toggleCompletedButton" destination="M0s-5t-61R" id="5nA-W4-jFQ"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="sjR-kN-GDM" id="3bh-j7-tzd"/>
+                            <outlet property="delegate" destination="sjR-kN-GDM" id="fGX-yV-v2T"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Completed" id="ba7-Lm-nW7"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="arZ-6b-egP" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1123" y="-791"/>
         </scene>
         <!--Personal-->
         <scene sceneID="LGF-FH-sh0">
@@ -2029,8 +2203,28 @@
             </objects>
             <point key="canvasLocation" x="-1261" y="-84"/>
         </scene>
+        <!--Completed-->
+        <scene sceneID="AS5-EO-Z3B">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="oY2-wd-BUk" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Completed" image="CompletedBarButtonIcon" id="YA3-9e-1Sw"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="hmM-ck-Mll">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="sjR-kN-GDM" kind="relationship" relationship="rootViewController" id="NgH-EY-RtH"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eeh-f4-aPU" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="311" y="-791"/>
+        </scene>
     </scenes>
     <resources>
+        <image name="CompletedBarButtonIcon" width="25" height="25"/>
         <image name="Later" width="58" height="58"/>
         <image name="NotCompleted" width="25" height="25"/>
         <image name="PersonalBarButtonIcon" width="22" height="25"/>

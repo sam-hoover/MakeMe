@@ -16,6 +16,7 @@
 		885F2C271C8B709600A1F811 /* MakeMeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885F2C261C8B709600A1F811 /* MakeMeTableViewCell.swift */; };
 		8873CFDD1C949ADD001153F0 /* AddQuickAlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8873CFDC1C949ADD001153F0 /* AddQuickAlertViewController.swift */; };
 		8873CFDF1C949FD4001153F0 /* MakeMeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8873CFDE1C949FD4001153F0 /* MakeMeTableViewController.swift */; };
+		887B27C81CF64573001DF5FE /* CompletedReminderTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 887B27C71CF64573001DF5FE /* CompletedReminderTableViewController.swift */; };
 		888A3A781C94DBB60014AA76 /* CollectionTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 888A3A771C94DBB60014AA76 /* CollectionTableViewController.swift */; };
 		888A3A7A1C94E70D0014AA76 /* AddCustomeAlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 888A3A791C94E70D0014AA76 /* AddCustomeAlertViewController.swift */; };
 		889E62141C7FD6A00058E456 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 889E62131C7FD6A00058E456 /* AppDelegate.swift */; };
@@ -80,6 +81,7 @@
 		885F2C261C8B709600A1F811 /* MakeMeTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MakeMeTableViewCell.swift; sourceTree = "<group>"; };
 		8873CFDC1C949ADD001153F0 /* AddQuickAlertViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddQuickAlertViewController.swift; sourceTree = "<group>"; };
 		8873CFDE1C949FD4001153F0 /* MakeMeTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MakeMeTableViewController.swift; sourceTree = "<group>"; };
+		887B27C71CF64573001DF5FE /* CompletedReminderTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CompletedReminderTableViewController.swift; sourceTree = "<group>"; };
 		888A3A771C94DBB60014AA76 /* CollectionTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionTableViewController.swift; sourceTree = "<group>"; };
 		888A3A791C94E70D0014AA76 /* AddCustomeAlertViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddCustomeAlertViewController.swift; sourceTree = "<group>"; };
 		889E62101C7FD6A00058E456 /* MakeMe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MakeMe.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -193,6 +195,7 @@
 				889EBCEB1C8A41A500BE1581 /* SharedCollectionTableViewCell.swift */,
 				889EBCED1C8A4E8500BE1581 /* PersonalReminderTableViewController.swift */,
 				88F614E21C8BC058005A9EE1 /* SharedReminderTableViewController.swift */,
+				887B27C71CF64573001DF5FE /* CompletedReminderTableViewController.swift */,
 				889EBCEF1C8A4EB100BE1581 /* ReminderTableViewCell.swift */,
 				88A1535C1C8F92070051FC1D /* FriendTableViewController.swift */,
 				88A153601C8F964C0051FC1D /* FriendTableViewCell.swift */,
@@ -362,6 +365,7 @@
 				88FA3CEB1CCC11F4003B3432 /* SocketEnginePollable.swift in Sources */,
 				88FA3CE41CCC11F4003B3432 /* SocketAckEmitter.swift in Sources */,
 				88FA3CF01CCC11F4003B3432 /* SocketIOClientOption.swift in Sources */,
+				887B27C81CF64573001DF5FE /* CompletedReminderTableViewController.swift in Sources */,
 				88FA3CF71CCC11F4003B3432 /* SwiftRegex.swift in Sources */,
 				88FA3CE91CCC11F4003B3432 /* SocketEngineClient.swift in Sources */,
 				885F2C271C8B709600A1F811 /* MakeMeTableViewCell.swift in Sources */,

@@ -41,6 +41,16 @@ class ReminderList {
     }
     
     
+    func getCompletionStatusOfReminder(atIndex: Int) -> Bool {
+        return reminders[atIndex].completed
+    }
+    
+    
+    func getReminder(atIndex: Int) -> Reminder {
+        return self.reminders[atIndex]
+    }
+    
+    
     func count() -> Int {
         return reminders.count
     }

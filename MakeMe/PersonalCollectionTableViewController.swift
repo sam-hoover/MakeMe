@@ -120,8 +120,23 @@ class PersonalCollectionTableViewController: CollectionTableViewController {
             if let selectedIndexPath = tableView.indexPathForSelectedRow {
                 // update an existing list
                 
+                /*
+                let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+                var i = 0
+                while i < list.count() {
+                    if list.getCompletionStatusOfReminder(i) {
+                        
+                        // add the completed item to the completed reminder list
+                        appDelegate.completedReminderList.add(list.getReminder(i))
+                        
+                        // remove the completed item frm this reminder list
+                        list.remove(i)
+                    } else {
+                        i += 1
+                    }
+                }
+                */
                 reminderListCollection[selectedIndexPath.row] = list
-                
                 tableView.reloadRowsAtIndexPaths([selectedIndexPath], withRowAnimation: .None)
                 
             } else {

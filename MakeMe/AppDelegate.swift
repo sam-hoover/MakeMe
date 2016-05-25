@@ -10,10 +10,14 @@ import UIKit
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
-
+    
+    var completedReminderList = ReminderList()
+    
     var window: UIWindow?
     
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
+        
+        UIApplication.sharedApplication().statusBarStyle = UIStatusBarStyle.LightContent
         
         window?.backgroundColor = UIColor.whiteColor()
         // Override point for customization after application launch.

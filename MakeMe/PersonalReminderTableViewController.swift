@@ -28,6 +28,24 @@ class PersonalReminderTableViewController: MakeMeTableViewController, MakeMeTabl
     override func viewWillDisappear(animated : Bool) {
         super.viewWillDisappear(animated)
         
+        // add completed items to completed reminder list and remove from this reminder list
+        
+        var i = 0
+        while i < self.reminderList.count() {
+            if self.reminderList.getCompletionStatusOfReminder(i) {
+                
+                // add the completed item to the completed reminder list
+                let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+                appDelegate.completedReminderList.add(self.reminderList.getReminder(i))
+                
+                // remove the completed item frm this reminder list
+                self.reminderList.remove(i)
+            } else {
+                i += 1
+            }
+        }
+        
+        
         let stackCount = self.navigationController?.viewControllers.count
         
         if stackCount >= 1 {
@@ -145,6 +163,9 @@ class PersonalReminderTableViewController: MakeMeTableViewController, MakeMeTabl
     }
     
     func cellHasBeenCompleted(cell: UITableViewCell) {
+        
+        //let index = self.indexOfSelectedCell
+        
         if let rtc = cell as? ReminderTableViewCell {
             if !rtc.isCompleted {
                 rtc.reminderText.textColor = UIColor.grayColor()
@@ -195,7 +216,7 @@ class PersonalReminderTableViewController: MakeMeTableViewController, MakeMeTabl
             indexOfSelectedCell = index
         }
         
-        
+        /*
         let storyboard : UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
         let vc = storyboard.instantiateViewControllerWithIdentifier("AddQuickAlarm")
         vc.modalPresentationStyle = UIModalPresentationStyle.Popover
@@ -203,7 +224,7 @@ class PersonalReminderTableViewController: MakeMeTableViewController, MakeMeTabl
         popover.delegate = self
         //popover.barButtonItem = sender
         self.presentViewController(vc, animated: true, completion:nil)
-        
+        */
     }
     
     // MARK: - UIPopoverPresentationControllerDelegate
@@ -216,6 +237,8 @@ class PersonalReminderTableViewController: MakeMeTableViewController, MakeMeTabl
         let navigationController = UINavigationController(rootViewController: controller.presentedViewController)
         let btnDone = UIBarButtonItem(title: "Done", style: .Done, target: self, action: #selector(PersonalReminderTableViewController.dismiss))
         navigationController.topViewController!.navigationItem.rightBarButtonItem = btnDone
+        
+        
         return navigationController
     }
     
