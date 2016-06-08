@@ -44,17 +44,7 @@ class CollectionTableViewController: MakeMeTableViewController, MakeMeTableViewC
         self.navigationItem.rightBarButtonItem?.enabled = true
     }
     
-    func cellHasBeenCompleted(cell: UITableViewCell) {
-        /*
-         if let rtc = cell as? ReminderTableViewCell {
-            if !rtc.isCompleted {
-                rtc.textLabel?.textColor = UIColor.grayColor()
-            } else {
-                rtc.textLabel?.textColor = SettingsProfile.colors.tableBackground
-            }
-        }
-        */
-    }
+    func cellHasBeenCompleted(cell: UITableViewCell) { /* nothing is need here */ }
     
     
     func deleteWithConfirmation(cell: UITableViewCell) {

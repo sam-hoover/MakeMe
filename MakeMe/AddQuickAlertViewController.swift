@@ -8,7 +8,7 @@
 
 import UIKit
 
-class AddQuickAlertViewController: UIViewController {
+class AddQuickAlertViewController: UIViewController, UIPopoverPresentationControllerDelegate {
 
     var alert: String?
     
@@ -107,6 +107,25 @@ class AddQuickAlertViewController: UIViewController {
     }
     
     
+    @IBAction func addCustomAlert(sender: UIButton) {
+        let storyboard : UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let vc = storyboard.instantiateViewControllerWithIdentifier("AddCustomAlarm")
+        
+        vc.modalPresentationStyle = UIModalPresentationStyle.Popover
+        
+        let screenSize: CGRect = UIScreen.mainScreen().bounds
+        
+        vc.preferredContentSize = CGSizeMake(screenSize.width, screenSize.width)
+        
+        let popover: UIPopoverPresentationController = vc.popoverPresentationController!
+        
+        popover.delegate = self
+        popover.sourceView = self.view
+        popover.permittedArrowDirections = UIPopoverArrowDirection(rawValue: 0)
+        
+        self.presentViewController(vc, animated: true, completion:nil)
+        
+    }
     
     func eveningHasPassed() -> Bool {
         let currentDate = NSDate()
@@ -115,6 +134,28 @@ class AddQuickAlertViewController: UIViewController {
         let eveningHasPassed = currentDate.compare(eveningOfCurrentDate) == NSComparisonResult.OrderedDescending
         
         return(eveningHasPassed)
+    }
+    
+    
+    
+    // MARK: - UIPopoverPresentationControllerDelegate
+    
+    func adaptivePresentationStyleForPresentationController(controller: UIPresentationController) -> UIModalPresentationStyle {
+        return UIModalPresentationStyle.None
+    }
+    
+    func presentationController(controller: UIPresentationController, viewControllerForAdaptivePresentationStyle style: UIModalPresentationStyle) -> UIViewController? {
+        
+        let navigationController = UINavigationController(rootViewController: controller.presentedViewController)
+        let btnDone = UIBarButtonItem(title: "Done", style: .Done, target: self, action: #selector(PersonalReminderTableViewController.dismiss))
+        navigationController.topViewController!.navigationItem.rightBarButtonItem = btnDone
+        
+        
+        return navigationController
+    }
+    
+    func dismiss() {
+        self.dismissViewControllerAnimated(true, completion: nil)
     }
     
     

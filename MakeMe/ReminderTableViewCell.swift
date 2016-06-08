@@ -93,9 +93,7 @@ class ReminderTableViewCell: MakeMeTableViewCell, UITextFieldDelegate {
     @IBAction func addAlert(sender: UIButton) {
         reminderText.resignFirstResponder()
         delegate!.cellHasBeenSelected(self)
-        
-        
-        
+        delegate!.alertBeingAddedtoCell(self)
     }
     
     

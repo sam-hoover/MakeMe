@@ -29,23 +29,6 @@ class PersonalReminderTableViewController: MakeMeTableViewController, MakeMeTabl
         super.viewWillDisappear(animated)
         
         // add completed items to completed reminder list and remove from this reminder list
-        
-        /*
-        var i = 0
-        while i < self.reminderList.count() {
-            if self.reminderList.getCompletionStatusOfReminder(i) {
-                
-                // add the completed item to the completed reminder list
-                let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
-                appDelegate.completedReminderList.add(self.reminderList.getReminder(i))
-                
-                // remove the completed item frm this reminder list
-                self.reminderList.remove(i)
-            } else {
-                i += 1
-            }
-        }
-        */
         checkForCompleted()
         
         let stackCount = self.navigationController?.viewControllers.count
@@ -156,6 +139,27 @@ class PersonalReminderTableViewController: MakeMeTableViewController, MakeMeTabl
     
     // MARK: - MakeMeTableViewCellDelegate
     
+    func alertBeingAddedtoCell(cell: UITableViewCell) {
+    
+        let storyboard : UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let vc = storyboard.instantiateViewControllerWithIdentifier("AddQuickAlarm")
+        
+        vc.modalPresentationStyle = UIModalPresentationStyle.Popover
+        
+        let screenSize: CGRect = UIScreen.mainScreen().bounds
+
+        vc.preferredContentSize = CGSizeMake(screenSize.width, screenSize.width)
+        
+        let popover: UIPopoverPresentationController = vc.popoverPresentationController!
+        
+        popover.delegate = self
+        popover.sourceView = self.view
+        popover.permittedArrowDirections = UIPopoverArrowDirection(rawValue: 0)
+        
+        self.presentViewController(vc, animated: true, completion:nil)
+    
+    }
+    
     func cellDidBeginEditing() {
        self.navigationItem.rightBarButtonItem?.enabled = false
     }
@@ -217,25 +221,6 @@ class PersonalReminderTableViewController: MakeMeTableViewController, MakeMeTabl
         if let index = self.tableView.indexPathForCell(cell) {
             indexOfSelectedCell = index
         }
-        
-        
-        let storyboard : UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-        let vc = storyboard.instantiateViewControllerWithIdentifier("AddQuickAlarm")
-        
-        vc.modalPresentationStyle = UIModalPresentationStyle.Popover
-        
-        let height = self.view.frame.width
-        let width = self.view.frame.width
-        
-        vc.preferredContentSize = CGSizeMake(width, height)
-        
-        let popover: UIPopoverPresentationController = vc.popoverPresentationController!
-        popover.delegate = self
-
-        popover.sourceView = self.view
-        
-        self.presentViewController(vc, animated: true, completion:nil)
-
     }
     
     // MARK: - UIPopoverPresentationControllerDelegate

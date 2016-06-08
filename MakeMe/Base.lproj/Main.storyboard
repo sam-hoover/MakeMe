@@ -307,6 +307,16 @@
                                     <segue destination="ZG5-Wz-faB" kind="unwind" unwindAction="unwindFromAddQuickAlert:" id="IZw-qd-gE6"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="Xoe-U7-GDV">
+                                <rect key="frame" x="396" y="220" width="176" height="160"/>
+                                <accessibility key="accessibilityConfiguration" identifier="CoupleDays"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                <state key="normal" backgroundImage="This Weekend"/>
+                                <connections>
+                                    <action selector="addAlert:" destination="Fw4-Y6-PeN" eventType="touchUpInside" id="EG9-qB-dVN"/>
+                                    <segue destination="ZG5-Wz-faB" kind="unwind" unwindAction="unwindFromAddQuickAlert:" id="WcD-7b-cC1"/>
+                                </connections>
+                            </button>
                             <button opaque="NO" tag="7" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="ksL-xT-QPv">
                                 <rect key="frame" x="28" y="388" width="176" height="160"/>
                                 <accessibility key="accessibilityConfiguration" identifier="NextWeek"/>
@@ -325,14 +335,6 @@
                                 <connections>
                                     <action selector="addAlert:" destination="Fw4-Y6-PeN" eventType="touchUpInside" id="K1E-48-9qd"/>
                                     <segue destination="ZG5-Wz-faB" kind="unwind" unwindAction="unwindFromAddQuickAlert:" id="SPa-uq-nDx"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" tag="9" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="yM9-Gq-TvT">
-                                <rect key="frame" x="396" y="388" width="176" height="160"/>
-                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
-                                <state key="normal" backgroundImage="Custom"/>
-                                <connections>
-                                    <segue destination="9LQ-Fh-afV" kind="show" identifier="showCustomAlarm" id="z8M-IG-Fid"/>
                                 </connections>
                             </button>
                             <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="7kS-5G-mzJ">
@@ -355,14 +357,13 @@
                                     <segue destination="ZG5-Wz-faB" kind="unwind" unwindAction="unwindFromAddQuickAlert:" id="Q7F-hA-rq2"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="Xoe-U7-GDV">
-                                <rect key="frame" x="396" y="220" width="176" height="160"/>
-                                <accessibility key="accessibilityConfiguration" identifier="CoupleDays"/>
+                            <button opaque="NO" tag="9" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="yM9-Gq-TvT">
+                                <rect key="frame" x="396" y="388" width="176" height="160"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
-                                <state key="normal" backgroundImage="This Weekend"/>
+                                <state key="normal" backgroundImage="Custom"/>
                                 <connections>
-                                    <action selector="addAlert:" destination="Fw4-Y6-PeN" eventType="touchUpInside" id="EG9-qB-dVN"/>
-                                    <segue destination="ZG5-Wz-faB" kind="unwind" unwindAction="unwindFromAddQuickAlert:" id="WcD-7b-cC1"/>
+                                    <action selector="addCustomAlert:" destination="Fw4-Y6-PeN" eventType="touchUpInside" id="3yw-Ly-0iD"/>
+                                    <segue destination="9LQ-Fh-afV" kind="show" identifier="showCustomAlarm" id="z8M-IG-Fid"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -422,7 +423,7 @@
         <!--Add Custome Alert View Controller-->
         <scene sceneID="5Zi-dt-NOw">
             <objects>
-                <viewController id="9LQ-Fh-afV" customClass="AddCustomeAlertViewController" customModule="MakeMe" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="AddCustomAlarm" id="9LQ-Fh-afV" customClass="AddCustomeAlertViewController" customModule="MakeMe" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="EKD-XK-yWQ"/>
                         <viewControllerLayoutGuide type="bottom" id="Kf3-vh-ezF"/>
