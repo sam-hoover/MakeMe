@@ -55,7 +55,9 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let greenColor = UIColor(red: 77/255.0, green: 196/255.0, blue: 44/255.0, alpha: 1).CGColor
+        //let greenColor = UIColor(red: 77/255.0, green: 196/255.0, blue: 44/255.0, alpha: 1).CGColor
+        
+        let greenColor = SettingsProfile.colors.tableBackground.CGColor
         continueButton.layer.backgroundColor = greenColor
         continueButton.setTitleColor(UIColor.whiteColor(), forState: .Normal)
 

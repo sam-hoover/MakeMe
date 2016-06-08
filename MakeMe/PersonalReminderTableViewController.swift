@@ -18,8 +18,8 @@ class PersonalReminderTableViewController: MakeMeTableViewController, MakeMeTabl
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        //tableView.estimatedRowHeight = tableView.rowHeight
-        //tableView.rowHeight = UITableViewAutomaticDimension
+        tableView.estimatedRowHeight = tableView.rowHeight
+        tableView.rowHeight = UITableViewAutomaticDimension
                 
         setTitle()
     }
@@ -30,6 +30,7 @@ class PersonalReminderTableViewController: MakeMeTableViewController, MakeMeTabl
         
         // add completed items to completed reminder list and remove from this reminder list
         
+        /*
         var i = 0
         while i < self.reminderList.count() {
             if self.reminderList.getCompletionStatusOfReminder(i) {
@@ -44,7 +45,8 @@ class PersonalReminderTableViewController: MakeMeTableViewController, MakeMeTabl
                 i += 1
             }
         }
-        
+        */
+        checkForCompleted()
         
         let stackCount = self.navigationController?.viewControllers.count
         
@@ -219,10 +221,19 @@ class PersonalReminderTableViewController: MakeMeTableViewController, MakeMeTabl
         
         let storyboard : UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
         let vc = storyboard.instantiateViewControllerWithIdentifier("AddQuickAlarm")
+        
         vc.modalPresentationStyle = UIModalPresentationStyle.Popover
+        
+        let height = self.view.frame.width
+        let width = self.view.frame.width
+        
+        vc.preferredContentSize = CGSizeMake(width, height)
+        
         let popover: UIPopoverPresentationController = vc.popoverPresentationController!
         popover.delegate = self
-        //popover.barButtonItem = sender
+
+        popover.sourceView = self.view
+        
         self.presentViewController(vc, animated: true, completion:nil)
 
     }
@@ -230,10 +241,11 @@ class PersonalReminderTableViewController: MakeMeTableViewController, MakeMeTabl
     // MARK: - UIPopoverPresentationControllerDelegate
     
     func adaptivePresentationStyleForPresentationController(controller: UIPresentationController) -> UIModalPresentationStyle {
-        return UIModalPresentationStyle.FullScreen
+        return UIModalPresentationStyle.None
     }
     
     func presentationController(controller: UIPresentationController, viewControllerForAdaptivePresentationStyle style: UIModalPresentationStyle) -> UIViewController? {
+        
         let navigationController = UINavigationController(rootViewController: controller.presentedViewController)
         let btnDone = UIBarButtonItem(title: "Done", style: .Done, target: self, action: #selector(PersonalReminderTableViewController.dismiss))
         navigationController.topViewController!.navigationItem.rightBarButtonItem = btnDone
@@ -246,7 +258,22 @@ class PersonalReminderTableViewController: MakeMeTableViewController, MakeMeTabl
         self.dismissViewControllerAnimated(true, completion: nil)
     }
     
-    
+    func checkForCompleted() {
+        var i = 0
+        while i < self.reminderList.count() {
+            if self.reminderList.getCompletionStatusOfReminder(i) {
+                
+                // add the completed item to the completed reminder list
+                let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+                appDelegate.completedReminderList.add(self.reminderList.getReminder(i))
+                
+                // remove the completed item frm this reminder list
+                self.reminderList.remove(i)
+            } else {
+                i += 1
+            }
+        }
+    }
     
     // MARK: - Setup
     

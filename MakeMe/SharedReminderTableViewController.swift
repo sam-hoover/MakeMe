@@ -23,8 +23,8 @@ class SharedReminderTableViewController: MakeMeTableViewController, MakeMeTableV
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //tableView.estimatedRowHeight = tableView.rowHeight
-        //tableView.rowHeight = UITableViewAutomaticDimension
+        tableView.estimatedRowHeight = tableView.rowHeight
+        tableView.rowHeight = UITableViewAutomaticDimension
         
         setTitle()
     }
@@ -32,6 +32,11 @@ class SharedReminderTableViewController: MakeMeTableViewController, MakeMeTableV
     
     override func viewWillDisappear(animated : Bool) {
         super.viewWillDisappear(animated)
+        
+        
+        checkForCompleted(Index.from)
+        checkForCompleted(Index.to)
+        
         
         let stackCount = self.navigationController?.viewControllers.count
         
@@ -227,5 +232,22 @@ class SharedReminderTableViewController: MakeMeTableViewController, MakeMeTableV
         }
     }
     
+    
+    func checkForCompleted(index: Int) {
+        var i = 0
+        while i < self.reminderLists[index].count() {
+            if self.reminderLists[index].getCompletionStatusOfReminder(i) {
+                
+                // add the completed item to the completed reminder list
+                let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+                appDelegate.completedReminderList.add(self.reminderLists[index].getReminder(i))
+                
+                // remove the completed item frm this reminder list
+                self.reminderLists[index].remove(i)
+            } else {
+                i += 1
+            }
+        }
+    }
 
 }

@@ -10,6 +10,8 @@ import UIKit
 
 protocol MakeMeTableViewCellDelegate {
     
+    func alertBeingAddedtoCell(cell: UITableViewCell)
+    
     func deleteWithConfirmation(cell: UITableViewCell)
     func deleteWithoutConfirmation(cell: UITableViewCell)
     
@@ -17,6 +19,8 @@ protocol MakeMeTableViewCellDelegate {
     func cellDidEndEditing()
     
     func cellHasBeenCompleted(cell: UITableViewCell)
+    
+    
     func cellHasBeenSelected(cell: UITableViewCell)
 }
 

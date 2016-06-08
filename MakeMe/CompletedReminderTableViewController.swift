@@ -31,6 +31,13 @@ class CompletedReminderTableViewController: PersonalReminderTableViewController 
         // Dispose of any resources that can be recreated.
     }
     
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        self.tableView.reloadData()
+    }
+    
     override func viewWillDisappear(animated: Bool) {
         //super.viewWillDisappear(animated)
        // let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
