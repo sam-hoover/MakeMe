@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MakeMeTableViewController: UITableViewController {
+class MakeMeTableViewController: UITableViewController, UIPopoverPresentationControllerDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -53,10 +53,38 @@ class MakeMeTableViewController: UITableViewController {
     }
     
     
-    func presentQuickAlarmPopover() {
+    
+    func createQuickAlarmPopover() {
         
+        let storyboard : UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let vc = storyboard.instantiateViewControllerWithIdentifier("AddQuickAlarm")
+        
+        vc.modalPresentationStyle = UIModalPresentationStyle.Popover
+        
+        let screenSize: CGRect = UIScreen.mainScreen().bounds
+        
+        vc.preferredContentSize = CGSizeMake(screenSize.width, screenSize.width)
+        
+        let popover: UIPopoverPresentationController = vc.popoverPresentationController!
+        
+        popover.delegate = self
+        popover.sourceView = self.view
+        popover.permittedArrowDirections = UIPopoverArrowDirection(rawValue: 0)
+        popover.sourceRect = CGRectMake(0, CGRectGetMidY(self.view.bounds), 0, 0)
+        
+        self.presentViewController(vc, animated: true, completion:nil)
     }
     
+    
+    // MARK: - UIPopoverPresentationControllerDelegate
+    
+    func adaptivePresentationStyleForPresentationController(controller: UIPresentationController) -> UIModalPresentationStyle {
+        return UIModalPresentationStyle.None
+    }
+    
+    func dismiss() {
+        self.dismissViewControllerAnimated(true, completion: nil)
+    }
     
 }
 

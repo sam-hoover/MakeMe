@@ -637,7 +637,6 @@
                                             <rect key="frame" x="570" y="24" width="22" height="22"/>
                                             <connections>
                                                 <action selector="addAlert:" destination="yqc-iV-wsA" eventType="touchUpInside" id="S2t-lZ-0Zb"/>
-                                                <segue destination="Fw4-Y6-PeN" kind="show" identifier="showAddQuickAlarm" id="RK7-Oh-JQy"/>
                                             </connections>
                                         </button>
                                         <button opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="749" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R45-IB-s5V">

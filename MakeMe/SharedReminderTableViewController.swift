@@ -151,7 +151,9 @@ class SharedReminderTableViewController: MakeMeTableViewController, MakeMeTableV
     
     // MARK: - MakeMeTableViewCellDelegate
     
-    func alertBeingAddedtoCell(cell: UITableViewCell) { /* nothing is need here */ }
+    func alertBeingAddedtoCell(cell: UITableViewCell) {
+        createQuickAlarmPopover()
+    }
     
     func cellDidBeginEditing() {
         self.navigationItem.rightBarButtonItem?.enabled = false

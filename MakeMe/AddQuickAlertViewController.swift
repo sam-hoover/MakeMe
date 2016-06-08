@@ -34,11 +34,13 @@ class AddQuickAlertViewController: UIViewController, UIPopoverPresentationContro
 
     // MARK: - Navigation
 
+    /*
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
         
+        /*
         if segue.identifier == "showCustomAlarm" {
             if ((segue.destinationViewController as? AddCustomeAlertViewController) != nil) {
                 let backItem = UIBarButtonItem()
@@ -46,8 +48,9 @@ class AddQuickAlertViewController: UIViewController, UIPopoverPresentationContro
                 navigationItem.backBarButtonItem = backItem
             }
         }
-        
+        */
     }
+    */
 
     @IBAction func addAlert(sender: UIButton) {
         
@@ -122,6 +125,7 @@ class AddQuickAlertViewController: UIViewController, UIPopoverPresentationContro
         popover.delegate = self
         popover.sourceView = self.view
         popover.permittedArrowDirections = UIPopoverArrowDirection(rawValue: 0)
+        popover.sourceRect = CGRectMake(0, CGRectGetMidY(self.view.bounds), 0, 0)
         
         self.presentViewController(vc, animated: true, completion:nil)
         
